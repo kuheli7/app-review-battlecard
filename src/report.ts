@@ -183,7 +183,7 @@ function mixHtml(d: ReportData): string {
                     const v = vals[i];
                     const n = a.themeCounts[t.code] ?? 0;
                     const tip = `${a.name}: ${n} of ${a.classified} labelled 1–2★ reviews (${v}%)`;
-                    return `<td class="mix${v === max && v > 0 && d.apps.length > 1 ? ' top' : ''}" title="${esc(tip)}">${barRow('', v, APP_COLORS[i], scale)}<small>${n} reviews</small></td>`;
+                    return `<td class="mix${v === max && v > 0 && d.apps.length > 1 ? ' top' : ''}" title="${esc(tip)}">${barRow('', v, APP_COLORS[i], scale)}<small>${n} review${n === 1 ? "" : "s"}</small></td>`;
                 })
                 .join('');
             return `<tr><th scope="row">${esc(t.label)}<br><small>${esc(t.owner)}</small></th>${cells}</tr>`;
