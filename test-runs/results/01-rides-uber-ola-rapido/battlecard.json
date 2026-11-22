@@ -1,0 +1,421 @@
+{
+  "type": "battlecard",
+  "yourApp": "Uber",
+  "rivals": [
+    "Ola",
+    "Rapido"
+  ],
+  "store": "Google Play",
+  "country": "in",
+  "verdict": "Ola's 1–2★ reviews are 57.6% of its total, versus Uber's 24.8%, so Ola's trust problems are the clearest opening for Uber to win switchers.",
+  "topOpportunity": "Real people answer when a ride goes wrong: 12% of Ola's 1–2★ reviews are about customer support, vs 5% of yours.",
+  "topThreat": "Rival fare surprises are pulling price-sensitive riders: 31% of your 1–2★ reviews are about prices, fees & subscriptions, vs 19% of Ola's.",
+  "opportunities": [
+    {
+      "theme": "SUPPORT",
+      "themeLabel": "Customer support",
+      "owner": "Support",
+      "rival": "Ola",
+      "yourShare": 5,
+      "rivalShare": 12,
+      "gapPoints": 7,
+      "confidence": "medium",
+      "evidence": "12% of Ola's 1–2★ reviews are about customer support, vs 5% of yours.",
+      "quotes": [
+        "very poor customer service....had to pay for wrong ride automatically booked by ola ....even after raising a concern ..no proper response..very poor support",
+        "worst cab booking app. no customer support system available. No one should use this app ever. worst experience with driver in last trip but no support system available"
+      ],
+      "headline": "Real people answer when a ride goes wrong",
+      "message": "When something goes wrong on your trip, you deserve a real response. Get help fast, with support that follows through."
+    },
+    {
+      "theme": "ACCOUNT",
+      "themeLabel": "Account, login & security",
+      "owner": "Engineering",
+      "rival": "Rapido",
+      "yourShare": 2,
+      "rivalShare": 7,
+      "gapPoints": 5,
+      "confidence": "medium",
+      "evidence": "7% of Rapido's 1–2★ reviews are about account, login & security, vs 2% of yours.",
+      "quotes": [
+        "why same otps for all rides its not safe for customers. rapido is really rapid you have no time to change otps for next rides",
+        "worst app profile doesn't get verified for bike driver in Pune City even after uploading documents since 2 weeks."
+      ],
+      "headline": "Rapido users are angrier about account, login & security",
+      "message": "Lead with your strength in account, login & security in campaigns aimed at Rapido users."
+    },
+    {
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
+      "rival": "Rapido",
+      "yourShare": 21,
+      "rivalShare": 30,
+      "gapPoints": 9,
+      "confidence": "medium",
+      "evidence": "30% of Rapido's 1–2★ reviews are about delivery & fulfilment (late, cancelled, missing, no-show), vs 21% of yours.",
+      "quotes": [
+        "Worst app ever.. Drivers never takes ride. If don't want to work then shut down the business, why customers to waste their time ..",
+        "These people hardly accept any rides these days. They prefer delivering parcels instead,so disappointed. Deleting this app right away"
+      ],
+      "caution": "Fix before you advertise this: \"Driver cancels or demands extra cash after accepting\" is on your own fix-first list (mentioned in 23 of your 100 recent 1–2★ reviews).",
+      "headline": "Rides that actually get accepted and arrive on time",
+      "message": "Tired of drivers skipping your ride? With Uber, we match you quickly and keep you informed until you're picked up."
+    }
+  ],
+  "threats": [
+    {
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "rival": "Ola",
+      "yourShare": 31,
+      "rivalShare": 19,
+      "gapPoints": 12,
+      "confidence": "medium",
+      "evidence": "31% of your 1–2★ reviews are about prices, fees & subscriptions, vs 19% of Ola's.",
+      "quotes": [
+        "sabse bekar app hai kiraya dikhata kuchh aur hai leta kuchh aur hai isse achcha green sm hai uber is very bed app ☹️🫤",
+        "Worst experience, drivers do not accept rides at night in Railway station, instead they charge triple amount as a private taxi"
+      ],
+      "headline": "Rival fare surprises are pulling price-sensitive riders",
+      "action": "Pricing & Growth: publish a fare-transparency promise and show full price upfront to counter rival fare-mismatch complaints."
+    },
+    {
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "rival": "Rapido",
+      "yourShare": 10,
+      "rivalShare": 7,
+      "gapPoints": 3,
+      "confidence": "low",
+      "evidence": "10% of your 1–2★ reviews are about payments & refunds, vs 7% of Rapido's.",
+      "quotes": [
+        "not only are they terrible at actually finding you a driver, they will STILL charge you for a ride you cancelled.",
+        "I always get charges I don't know about. maybe it's a way of extorting my account but y'all can do without me."
+      ],
+      "headline": "Charge and refund complaints are spreading to rivals' users",
+      "action": "Payments & Support: audit cancellation-fee logic and make refunds visible in-app to keep users from switching over billing confusion."
+    },
+    {
+      "theme": "QUALITY",
+      "themeLabel": "Product, food, service or content quality",
+      "owner": "Operations & Partners",
+      "rival": "Rapido",
+      "yourShare": 14,
+      "rivalShare": 11,
+      "gapPoints": 3,
+      "confidence": "low",
+      "evidence": "14% of your 1–2★ reviews are about product, food, service or content quality, vs 11% of Rapido's.",
+      "quotes": [
+        "some one answering the call. after booking and call the driver. avoid this ASAP. good people struggle for that issue",
+        "asks to be rated= 0 starts. instead of using text it sends a WhatsApp. this is what i consider exceptionally rude."
+      ],
+      "headline": "Rider experience complaints around driver conduct and contact",
+      "action": "Operations & Partners: set a driver-conduct standard and contact-policy review so Uber doesn't inherit similar rider-experience churn."
+    }
+  ],
+  "fixFirst": [
+    "Driver cancels or demands extra cash after accepting (mentioned in 23 of 100 recent 1–2★ reviews; owner: Operations)",
+    "Fare increases after booking or at trip end (mentioned in 19 of 100 recent 1–2★ reviews; owner: Pricing & Growth)",
+    "Long waits and rides not being accepted (mentioned in 15 of 100 recent 1–2★ reviews; owner: Operations)"
+  ],
+  "yourIssues": [
+    {
+      "title": "Driver cancels or demands extra cash after accepting",
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
+      "count": 23,
+      "shareOfNegative": 23,
+      "inCurrentVersion": null,
+      "quotes": [
+        "Worst experience, drivers do not accept rides at night in Railway station, instead they charge triple amount as a private taxi",
+        "not only are they terrible at actually finding you a driver, they will STILL charge you for a ride you cancelled."
+      ]
+    },
+    {
+      "title": "Fare increases after booking or at trip end",
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "count": 19,
+      "shareOfNegative": 19,
+      "inCurrentVersion": null,
+      "quotes": [
+        "booked an auto whose fare was around 383 rs but instead the driver charged me 400 rs. Tried to log a complaint but didn't get any response.",
+        "Digital payment has been cancelled automatically. Very high fare within short distance. Shame!"
+      ]
+    },
+    {
+      "title": "Long waits and rides not being accepted",
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
+      "count": 15,
+      "shareOfNegative": 15,
+      "inCurrentVersion": null,
+      "quotes": [
+        "worst service ever when booking for vehicles for long trips and bigger vehicles worst possible service",
+        "always the waiting time is too high many auto cancel there ride after accepting it bad experience"
+      ]
+    },
+    {
+      "title": "Customer support unresponsive, AI-only and unhelpful",
+      "theme": "SUPPORT",
+      "themeLabel": "Customer support",
+      "owner": "Support",
+      "count": 12,
+      "shareOfNegative": 12,
+      "inCurrentVersion": null,
+      "quotes": [
+        "customer service is not good and i have changed excess amount by uber driver but no resolution by uber team",
+        "You can not reqest an invoice, function does not work. Customer service does not exist. Bad experience."
+      ]
+    },
+    {
+      "title": "Cancellation fees charged though driver cancelled",
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "count": 7,
+      "shareOfNegative": 7,
+      "inCurrentVersion": null,
+      "quotes": [
+        "I always get charges I don't know about. maybe it's a way of extorting my account but y'all can do without me.",
+        "I need to pay a cancellation fee when I cancel an order, and when Uber cancels an order, they do not give any cancellation fee to the customer. Bad experience."
+      ]
+    },
+    {
+      "title": "Unsafe or dangerous drivers and riders",
+      "theme": "QUALITY",
+      "themeLabel": "Product, food, service or content quality",
+      "owner": "Operations & Partners",
+      "count": 5,
+      "shareOfNegative": 5,
+      "inCurrentVersion": null,
+      "quotes": [
+        "dangerous driver, no safety, even they don't take any actions also",
+        "NEGATIVE RATING...On my very first drive the rider literally argued with me in middle of a busy road demanding extra cash ... couldn't find any helpline number or something on the app... TERRIBLE E…"
+      ]
+    }
+  ],
+  "switching": [
+    {
+      "app": "Uber",
+      "mentions": "Rapido",
+      "count": 3,
+      "negativeReviews": 124,
+      "quotes": [
+        "Now a days driver phone has shown different fare from customer fare... too poor service by Uber... rapido is excellent for this",
+        "Sabse kharab Seva Hai uber ki, is se achcha rapido aur Bharat taxi hai."
+      ]
+    },
+    {
+      "app": "Ola",
+      "mentions": "Uber",
+      "count": 7,
+      "negativeReviews": 288,
+      "quotes": [
+        "I have submitted a complaint but have not received a response. I recommend using Uber instead of Ola, as they address issues promptly.",
+        "one of the worst service provider in field of cab service provider. fictitious and fraudsters only. never go for this fraud company. avoid this and prefer UBER or RAPIDO."
+      ]
+    },
+    {
+      "app": "Ola",
+      "mentions": "Rapido",
+      "count": 5,
+      "negativeReviews": 288,
+      "quotes": [
+        "one of the worst service provider in field of cab service provider. fictitious and fraudsters only. never go for this fraud company. avoid this and prefer UBER or RAPIDO.",
+        "Very high charges compare with other uber or Rapido"
+      ]
+    },
+    {
+      "app": "Rapido",
+      "mentions": "Uber",
+      "count": 4,
+      "negativeReviews": 134,
+      "quotes": [
+        "RAPIO DIRTY TACTICS I CAN'T MONEY IN MY RAPIDO WALLET WORST EXPERIENCE AGESE UBER MEIN KARLO ADD MONEY FOR MOTO RIDE",
+        "guys, listen all. don't use rapido. If you get any problem they will not respond. there is no customer care for rapido. Uber and Ola is best. Uber have direct customer care number. Rapido is worst."
+      ]
+    },
+    {
+      "app": "Rapido",
+      "mentions": "Ola",
+      "count": 4,
+      "negativeReviews": 134,
+      "quotes": [
+        "very worst app ola is better then this it's very costly ola is always less then this 25 to 40 ruppes 😡",
+        "guys, listen all. don't use rapido. If you get any problem they will not respond. there is no customer care for rapido. Uber and Ola is best. Uber have direct customer care number. Rapido is worst."
+      ]
+    }
+  ],
+  "apps": [
+    {
+      "name": "Uber",
+      "isYours": true,
+      "appId": "com.ubercab",
+      "url": "https://play.google.com/store/apps/details?id=com.ubercab&hl=en&gl=in",
+      "icon": "https://play-lh.googleusercontent.com/OXQnDlRtPa5ha6KCnKPqVmxHYBP7tjrAa7PXGNRqcwDC_J03HVeuEKcKrkcIqnfOqsF5uy3uwWxIXR067QHsNQ",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 124,
+      "negativeShare": 24.8,
+      "avgRatingRecent": 3.95,
+      "storeRating": 4.73,
+      "ratingCount": 20506587,
+      "currentVersion": null,
+      "starMix": {
+        "1": 103,
+        "2": 21,
+        "3": 13,
+        "4": 25,
+        "5": 338
+      },
+      "replyRateToNegative": 0,
+      "from": "2026-11-20T05:27:05.432Z",
+      "to": "2026-11-21T07:58:50.976Z",
+      "daysCovered": 1,
+      "releaseNote": "v4.655.10001 is about the same as v4.652.10004: 15.4% vs 16.7% of reviews are 1–2★ (13 vs 6 reviews).",
+      "themeShares": {
+        "BUGS": 3,
+        "PAYMENTS": 10,
+        "FULFILMENT": 21,
+        "QUALITY": 14,
+        "PRICING": 31,
+        "SUPPORT": 5,
+        "UX": 3,
+        "ACCOUNT": 2,
+        "OTHER": 11
+      },
+      "themeCounts": {
+        "BUGS": 3,
+        "PAYMENTS": 10,
+        "FULFILMENT": 21,
+        "QUALITY": 14,
+        "PRICING": 31,
+        "SUPPORT": 5,
+        "UX": 3,
+        "ACCOUNT": 2,
+        "OTHER": 11
+      },
+      "classified": 100,
+      "sampled": 100
+    },
+    {
+      "name": "Ola",
+      "isYours": false,
+      "appId": "com.olacabs.customer",
+      "url": "https://play.google.com/store/apps/details?id=com.olacabs.customer&hl=en&gl=in",
+      "icon": "https://play-lh.googleusercontent.com/X2EES6J1Q6cf18gTsBX-yWvsLrDm31TjwjwbSGE8t8w-v1uEIpHDNExfTF3tw_bbOqeRuYZhPg5mOu-kLWKhJ64",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 288,
+      "negativeShare": 57.6,
+      "avgRatingRecent": 2.65,
+      "storeRating": 4.61,
+      "ratingCount": 3560970,
+      "currentVersion": "7.6.2",
+      "starMix": {
+        "1": 272,
+        "2": 16,
+        "3": 13,
+        "4": 13,
+        "5": 186
+      },
+      "replyRateToNegative": 2.8,
+      "from": "2026-11-06T16:24:50.278Z",
+      "to": "2026-11-21T06:44:25.886Z",
+      "daysCovered": 15,
+      "releaseNote": "v7.6.2 is worse than v7.5.5: 57.5% vs 20% of reviews are 1–2★ (252 vs 5 reviews).",
+      "themeShares": {
+        "BUGS": 3,
+        "PAYMENTS": 8,
+        "FULFILMENT": 25,
+        "QUALITY": 17,
+        "PRICING": 19,
+        "SUPPORT": 12,
+        "UX": 0,
+        "ACCOUNT": 1,
+        "OTHER": 15
+      },
+      "themeCounts": {
+        "BUGS": 3,
+        "PAYMENTS": 8,
+        "FULFILMENT": 25,
+        "QUALITY": 17,
+        "PRICING": 19,
+        "SUPPORT": 12,
+        "UX": 0,
+        "ACCOUNT": 1,
+        "OTHER": 15
+      },
+      "classified": 100,
+      "sampled": 100
+    },
+    {
+      "name": "Rapido",
+      "isYours": false,
+      "appId": "com.rapido.passenger",
+      "url": "https://play.google.com/store/apps/details?id=com.rapido.passenger&hl=en&gl=in",
+      "icon": "https://play-lh.googleusercontent.com/94XgU5OUmk5HIyv6gn9ZVJWudLxUjeAunu8QcORlmEx3sG_bw8NArUjvKx3lSAXsJAOYf7qfz1Fi7E-xEN4O",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 134,
+      "negativeShare": 26.8,
+      "avgRatingRecent": 3.82,
+      "storeRating": 4.76,
+      "ratingCount": 5185311,
+      "currentVersion": "8.132.0",
+      "starMix": {
+        "1": 118,
+        "2": 16,
+        "3": 15,
+        "4": 41,
+        "5": 310
+      },
+      "replyRateToNegative": 33.6,
+      "from": "2026-11-20T03:01:57.563Z",
+      "to": "2026-11-21T07:58:06.769Z",
+      "daysCovered": 1,
+      "releaseNote": "v8.132.0: 23.5% of 340 reviews are 1–2★.",
+      "themeShares": {
+        "BUGS": 4,
+        "PAYMENTS": 7,
+        "FULFILMENT": 30,
+        "QUALITY": 11,
+        "PRICING": 20,
+        "SUPPORT": 5,
+        "UX": 1,
+        "ACCOUNT": 7,
+        "OTHER": 15
+      },
+      "themeCounts": {
+        "BUGS": 4,
+        "PAYMENTS": 7,
+        "FULFILMENT": 30,
+        "QUALITY": 11,
+        "PRICING": 20,
+        "SUPPORT": 5,
+        "UX": 1,
+        "ACCOUNT": 7,
+        "OTHER": 15
+      },
+      "classified": 100,
+      "sampled": 100
+    }
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/TqMHXcbTsI0fwQexM/records/BATTLECARD?signature=16EOjHptKeCn62HHsnM0Z",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/TqMHXcbTsI0fwQexM/records/BATTLECARD_CLASSIC?signature=DeKl8GR3Dm0TBwvUtjvW",
+  "markdownUrl": "https://api.apify.com/v2/key-value-stores/TqMHXcbTsI0fwQexM/records/BATTLECARD_MD?signature=bcXZn7aBVJaE1B2b9cYt",
+  "labelCheck": {
+    "checked": 30,
+    "agreed": 26,
+    "share": 86.7
+  },
+  "model": "anthropic/claude-haiku-5.5",
+  "aiCopy": true,
+  "tokensUsed": 31317,
+  "generatedAt": "2026-11-22T07:59:10.003Z"
+}

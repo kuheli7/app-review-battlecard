@@ -1,0 +1,56 @@
+{
+  "name": "04-generic-us-music",
+  "runId": "kz0wXAHkHAfjUVlQ4",
+  "status": "SUCCEEDED",
+  "statusMessage": "Done: Spotify vs YouTube Music. 2 opportunities, 1 threats, 6 named issues. Open the Output tab for the battlecard.",
+  "build": "0.1.16",
+  "memoryMbytes": 1024,
+  "runTimeSecs": 12.181,
+  "usageTotalUsd": 0.0009090145921988621,
+  "consoleUrl": "https://console.apify.com/view/runs/kz0wXAHkHAfjUVlQ4",
+  "apps": [
+    "Spotify",
+    "YouTube Music"
+  ],
+  "reviews": [
+    500,
+    500
+  ],
+  "labelled": [
+    "100/100",
+    "100/100"
+  ],
+  "otherShare": [
+    11,
+    10
+  ],
+  "labelCheck": {
+    "checked": 30,
+    "agreed": 25,
+    "share": 83.3
+  },
+  "verdict": "Spotify's 26.6% negative share beats YouTube Music's 40.4%, but Spotify's own ad and crash complaints must be fixed before it can lead on rival weaknesses.",
+  "opportunities": [
+    "PAYMENTS vs YouTube Music +4 (medium)",
+    "QUALITY vs YouTube Music +3 (low)"
+  ],
+  "threats": [
+    "PRICING vs YouTube Music +9 (high)"
+  ],
+  "issues": [
+    "Too many ads, especially for free users",
+    "App crashes, lags, or fails to load music",
+    "Forced Premium needed to skip or replay songs",
+    "Shuffle plays only part of playlist or repeats",
+    "Queue and add-to-queue features broken",
+    "Random songs or podcasts auto-played unexpectedly"
+  ],
+  "switching": [
+    "Spotify -> YouTube Music: 2",
+    "YouTube Music -> Spotify: 12"
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/hPbGdTXewHS3zLDKO/records/BATTLECARD?signature=TRdKg06drmDYifYP8bxj",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/hPbGdTXewHS3zLDKO/records/BATTLECARD_CLASSIC?signature=jWvVMTCEGa0Zdd5LeRwi",
+  "tokensUsed": 22467,
+  "aiCopy": true
+}

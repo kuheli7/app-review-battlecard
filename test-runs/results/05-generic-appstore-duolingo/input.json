@@ -1,0 +1,11 @@
+{
+  "apps": [
+    "Duolingo",
+    "Babbel"
+  ],
+  "store": "appStore",
+  "country": "us",
+  "reviewsPerApp": 500,
+  "maxNegativeReviewsForAI": 100,
+  "model": "anthropic/claude-haiku-5.5"
+}

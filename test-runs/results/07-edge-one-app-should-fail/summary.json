@@ -1,0 +1,11 @@
+{
+  "name": "07-edge-one-app-should-fail",
+  "runId": "YyoOQxMm3865tsL98",
+  "status": "FAILED",
+  "statusMessage": "Add at least 2 apps: your app first, then 1 to 3 rivals.",
+  "build": "0.1.18",
+  "memoryMbytes": 1024,
+  "runTimeSecs": 1.783,
+  "usageTotalUsd": 0.00020441625678870414,
+  "consoleUrl": "https://console.apify.com/view/runs/YyoOQxMm3865tsL98"
+}

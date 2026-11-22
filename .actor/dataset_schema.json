@@ -79,6 +79,27 @@
                 ],
                 "description": "Shareable link to the HTML battlecard (works without logging in)"
             },
+            "classicReportUrl": {
+                "type": [
+                    "string",
+                    "null"
+                ],
+                "description": "Shareable link to the same report in the light classic layout"
+            },
+            "labelCheck": {
+                "type": [
+                    "object",
+                    "null"
+                ],
+                "description": "Accuracy check: a second, independent AI pass re-labels up to 30 of your app's 1-2 star reviews; checked, agreed and share (%) of labels that match. Null if skipped"
+            },
+            "skippedApps": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "description": "Apps from the input that were left out: not found on the store, or too few reviews."
+            },
             "markdownUrl": {
                 "type": [
                     "string",

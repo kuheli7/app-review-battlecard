@@ -1,0 +1,66 @@
+{
+  "name": "01-rides-uber-ola-rapido",
+  "runId": "JNZoa4NbwWH5HceAx",
+  "status": "SUCCEEDED",
+  "statusMessage": "Done: Uber vs Ola, Rapido. 3 opportunities, 3 threats, 6 named issues. Open the Output tab for the battlecard.",
+  "build": "0.1.15",
+  "memoryMbytes": 4096,
+  "runTimeSecs": 12.51,
+  "usageTotalUsd": 0.003053886726275086,
+  "consoleUrl": "https://console.apify.com/view/runs/JNZoa4NbwWH5HceAx",
+  "apps": [
+    "Uber",
+    "Ola",
+    "Rapido"
+  ],
+  "reviews": [
+    500,
+    500,
+    500
+  ],
+  "labelled": [
+    "100/100",
+    "100/100",
+    "100/100"
+  ],
+  "otherShare": [
+    11,
+    15,
+    15
+  ],
+  "labelCheck": {
+    "checked": 30,
+    "agreed": 26,
+    "share": 86.7
+  },
+  "verdict": "Ola's 1–2★ reviews are 57.6% of its total, versus Uber's 24.8%, so Ola's trust problems are the clearest opening for Uber to win switchers.",
+  "opportunities": [
+    "SUPPORT vs Ola +7 (medium)",
+    "ACCOUNT vs Rapido +5 (medium)",
+    "FULFILMENT vs Rapido +9 (medium)"
+  ],
+  "threats": [
+    "PRICING vs Ola +12 (medium)",
+    "PAYMENTS vs Rapido +3 (low)",
+    "QUALITY vs Rapido +3 (low)"
+  ],
+  "issues": [
+    "Driver cancels or demands extra cash after accepting",
+    "Fare increases after booking or at trip end",
+    "Long waits and rides not being accepted",
+    "Customer support unresponsive, AI-only and unhelpful",
+    "Cancellation fees charged though driver cancelled",
+    "Unsafe or dangerous drivers and riders"
+  ],
+  "switching": [
+    "Uber -> Rapido: 3",
+    "Ola -> Uber: 7",
+    "Ola -> Rapido: 5",
+    "Rapido -> Uber: 4",
+    "Rapido -> Ola: 4"
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/TqMHXcbTsI0fwQexM/records/BATTLECARD?signature=16EOjHptKeCn62HHsnM0Z",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/TqMHXcbTsI0fwQexM/records/BATTLECARD_CLASSIC?signature=DeKl8GR3Dm0TBwvUtjvW",
+  "tokensUsed": 31317,
+  "aiCopy": true
+}

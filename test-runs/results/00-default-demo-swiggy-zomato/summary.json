@@ -1,0 +1,59 @@
+{
+  "name": "00-default-demo-swiggy-zomato",
+  "runId": "h063jpUAfVFVVyulp",
+  "status": "SUCCEEDED",
+  "statusMessage": "Done: Swiggy vs Zomato. 3 opportunities, 3 threats, 6 named issues. Open the Output tab for the battlecard.",
+  "build": "0.1.18",
+  "memoryMbytes": 1024,
+  "runTimeSecs": 10.827,
+  "usageTotalUsd": 0.0008355814872086048,
+  "consoleUrl": "https://console.apify.com/view/runs/h063jpUAfVFVVyulp",
+  "apps": [
+    "Swiggy",
+    "Zomato"
+  ],
+  "reviews": [
+    500,
+    500
+  ],
+  "labelled": [
+    "100/100",
+    "100/100"
+  ],
+  "otherShare": [
+    19,
+    20
+  ],
+  "labelCheck": {
+    "checked": 30,
+    "agreed": 24,
+    "share": 80
+  },
+  "verdict": "Swiggy's support complaints run 22.5% of Zomato's share versus 9.9% for Swiggy, but fulfilment at 34.6% is Swiggy's biggest threat.",
+  "opportunities": [
+    "PRICING vs Zomato +4 (low)",
+    "SUPPORT vs Zomato +12.6 (high)",
+    "PAYMENTS vs Zomato +7.7 (medium)"
+  ],
+  "threats": [
+    "FULFILMENT vs Zomato +8.3 (low)",
+    "UX vs Zomato +7.3 (high)",
+    "QUALITY vs Zomato +6 (low)"
+  ],
+  "issues": [
+    "Customer support unresponsive, rude or unhelpful",
+    "Orders delivered late or delayed significantly",
+    "Refund denied or not issued for problem orders",
+    "Wrong, missing or damaged items delivered",
+    "Prices and charges too high for orders",
+    "Delivery partner marks order delivered without delivery"
+  ],
+  "switching": [
+    "Swiggy -> Zomato: 7",
+    "Zomato -> Swiggy: 1"
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/INKoWCQzlNQgdVx9b/records/BATTLECARD?signature=fA3X4zbk2U5umJFSRajq",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/INKoWCQzlNQgdVx9b/records/BATTLECARD_CLASSIC?signature=9k7YcfRBvo7rOzzqKzpe",
+  "tokensUsed": 22416,
+  "aiCopy": true
+}

@@ -1,0 +1,72 @@
+{
+  "name": "03-generic-shopping-4apps-url",
+  "runId": "hpoUCSgX1VGWhAvwB",
+  "status": "SUCCEEDED",
+  "statusMessage": "Done: Flipkart Online Shopping App vs Amazon India Shop, Pay, miniTV, Meesho, Myntra. 3 opportunities, 2 threats, 6 named issues. Open the Output tab for the battlecard.",
+  "build": "0.1.15",
+  "memoryMbytes": 4096,
+  "runTimeSecs": 10.428,
+  "usageTotalUsd": 0.0025625176757474734,
+  "consoleUrl": "https://console.apify.com/view/runs/hpoUCSgX1VGWhAvwB",
+  "apps": [
+    "Flipkart Online Shopping App",
+    "Amazon India Shop, Pay, miniTV",
+    "Meesho",
+    "Myntra"
+  ],
+  "reviews": [
+    500,
+    500,
+    500,
+    500
+  ],
+  "labelled": [
+    "82/82",
+    "100/100",
+    "73/73",
+    "75/75"
+  ],
+  "otherShare": [
+    28,
+    7,
+    21.9,
+    12
+  ],
+  "labelCheck": {
+    "checked": 30,
+    "agreed": 25,
+    "share": 83.3
+  },
+  "verdict": "Flipkart's 16.4% negative share trails Meesho and Myntra, and fulfilment delays are its top problem, so fix that before any attack.",
+  "opportunities": [
+    "BUGS vs Amazon India Shop, Pay, miniTV +7.3 (medium)",
+    "PAYMENTS vs Amazon India Shop, Pay, miniTV +13.6 (high)",
+    "SUPPORT vs Myntra +8.3 (high)"
+  ],
+  "threats": [
+    "UX vs Meesho +4.9 (medium)",
+    "PRICING vs Amazon India Shop, Pay, miniTV +3.9 (medium)"
+  ],
+  "issues": [
+    "Orders delayed, rescheduled repeatedly, then cancelled",
+    "Customer support unreachable or unhelpful",
+    "Refund not credited after cancellation or missing items",
+    "Items missing from delivery or delivered as not ordered",
+    "App crashes, shows errors or fails to open",
+    "Prices increased at checkout; super coins removed"
+  ],
+  "switching": [
+    "Flipkart Online Shopping App -> Amazon India Shop, Pay, miniTV: 3",
+    "Flipkart Online Shopping App -> Myntra: 1",
+    "Amazon India Shop, Pay, miniTV -> Flipkart Online Shopping App: 10",
+    "Amazon India Shop, Pay, miniTV -> Meesho: 4",
+    "Amazon India Shop, Pay, miniTV -> Myntra: 3",
+    "Meesho -> Flipkart Online Shopping App: 1",
+    "Meesho -> Amazon India Shop, Pay, miniTV: 4",
+    "Myntra -> Meesho: 1"
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/iTh2ug5XhGf6d7Zry/records/BATTLECARD?signature=1RCaYwBx2Umyh8z6UPDLw",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/iTh2ug5XhGf6d7Zry/records/BATTLECARD_CLASSIC?signature=Xtby0nLqC9qecvQQpGQK",
+  "tokensUsed": 32711,
+  "aiCopy": true
+}

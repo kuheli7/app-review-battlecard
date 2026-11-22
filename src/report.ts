@@ -15,6 +15,8 @@ export interface CardItem {
     action?: string;
     /** Set when this opportunity's theme is also on your own fix-first list. */
     caution?: string;
+    /** Statistical confidence that the gap is real (two-proportion z-test). */
+    confidence?: 'high' | 'medium' | 'low';
     quotes: string[];
 }
 
@@ -40,6 +42,10 @@ export interface AppSummary {
     themeShares: Record<string, number>;
     themeCounts: Record<string, number>;
     classified: number;
+    /** Labelled reviews with a concrete complaint; theme shares are of this number. */
+    concrete?: number;
+    /** Negative reviews sent to the AI (classified = how many it labelled). */
+    sampled?: number;
 }
 
 export interface ReportData {
@@ -56,9 +62,13 @@ export interface ReportData {
     switching: SwitchingSignal[];
     generatedAt: string;
     model: string;
+    /** Second, independent labelling pass on a sample of your app's reviews: how often both passes agree. */
+    labelCheck?: { checked: number; agreed: number; share: number } | null;
+    /** Apps from the input that were left out (not found, or too few reviews). */
+    skipped?: string[];
 }
 
-const esc = (s: unknown) =>
+export const esc = (s: unknown) =>
     String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
 const day = (iso: string | null) => (iso ? iso.slice(0, 10) : '?');
 
@@ -68,12 +78,12 @@ const APP_COLORS = ['#2a78d6', '#eb6834', '#1baf7a', '#eda100'];
 
 const appIndex = (d: ReportData, name: string) => Math.max(0, d.apps.findIndex((a) => a.name === name));
 const appColor = (d: ReportData, name: string) => APP_COLORS[appIndex(d, name)] ?? APP_COLORS[0];
-const fmtDay = (iso: string | null) => {
+export const fmtDay = (iso: string | null) => {
     if (!iso) return '?';
     const t = new Date(iso);
     return Number.isNaN(t.getTime()) ? day(iso) : t.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
 };
-const stars = (n: number | null | undefined) => (typeof n === 'number' ? `${n.toFixed(1)}★` : '?');
+export const stars = (n: number | null | undefined) => (typeof n === 'number' ? `${n.toFixed(1)}★` : '?');
 const youTag = (isYours: boolean) => (isYours ? ' <span class="you">you</span>' : '');
 const width = (v: number, scale: number) => `${Math.max(v > 0 ? 2 : 0, Math.min(100, (v / scale) * 100)).toFixed(1)}%`;
 
@@ -82,7 +92,7 @@ function barRow(label: string, value: number, color: string, scale: number, suff
     return `<div class="cb"><span class="cb-name">${label}</span><span class="track" aria-hidden="true"><span class="fill" style="width:${width(value, scale)};background:${color}"></span></span><span class="cb-val">${value}${suffix}</span></div>`;
 }
 
-function quotesHtml(quotes: string[]): string {
+export function quotesHtml(quotes: string[]): string {
     const [first, ...rest] = quotes;
     if (!first) return '';
     const more = rest.length
@@ -182,14 +192,14 @@ function mixHtml(d: ReportData): string {
                 .map((a, i) => {
                     const v = vals[i];
                     const n = a.themeCounts[t.code] ?? 0;
-                    const tip = `${a.name}: ${n} of ${a.classified} labelled 1–2★ reviews (${v}%)`;
+                    const tip = `${a.name}: ${n} of ${a.concrete ?? a.classified} specific 1–2★ complaints (${v}%)`;
                     return `<td class="mix${v === max && v > 0 && d.apps.length > 1 ? ' top' : ''}" title="${esc(tip)}">${barRow('', v, APP_COLORS[i], scale)}<small>${n} review${n === 1 ? "" : "s"}</small></td>`;
                 })
                 .join('');
             return `<tr><th scope="row">${esc(t.label)}<br><small>${esc(t.owner)}</small></th>${cells}</tr>`;
         })
         .join('');
-    return `<section><h2>📊 Complaint mix</h2><p class="lead">Share of each app's own 1–2★ reviews per theme. Compare the mix, not the stars. The highest share in each row is bold.</p>
+    return `<section><h2>📊 Complaint mix</h2><p class="lead">Share of each app's own specific 1–2★ complaints per theme (vague reviews like "bad" or "ok" are left out). Compare the mix, not the stars. The highest share in each row is bold.</p>
 <div class="legend">${legend}</div>
 <div class="tbl"><table class="mixt"><thead><tr><th scope="col">Theme · owner team</th>${head}</tr></thead><tbody>${rows}</tbody></table></div></section>`;
 }
@@ -274,7 +284,7 @@ td small,th small{color:var(--muted);font-weight:400;font-size:12px}
 ${switchingHtml(d)}
 ${issuesHtml(d)}
 ${mixHtml(d)}
-<p class="foot">Method: the most recent ${esc(d.store)} reviews per app. An AI model (${esc(d.model)}) labels every 1–2★ review with one theme; shares and gaps are computed in code. We compare the <b>mix</b> of complaints, not average stars, because in-app rating prompts inflate star averages. Quotes are real reviews; reviewer names are never stored. Made with App Review Battlecard on Apify.</p>
+<p class="foot">${d.skipped?.length ? `<b>Skipped:</b> ${esc(d.skipped.join(', '))}. ` : ''}Method: the most recent ${esc(d.store)} reviews per app. An AI model (${esc(d.model)}) labels every 1–2★ review with one theme; shares and gaps are computed in code. We compare the <b>mix</b> of complaints, not average stars, because in-app rating prompts inflate star averages. ${d.labelCheck?.checked ? `Accuracy check: a second AI pass re-labelled ${d.labelCheck.checked} of ${esc(d.yourApp)}'s reviews and agreed on ${d.labelCheck.share}%. ` : ''}Quotes are real reviews; reviewer names are never stored. Made with App Review Battlecard on Apify.</p>
 </div></body></html>`;
 }
 
@@ -286,7 +296,7 @@ export function renderMarkdown(d: ReportData): string {
     lines.push(`> **${d.verdict}**`, '');
     lines.push('## 🟢 Opportunities (where rivals are weaker)', '');
     for (const c of d.opportunities) {
-        lines.push(`- **${c.headline}**: ${c.evidence}`);
+        lines.push(`- **${c.headline}**: ${c.evidence}${c.confidence ? ` (confidence: ${c.confidence})` : ''}`);
         if (c.caution) lines.push(`  - ${c.caution}`);
         lines.push(`  - Message: ${c.message}`);
         for (const q of c.quotes) lines.push(`  - “${q}”`);
@@ -294,7 +304,7 @@ export function renderMarkdown(d: ReportData): string {
     if (!d.opportunities.length) lines.push('- No clear rival weakness in this sample.');
     lines.push('', '## 🔴 Threats (where you are weaker)', '');
     for (const c of d.threats) {
-        lines.push(`- **${c.headline}**: ${c.evidence}`, `  - Action: ${c.action}`);
+        lines.push(`- **${c.headline}**: ${c.evidence}${c.confidence ? ` (confidence: ${c.confidence})` : ''}`, `  - Action: ${c.action}`);
         for (const q of c.quotes) lines.push(`  - “${q}”`);
     }
     if (!d.threats.length) lines.push('- No clear weakness vs rivals in this sample.');
@@ -312,7 +322,7 @@ export function renderMarkdown(d: ReportData): string {
             if (i.quotes[0]) lines.push(`   - “${i.quotes[0]}”`);
         });
     }
-    lines.push('', "## Complaint mix (share of each app's own 1–2★ reviews)", '');
+    lines.push('', "## Complaint mix (share of each app's own specific 1–2★ complaints; vague reviews left out)", '');
     lines.push(`| Theme | ${d.apps.map((a) => a.name + (a.isYours ? ' (you)' : '')).join(' | ')} |`);
     lines.push(`|---|${d.apps.map(() => '---').join('|')}|`);
     for (const t of themes) {
@@ -322,6 +332,13 @@ export function renderMarkdown(d: ReportData): string {
     for (const a of d.apps) {
         lines.push(
             `- **${a.name}**: ${a.reviewsAnalyzed} recent reviews (${day(a.from)} → ${day(a.to)}), ${a.negativeReviews} are 1–2★ (${a.negativeShare}%), recent avg ${a.avgRatingRecent}★, store ${a.storeRating ?? '?'}★.${a.replyRateToNegative !== null ? ` Developer replied to ${a.replyRateToNegative}% of 1–2★ reviews.` : ''}${a.releaseNote ? ` ${a.releaseNote}` : ''}`,
+        );
+    }
+    if (d.skipped?.length) lines.push('', `Skipped: ${d.skipped.join(', ')}.`);
+    if (d.labelCheck?.checked) {
+        lines.push(
+            '',
+            `Accuracy check: a second, independent AI pass re-labelled ${d.labelCheck.checked} of ${d.yourApp}'s reviews and agreed on ${d.labelCheck.agreed} (${d.labelCheck.share}%). Confidence on each gap comes from a two-proportion z-test (high = about 95% sure the gap is not chance).`,
         );
     }
     return lines.join('\n');

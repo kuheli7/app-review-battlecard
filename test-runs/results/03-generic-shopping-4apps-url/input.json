@@ -1,0 +1,13 @@
+{
+  "apps": [
+    "https://play.google.com/store/apps/details?id=com.flipkart.android",
+    "Amazon Shopping",
+    "Meesho",
+    "Myntra"
+  ],
+  "store": "googlePlay",
+  "country": "in",
+  "reviewsPerApp": 500,
+  "maxNegativeReviewsForAI": 100,
+  "model": "anthropic/claude-haiku-5.5"
+}

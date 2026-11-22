@@ -1,7 +1,7 @@
 // Google Play data via the open-source google-play-scraper package: app search, app details and newest reviews.
 import gplay from 'google-play-scraper';
 
-import type { AppInfo, Review } from './apple.js';
+import { type AppInfo, displayName, type Review } from './apple.js';
 
 const PKG = /^[a-zA-Z][\w]*(\.[\w]+)+$/;
 // gplay.sort.NEWEST at runtime; the package's typings declare `sort` wrongly, so use the value directly.
@@ -23,6 +23,7 @@ export async function resolvePlayApp(input: string, country: string): Promise<Ap
     const raw = input.trim();
     const fromUrl = raw.match(/[?&]id=([\w.]+)/);
     let appId = fromUrl ? fromUrl[1] : PKG.test(raw) ? raw : null;
+    const typed = appId ? null : raw;
 
     if (!appId) {
         const results = await withRetry(async () => gplay.search({ term: raw, num: 5, country }));
@@ -38,7 +39,7 @@ export async function resolvePlayApp(input: string, country: string): Promise<Ap
     return {
         input: raw,
         id: a.appId ?? appId,
-        name: title.split(/[:\-–|]/)[0].trim() || title,
+        name: displayName(title, typed),
         developer: a.developer ?? null,
         url: a.url ?? `https://play.google.com/store/apps/details?id=${appId}`,
         icon: a.icon ?? null,

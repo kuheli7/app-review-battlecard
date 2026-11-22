@@ -1,0 +1,12 @@
+{
+  "apps": [
+    "Zepto",
+    "Blinkit",
+    "qwzxkjhgfdsa"
+  ],
+  "store": "googlePlay",
+  "country": "in",
+  "reviewsPerApp": 500,
+  "maxNegativeReviewsForAI": 100,
+  "model": "anthropic/claude-haiku-5.5"
+}

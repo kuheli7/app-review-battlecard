@@ -1,0 +1,62 @@
+{
+  "name": "02-payments-phonepe-gpay-paytm",
+  "runId": "Kk00pOWL9lghlFL38",
+  "status": "SUCCEEDED",
+  "statusMessage": "Done: PhonePe vs Google Pay, Paytm. 3 opportunities, 3 threats, 5 named issues. Open the Output tab for the battlecard.",
+  "build": "0.1.18",
+  "memoryMbytes": 1024,
+  "runTimeSecs": 10.918,
+  "usageTotalUsd": 0.0008334319122317765,
+  "consoleUrl": "https://console.apify.com/view/runs/Kk00pOWL9lghlFL38",
+  "apps": [
+    "PhonePe",
+    "Google Pay",
+    "Paytm"
+  ],
+  "reviews": [
+    500,
+    500,
+    500
+  ],
+  "labelled": [
+    "44/44",
+    "35/35",
+    "27/27"
+  ],
+  "otherShare": [
+    45.5,
+    74.3,
+    40.7
+  ],
+  "labelCheck": {
+    "checked": 22,
+    "agreed": 19,
+    "share": 86.4
+  },
+  "verdict": "PhonePe's 8.8% negative share trails Paytm's 5.4% and Google Pay's 7%, so fix bugs and support before competing on features.",
+  "opportunities": [
+    "UX vs Google Pay +58.4 (low)",
+    "PAYMENTS vs Paytm +39.6 (high)",
+    "QUALITY vs Paytm +4.2 (low)"
+  ],
+  "threats": [
+    "BUGS vs Paytm +29.2 (high)",
+    "PRICING vs Google Pay +16.7 (low)",
+    "SUPPORT vs Google Pay +12.5 (low)"
+  ],
+  "issues": [
+    "App not working, gets stuck on open",
+    "Charges fees on transactions without clear disclosure",
+    "No customer support or reachable complaint channel",
+    "UPI Lite failing with technical error, money stuck",
+    "Autopay debits without permission, refund wanted"
+  ],
+  "switching": [
+    "PhonePe -> Google Pay: 1",
+    "PhonePe -> Paytm: 1"
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/PaFFDBj8gu4fu2yMQ/records/BATTLECARD?signature=1Dd5zqoFaSEc6OG5zNxrJ",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/PaFFDBj8gu4fu2yMQ/records/BATTLECARD_CLASSIC?signature=1gIhjkkC7rOW6KNyG8Tkk",
+  "tokensUsed": 11070,
+  "aiCopy": true
+}

@@ -1,0 +1,374 @@
+{
+  "type": "battlecard",
+  "yourApp": "PhonePe",
+  "rivals": [
+    "Google Pay",
+    "Paytm"
+  ],
+  "store": "Google Play",
+  "country": "in",
+  "verdict": "PhonePe's 8.8% negative share trails Paytm's 5.4% and Google Pay's 7%, so fix bugs and support before competing on features.",
+  "topOpportunity": "Rewards that show up while you transact: 66.7% of Google Pay's specific 1–2★ complaints are about app design, features & ads, vs 8.3% of yours.",
+  "topThreat": "Stuck-on-open issues hurt PhonePe's rating: 29.2% of your specific 1–2★ complaints are about crashes, bugs & app speed, vs 0% of Paytm's.",
+  "opportunities": [
+    {
+      "theme": "UX",
+      "themeLabel": "App design, features & ads",
+      "owner": "Product",
+      "rival": "Google Pay",
+      "yourShare": 8.3,
+      "rivalShare": 66.7,
+      "gapPoints": 58.4,
+      "confidence": "low",
+      "evidence": "66.7% of Google Pay's specific 1–2★ complaints are about app design, features & ads, vs 8.3% of yours.",
+      "quotes": [
+        "not benefits while doing transaction",
+        "the app doesn't provides any REWARD"
+      ],
+      "headline": "Rewards that show up while you transact",
+      "message": "Get benefits right at checkout. Every payment can earn you something, with no hunting for offers or wondering where your rewards went."
+    },
+    {
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "rival": "Paytm",
+      "yourShare": 16.7,
+      "rivalShare": 56.3,
+      "gapPoints": 39.6,
+      "confidence": "high",
+      "evidence": "56.3% of Paytm's specific 1–2★ complaints are about payments & refunds, vs 16.7% of yours.",
+      "quotes": [
+        "frod app he cashback ka bolta he per deta nhi he bs fake ads ke jariye app download krwate he",
+        "I Have My Rs4000 In Paytm Payments Bank, I Am Not Able To Withdraw That Right Now..."
+      ],
+      "headline": "Your money, withdrawable when you need it",
+      "message": "Your balance is yours. Withdraw promptly and track every rupee, with no ads-led promises and no stuck funds."
+    },
+    {
+      "theme": "QUALITY",
+      "themeLabel": "Product, food, service or content quality",
+      "owner": "Operations & Partners",
+      "rival": "Paytm",
+      "yourShare": 8.3,
+      "rivalShare": 12.5,
+      "gapPoints": 4.2,
+      "confidence": "low",
+      "evidence": "12.5% of Paytm's specific 1–2★ complaints are about product, food, service or content quality, vs 8.3% of yours.",
+      "quotes": [],
+      "headline": "Paytm users are angrier about product, food, service or content quality",
+      "message": "Lead with your strength in product, food, service or content quality in campaigns aimed at Paytm users."
+    }
+  ],
+  "threats": [
+    {
+      "theme": "BUGS",
+      "themeLabel": "Crashes, bugs & app speed",
+      "owner": "Engineering",
+      "rival": "Paytm",
+      "yourShare": 29.2,
+      "rivalShare": 0,
+      "gapPoints": 29.2,
+      "confidence": "high",
+      "evidence": "29.2% of your specific 1–2★ complaints are about crashes, bugs & app speed, vs 0% of Paytm's.",
+      "quotes": [
+        "memory tagging error and also enforcing play integrity check on graphine os. Both indicate bad sw development.",
+        "I don't know why but for the past few days it's not working and it gets stuck as soon as I open it"
+      ],
+      "headline": "Stuck-on-open issues hurt PhonePe's rating",
+      "action": "Engineering: triage the stuck-on-launch and integrity-check failures before any new feature launch, and confirm the fix in the next release."
+    },
+    {
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "rival": "Google Pay",
+      "yourShare": 16.7,
+      "rivalShare": 0,
+      "gapPoints": 16.7,
+      "confidence": "low",
+      "evidence": "16.7% of your specific 1–2★ complaints are about prices, fees & subscriptions, vs 0% of Google Pay's.",
+      "quotes": [
+        "sms charges autopay weste this app for not my permission amount 😡😡😡😡😡😡??",
+        "it's not giving cash back since day one or giving cash backs to my frnd"
+      ],
+      "headline": "Unclear fees and cashback gaps drive complaints",
+      "action": "Pricing & Growth: publish a plain-language fee and cashback breakdown in-app and reconcile unrewarded cashback claims."
+    },
+    {
+      "theme": "SUPPORT",
+      "themeLabel": "Customer support",
+      "owner": "Support",
+      "rival": "Google Pay",
+      "yourShare": 12.5,
+      "rivalShare": 0,
+      "gapPoints": 12.5,
+      "confidence": "low",
+      "evidence": "12.5% of your specific 1–2★ complaints are about customer support, vs 0% of Google Pay's.",
+      "quotes": [
+        "improve your customer care service. Pay them well so that they can talk nicely and accurately",
+        "If I want to reach your authorised operator to listen complaint, there is no rout. every toll free number does not lead to enquiry operator. Ots a worst of phon Pay. Really fade up with this. 👎👎👎👎"
+      ],
+      "headline": "Users can't reach a human to resolve issues",
+      "action": "Support: add a reachable complaint route that connects to an enquiry operator, and make the toll-free number lead there."
+    }
+  ],
+  "fixFirst": [
+    "App not working, gets stuck on open (mentioned in 4 of 44 recent 1–2★ reviews; owner: Engineering)",
+    "Charges fees on transactions without clear disclosure (mentioned in 3 of 44 recent 1–2★ reviews; owner: Pricing & Growth)",
+    "No customer support or reachable complaint channel (mentioned in 3 of 44 recent 1–2★ reviews; owner: Support)"
+  ],
+  "yourIssues": [
+    {
+      "title": "App not working, gets stuck on open",
+      "theme": "BUGS",
+      "themeLabel": "Crashes, bugs & app speed",
+      "owner": "Engineering",
+      "count": 4,
+      "shareOfNegative": 9.1,
+      "inCurrentVersion": 3,
+      "quotes": [
+        "I don't know why but for the past few days it's not working and it gets stuck as soon as I open it"
+      ]
+    },
+    {
+      "title": "Charges fees on transactions without clear disclosure",
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "count": 3,
+      "shareOfNegative": 6.8,
+      "inCurrentVersion": 3,
+      "quotes": [
+        "sms charges autopay weste this app for not my permission amount 😡😡😡😡😡😡??",
+        "Thus app good for UPI transactions but remember charges 2% plus gst on digital silver buying but it does not show this the way buyer can see it, it appears like it is charging only mandatory 3% gst…"
+      ]
+    },
+    {
+      "title": "No customer support or reachable complaint channel",
+      "theme": "SUPPORT",
+      "themeLabel": "Customer support",
+      "owner": "Support",
+      "count": 3,
+      "shareOfNegative": 6.8,
+      "inCurrentVersion": 2,
+      "quotes": [
+        "improve your customer care service. Pay them well so that they can talk nicely and accurately",
+        "If I want to reach your authorised operator to listen complaint, there is no rout. every toll free number does not lead to enquiry operator. Ots a worst of phon Pay. Really fade up with this. 👎👎👎👎"
+      ]
+    },
+    {
+      "title": "UPI Lite failing with technical error, money stuck",
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "count": 2,
+      "shareOfNegative": 4.5,
+      "inCurrentVersion": 2,
+      "quotes": [
+        "reference money not received",
+        "Upi lite kyu kaam nhi kar rha hai? pichle ek week se \"Something went wrong due to technical issue\" show kar rha hai. Mere paise fas gya hai usme! Update karke bhi kuch nhi huwa. Paytm upi lite thik…"
+      ]
+    },
+    {
+      "title": "Autopay debits without permission, refund wanted",
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "count": 2,
+      "shareOfNegative": 4.5,
+      "inCurrentVersion": 2,
+      "quotes": [
+        "my money got deduced due to on of my Autopay in my airtel payments bank account so I want my money back of 900 total please send me back"
+      ]
+    }
+  ],
+  "switching": [
+    {
+      "app": "PhonePe",
+      "mentions": "Google Pay",
+      "count": 1,
+      "negativeReviews": 44,
+      "quotes": [
+        "Phone pay sucks your time and patience when you are in urgent need of sending money by their policies, Google pay is far better than this app."
+      ]
+    },
+    {
+      "app": "PhonePe",
+      "mentions": "Paytm",
+      "count": 1,
+      "negativeReviews": 44,
+      "quotes": [
+        "Upi lite kyu kaam nhi kar rha hai? pichle ek week se \"Something went wrong due to technical issue\" show kar rha hai. Mere paise fas gya hai usme! Update karke bhi kuch nhi huwa. Paytm upi lite thik…"
+      ]
+    }
+  ],
+  "apps": [
+    {
+      "name": "PhonePe",
+      "isYours": true,
+      "appId": "com.phonepe.app",
+      "url": "https://play.google.com/store/apps/details?id=com.phonepe.app&hl=en&gl=in",
+      "icon": "https://play-lh.googleusercontent.com/ARGoCZk-5QCKPpyTsGhn1WahhPbVMa95T1U7clwnI8gjtW-YNY96rAANqFkuENbU35IbYF2Gjg2UjZXA495x0A",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 44,
+      "negativeShare": 8.8,
+      "avgRatingRecent": 4.47,
+      "storeRating": 4.43,
+      "ratingCount": 14395740,
+      "currentVersion": "26.10.23.0",
+      "starMix": {
+        "1": 33,
+        "2": 11,
+        "3": 19,
+        "4": 63,
+        "5": 374
+      },
+      "replyRateToNegative": 68.2,
+      "from": "2026-11-20T06:38:50.715Z",
+      "to": "2026-11-21T08:17:37.433Z",
+      "daysCovered": 1,
+      "releaseNote": "v26.10.23.0: 8.4% of 332 reviews are 1–2★.",
+      "themeShares": {
+        "BUGS": 29.2,
+        "PAYMENTS": 16.7,
+        "FULFILMENT": 0,
+        "QUALITY": 8.3,
+        "PRICING": 16.7,
+        "SUPPORT": 12.5,
+        "UX": 8.3,
+        "ACCOUNT": 8.3,
+        "OTHER": 45.5
+      },
+      "themeCounts": {
+        "BUGS": 7,
+        "PAYMENTS": 4,
+        "FULFILMENT": 0,
+        "QUALITY": 2,
+        "PRICING": 4,
+        "SUPPORT": 3,
+        "UX": 2,
+        "ACCOUNT": 2,
+        "OTHER": 20
+      },
+      "classified": 44,
+      "concrete": 24,
+      "sampled": 44
+    },
+    {
+      "name": "Google Pay",
+      "isYours": false,
+      "appId": "com.google.android.apps.nbu.paisa.user",
+      "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.paisa.user&hl=en&gl=in",
+      "icon": "https://play-lh.googleusercontent.com/Wbik2RoUSGgWEg8ybAhFaMJO2fE7x9gqCXfwbmW0YPjh6TKcjKzecth8GaYkbUBYtLZXhyfVMpqkIuJgTM8p",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 35,
+      "negativeShare": 7,
+      "avgRatingRecent": 4.56,
+      "storeRating": 4.61,
+      "ratingCount": 12495100,
+      "currentVersion": null,
+      "starMix": {
+        "1": 24,
+        "2": 11,
+        "3": 22,
+        "4": 49,
+        "5": 394
+      },
+      "replyRateToNegative": 17.1,
+      "from": "2026-11-21T04:39:40.119Z",
+      "to": "2026-11-21T07:58:21.540Z",
+      "daysCovered": 1,
+      "releaseNote": "v356.1.7 (arm64-v8a_release_flutter) is better than v356.1.6 (arm64-v8a_release_flutter): 0% vs 15.4% of reviews are 1–2★ (5 vs 26 reviews).",
+      "themeShares": {
+        "BUGS": 22.2,
+        "PAYMENTS": 11.1,
+        "FULFILMENT": 0,
+        "QUALITY": 0,
+        "PRICING": 0,
+        "SUPPORT": 0,
+        "UX": 66.7,
+        "ACCOUNT": 0,
+        "OTHER": 74.3
+      },
+      "themeCounts": {
+        "BUGS": 2,
+        "PAYMENTS": 1,
+        "FULFILMENT": 0,
+        "QUALITY": 0,
+        "PRICING": 0,
+        "SUPPORT": 0,
+        "UX": 6,
+        "ACCOUNT": 0,
+        "OTHER": 26
+      },
+      "classified": 35,
+      "concrete": 9,
+      "sampled": 35
+    },
+    {
+      "name": "Paytm",
+      "isYours": false,
+      "appId": "net.one97.paytm",
+      "url": "https://play.google.com/store/apps/details?id=net.one97.paytm&hl=en&gl=in",
+      "icon": "https://play-lh.googleusercontent.com/WDGsMRuVENnZPEpV4DEaXw12qtMY3em85xpmZqcXzeh0iT_eXFtAU9VUj-Z7xNQQd5DMqrkKSs9D0qbI1rlt",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 27,
+      "negativeShare": 5.4,
+      "avgRatingRecent": 4.69,
+      "storeRating": 4.7,
+      "ratingCount": 24666192,
+      "currentVersion": "10.86.13",
+      "starMix": {
+        "1": 23,
+        "2": 4,
+        "3": 13,
+        "4": 23,
+        "5": 437
+      },
+      "replyRateToNegative": 92.6,
+      "from": "2026-11-20T05:07:01.822Z",
+      "to": "2026-11-21T08:13:11.172Z",
+      "daysCovered": 1,
+      "releaseNote": "v10.86.13 is about the same as v10.86.9: 4.1% vs 4.8% of reviews are 1–2★ (293 vs 42 reviews).",
+      "themeShares": {
+        "BUGS": 0,
+        "PAYMENTS": 56.3,
+        "FULFILMENT": 6.3,
+        "QUALITY": 12.5,
+        "PRICING": 6.3,
+        "SUPPORT": 0,
+        "UX": 6.3,
+        "ACCOUNT": 12.5,
+        "OTHER": 40.7
+      },
+      "themeCounts": {
+        "BUGS": 0,
+        "PAYMENTS": 9,
+        "FULFILMENT": 1,
+        "QUALITY": 2,
+        "PRICING": 1,
+        "SUPPORT": 0,
+        "UX": 1,
+        "ACCOUNT": 2,
+        "OTHER": 11
+      },
+      "classified": 27,
+      "concrete": 16,
+      "sampled": 27
+    }
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/PaFFDBj8gu4fu2yMQ/records/BATTLECARD?signature=1Dd5zqoFaSEc6OG5zNxrJ",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/PaFFDBj8gu4fu2yMQ/records/BATTLECARD_CLASSIC?signature=1gIhjkkC7rOW6KNyG8Tkk",
+  "markdownUrl": "https://api.apify.com/v2/key-value-stores/PaFFDBj8gu4fu2yMQ/records/BATTLECARD_MD?signature=NikVFV3I7qHAzZe6DsTP",
+  "labelCheck": {
+    "checked": 22,
+    "agreed": 19,
+    "share": 86.4
+  },
+  "skippedApps": [],
+  "model": "anthropic/claude-haiku-5.5",
+  "aiCopy": true,
+  "tokensUsed": 11070,
+  "generatedAt": "2026-11-22T08:19:31.867Z"
+}

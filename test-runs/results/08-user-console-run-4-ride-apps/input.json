@@ -1,0 +1,13 @@
+{
+  "apps": [
+    "Uber",
+    "Ola",
+    "Rapido",
+    "Namma Yatri"
+  ],
+  "store": "googlePlay",
+  "country": "in",
+  "reviewsPerApp": 500,
+  "maxNegativeReviewsForAI": 100,
+  "model": "anthropic/claude-haiku-5.5"
+}

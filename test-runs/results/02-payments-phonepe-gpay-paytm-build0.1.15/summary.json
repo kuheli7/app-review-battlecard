@@ -1,0 +1,62 @@
+{
+  "name": "02-payments-phonepe-gpay-paytm-build0.1.15",
+  "runId": "7SSrEYbtaFqtzPo9j",
+  "status": "SUCCEEDED",
+  "statusMessage": "Done: PhonePe UPI Payments, Loan App vs Google Pay, Paytm. 2 opportunities, 3 threats, 6 named issues. Open the Output tab for the battlecard.",
+  "build": "0.1.15",
+  "memoryMbytes": 4096,
+  "runTimeSecs": 10.652,
+  "usageTotalUsd": 0.002595256813890404,
+  "consoleUrl": "https://console.apify.com/view/runs/7SSrEYbtaFqtzPo9j",
+  "apps": [
+    "PhonePe UPI Payments, Loan App",
+    "Google Pay",
+    "Paytm"
+  ],
+  "reviews": [
+    500,
+    500,
+    500
+  ],
+  "labelled": [
+    "44/44",
+    "35/35",
+    "28/28"
+  ],
+  "otherShare": [
+    47.7,
+    74.3,
+    46.4
+  ],
+  "labelCheck": {
+    "checked": 22,
+    "agreed": 21,
+    "share": 95.5
+  },
+  "verdict": "Paytm's refund and payment complaints run 28.6% of its negative reviews versus 13.6% for PhonePe, so lead with money-back trust, after fixing PhonePe's bugs.",
+  "opportunities": [
+    "PAYMENTS vs Paytm +15 (medium)",
+    "UX vs Google Pay +12.6 (medium)"
+  ],
+  "threats": [
+    "BUGS vs Paytm +12.3 (medium)",
+    "PAYMENTS vs Google Pay +10.7 (medium)",
+    "PRICING vs Google Pay +6.8 (medium)"
+  ],
+  "issues": [
+    "App stuck or not working, fails to open",
+    "No customer support or reachable human operator",
+    "Unexpected autopay SMS charges and deducted amounts",
+    "Service fee charged per transaction without consent",
+    "UPI Lite failing with technical issue error",
+    "Account blocked and cannot be unblocked"
+  ],
+  "switching": [
+    "PhonePe UPI Payments, Loan App -> Google Pay: 1",
+    "PhonePe UPI Payments, Loan App -> Paytm: 1"
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/dWKLDhdROAYYq7nil/records/BATTLECARD?signature=zLyyuFMLOL0o1J4VtGyt",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/dWKLDhdROAYYq7nil/records/BATTLECARD_CLASSIC?signature=1eEi87xMiKQcSgTN5Bs3G",
+  "tokensUsed": 11246,
+  "aiCopy": true
+}

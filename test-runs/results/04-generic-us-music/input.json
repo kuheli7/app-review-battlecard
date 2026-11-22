@@ -1,0 +1,11 @@
+{
+  "apps": [
+    "Spotify",
+    "YouTube Music"
+  ],
+  "store": "googlePlay",
+  "country": "us",
+  "reviewsPerApp": 500,
+  "maxNegativeReviewsForAI": 100,
+  "model": "anthropic/claude-haiku-5.5"
+}

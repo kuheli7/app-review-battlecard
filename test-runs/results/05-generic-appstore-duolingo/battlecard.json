@@ -1,0 +1,296 @@
+{
+  "type": "battlecard",
+  "yourApp": "Duolingo",
+  "rivals": [
+    "Babbel"
+  ],
+  "store": "App Store",
+  "country": "us",
+  "verdict": "Babbel's 1–2★ share is 36.8% versus Duolingo's 20.7%, but Duolingo's UX complaints run higher, so fix UX before attacking.",
+  "topOpportunity": "Real content depth, not gamified filler: 33.7% of Babbel's 1–2★ reviews are about product, food, service or content quality, vs 16.1% of yours.",
+  "topThreat": "Babbel is winning on app design and ads: 38.7% of your 1–2★ reviews are about app design, features & ads, vs 18.5% of Babbel's.",
+  "opportunities": [
+    {
+      "theme": "QUALITY",
+      "themeLabel": "Product, food, service or content quality",
+      "owner": "Operations & Partners",
+      "rival": "Babbel",
+      "yourShare": 16.1,
+      "rivalShare": 33.7,
+      "gapPoints": 17.6,
+      "confidence": "medium",
+      "evidence": "33.7% of Babbel's 1–2★ reviews are about product, food, service or content quality, vs 16.1% of yours.",
+      "quotes": [
+        "No other languages are provided other than a short amount, really disappointing seeing as I really wanted to learn Korean",
+        "Learning platform is boring and passive, does not make language learning interesting at all. So dull I don’t want to do lessons"
+      ],
+      "headline": "Real content depth, not gamified filler",
+      "message": "Babbel reviewers call lessons boring and passive. Offer real conversation-focused lessons that keep learners engaged from day one."
+    },
+    {
+      "theme": "ACCOUNT",
+      "themeLabel": "Account, login & security",
+      "owner": "Engineering",
+      "rival": "Babbel",
+      "yourShare": 0,
+      "rivalShare": 5.4,
+      "gapPoints": 5.4,
+      "confidence": "medium",
+      "evidence": "5.4% of Babbel's 1–2★ reviews are about account, login & security, vs 0% of yours.",
+      "quotes": [
+        "There is nothing under subscriptions yet I have one. Tried to go through chat, was sent a button to cancel and it doesn’t work! I can’t cancel my account!!!",
+        "Refuses to allow voice features unless you give them permission to record, store and use your voice for ai training. I wish I’d known that before I paid $100+."
+      ],
+      "headline": "Clear consent and easy account control",
+      "message": "Some learners report broken cancellation and voice features requiring data consent. Keep account control and permissions transparent and easy."
+    },
+    {
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "rival": "Babbel",
+      "yourShare": 25.8,
+      "rivalShare": 31.5,
+      "gapPoints": 5.7,
+      "confidence": "low",
+      "evidence": "31.5% of Babbel's 1–2★ reviews are about prices, fees & subscriptions, vs 25.8% of yours.",
+      "quotes": [
+        "It’s good I guess don’t suggest it tho because if you don’t get a subscription you can’t do like anything at all…",
+        "This app is ok for learning a language. They make it very difficult to cancel and won’t refund your money."
+      ],
+      "caution": "Fix before you advertise this: \"Free version too limited, paywall for usable learning\" is on your own fix-first list (mentioned in 4 of your 31 recent 1–2★ reviews).",
+      "headline": "Transparent pricing, no cancellation traps",
+      "message": "Some learners feel stuck by hard-to-cancel subscriptions. Make cancelling simple and clearly show what's free versus paid."
+    }
+  ],
+  "threats": [
+    {
+      "theme": "UX",
+      "themeLabel": "App design, features & ads",
+      "owner": "Product",
+      "rival": "Babbel",
+      "yourShare": 38.7,
+      "rivalShare": 18.5,
+      "gapPoints": 20.2,
+      "confidence": "high",
+      "evidence": "38.7% of your 1–2★ reviews are about app design, features & ads, vs 18.5% of Babbel's.",
+      "quotes": [
+        "I haven’t played in over a year and deleted it from how corny it has gotten……",
+        "This app was spamming me every five seconds and even when I was at school"
+      ],
+      "headline": "Babbel is winning on app design and ads",
+      "action": "Product: audit ad frequency and gamification friction in onboarding, and cut repeated prompts before competing for Babbel's dissatisfied users."
+    }
+  ],
+  "fixFirst": [
+    "Too much gamification and taps before lessons (mentioned in 4 of 31 recent 1–2★ reviews; owner: Product)",
+    "Puzzle piece duplicates and rigged gem rewards (mentioned in 4 of 31 recent 1–2★ reviews; owner: Product)",
+    "Free version too limited, paywall for usable learning (mentioned in 4 of 31 recent 1–2★ reviews; owner: Pricing & Growth)"
+  ],
+  "yourIssues": [
+    {
+      "title": "Too much gamification and taps before lessons",
+      "theme": "UX",
+      "themeLabel": "App design, features & ads",
+      "owner": "Product",
+      "count": 4,
+      "shareOfNegative": 12.9,
+      "inCurrentVersion": 4,
+      "quotes": [
+        "You spend more time clicking through stupid cartoons, winning worthless gems, getting and celebrating experience points that you don’t care AT ALL about, giving kudos to other people who get gems t…",
+        "After my first lesson of the day I have to tap about 15 times to get through: celebrations, gems, daily XP boost, friend progress, monthly progress, chests, puzzle pieces, costumes, and whatever ga…"
+      ]
+    },
+    {
+      "title": "Puzzle piece duplicates and rigged gem rewards",
+      "theme": "UX",
+      "themeLabel": "App design, features & ads",
+      "owner": "Product",
+      "count": 4,
+      "shareOfNegative": 12.9,
+      "inCurrentVersion": 4,
+      "quotes": [
+        "I get duplicate pieces for every single lesson, every single day!!!! This game is rigged so you have to buy gems with real money in order to get more puzzle pieces (which may still be duplicates)!!…",
+        "Duolingo you know the new suits that you get by doing lessons and get peices. Well how do I get them if all I get are duplicates I mean I got two dupes and when I bought one with gems I GOT ANOTHER…"
+      ]
+    },
+    {
+      "title": "Free version too limited, paywall for usable learning",
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "count": 4,
+      "shareOfNegative": 12.9,
+      "inCurrentVersion": 4,
+      "quotes": [
+        "Unless you pay for “super”which is a ridiculous amount, forget the free version. Free version is just a demo. At this point just buy proper language learning books and take actual lessons.",
+        "Tried to use 120 form my credit card to use on this"
+      ]
+    },
+    {
+      "title": "Trial subscription cannot be cancelled, no support",
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "count": 4,
+      "shareOfNegative": 12.9,
+      "inCurrentVersion": 4,
+      "quotes": [
+        "Does not remind you to unsubscribe after trial subscription.",
+        "Every day this app disappoints me more, it charges more and more to try to fake the streak time and be able to save it to be able to buy some diamonds even if you have the most expensive plan like…"
+      ]
+    },
+    {
+      "title": "Intrusive upgrade ads and spam notifications",
+      "theme": "UX",
+      "themeLabel": "App design, features & ads",
+      "owner": "Product",
+      "count": 4,
+      "shareOfNegative": 12.9,
+      "inCurrentVersion": 4,
+      "quotes": [
+        "This app was spamming me every five seconds and even when I was at school",
+        "used to love this app. now, i can’t go a single lesson without your stupid “upgrade to super!” ads that use ai. actually, the entirety of the app went downhill when yall fired real people in place…"
+      ]
+    },
+    {
+      "title": "Lesson quality declined, AI replaced real people",
+      "theme": "QUALITY",
+      "themeLabel": "Product, food, service or content quality",
+      "owner": "Operations & Partners",
+      "count": 4,
+      "shareOfNegative": 12.9,
+      "inCurrentVersion": 4,
+      "quotes": [
+        "Me gustaría una enseñanza más fluida y menos cortada",
+        "I was practicing math with my dad and it was right next to it. I have it set to where I’m learning to speak Spanish and it literally said on the thing I said do you wanna try math like hello? Are y…"
+      ]
+    }
+  ],
+  "switching": [
+    {
+      "app": "Babbel",
+      "mentions": "Duolingo",
+      "count": 10,
+      "negativeReviews": 92,
+      "quotes": [
+        "This app does not appear to follow adult learning principles. I am not learning Spanish. It is much less effective than Duolingo.",
+        "The way Babbel teaches you a language, is not as effective as apps like Duolingo."
+      ]
+    }
+  ],
+  "apps": [
+    {
+      "name": "Duolingo",
+      "isYours": true,
+      "appId": "570060128",
+      "url": "https://apps.apple.com/us/app/duolingo-learn-languages/id570060128?uo=4",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/71/53/9e/71539ed2-0269-717b-f691-224b650dc6c1/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg",
+      "reviewsAnalyzed": 150,
+      "negativeReviews": 31,
+      "negativeShare": 20.7,
+      "avgRatingRecent": 3.91,
+      "storeRating": 4.72,
+      "ratingCount": 5612297,
+      "currentVersion": "7.149.1",
+      "starMix": {
+        "1": 27,
+        "2": 4,
+        "3": 13,
+        "4": 18,
+        "5": 88
+      },
+      "replyRateToNegative": null,
+      "from": "2026-11-18T14:18:51-07:00",
+      "to": "2026-11-20T05:58:39-07:00",
+      "daysCovered": 2,
+      "releaseNote": "v7.149.1: 20.8% of 149 reviews are 1–2★.",
+      "themeShares": {
+        "BUGS": 6.5,
+        "PAYMENTS": 3.2,
+        "FULFILMENT": 0,
+        "QUALITY": 16.1,
+        "PRICING": 25.8,
+        "SUPPORT": 3.2,
+        "UX": 38.7,
+        "ACCOUNT": 0,
+        "OTHER": 6.5
+      },
+      "themeCounts": {
+        "BUGS": 2,
+        "PAYMENTS": 1,
+        "FULFILMENT": 0,
+        "QUALITY": 5,
+        "PRICING": 8,
+        "SUPPORT": 1,
+        "UX": 12,
+        "ACCOUNT": 0,
+        "OTHER": 2
+      },
+      "classified": 31,
+      "sampled": 31
+    },
+    {
+      "name": "Babbel",
+      "isYours": false,
+      "appId": "829587759",
+      "url": "https://apps.apple.com/us/app/babbel-language-learning/id829587759?uo=4",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/39/e1/03/39e103be-8315-9ac9-221b-9146bf888cb2/AppIcon-Default-0-0-1x_U007epad-0-1-0-85-220.png/100x100bb.jpg",
+      "reviewsAnalyzed": 250,
+      "negativeReviews": 92,
+      "negativeShare": 36.8,
+      "avgRatingRecent": 3.21,
+      "storeRating": 4.72,
+      "ratingCount": 758729,
+      "currentVersion": "22.24.0",
+      "starMix": {
+        "1": 73,
+        "2": 19,
+        "3": 34,
+        "4": 31,
+        "5": 93
+      },
+      "replyRateToNegative": null,
+      "from": "2026-06-29T10:19:58-07:00",
+      "to": "2026-09-26T06:48:59-07:00",
+      "daysCovered": 89,
+      "releaseNote": "v22.15.0 is better than v22.14.0: 33.3% vs 46.7% of reviews are 1–2★ (24 vs 15 reviews).",
+      "themeShares": {
+        "BUGS": 6.5,
+        "PAYMENTS": 0,
+        "FULFILMENT": 0,
+        "QUALITY": 33.7,
+        "PRICING": 31.5,
+        "SUPPORT": 1.1,
+        "UX": 18.5,
+        "ACCOUNT": 5.4,
+        "OTHER": 3.3
+      },
+      "themeCounts": {
+        "BUGS": 6,
+        "PAYMENTS": 0,
+        "FULFILMENT": 0,
+        "QUALITY": 31,
+        "PRICING": 29,
+        "SUPPORT": 1,
+        "UX": 17,
+        "ACCOUNT": 5,
+        "OTHER": 3
+      },
+      "classified": 92,
+      "sampled": 92
+    }
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/Splo46HydVdwl3R41/records/BATTLECARD?signature=1fsPyfeRYvXZWWig1zxeh",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/Splo46HydVdwl3R41/records/BATTLECARD_CLASSIC?signature=1Cy6AxFLseZKZ7AJlTLh9",
+  "markdownUrl": "https://api.apify.com/v2/key-value-stores/Splo46HydVdwl3R41/records/BATTLECARD_MD?signature=1mFCXAQCBGykBAEAQ25Mk",
+  "labelCheck": {
+    "checked": 16,
+    "agreed": 9,
+    "share": 56.3
+  },
+  "model": "anthropic/claude-haiku-5.5",
+  "aiCopy": true,
+  "tokensUsed": 17632,
+  "generatedAt": "2026-11-22T08:01:43.734Z"
+}

@@ -13,12 +13,14 @@ import {
     findGaps,
     type Gap,
     isNegative,
+    labelAgreement,
     type NamedIssue,
     switchingSignals,
     type ThemeResult,
 } from './analysis.js';
 import { type BattlecardCopy, classifyReviews, type LlmUsage, nameIssues, writeBattlecard } from './llm.js';
 import { type AppSummary, type CardItem, renderHtml, renderMarkdown, type ReportData } from './report.js';
+import { renderHtmlStudio } from './report_studio.js';
 
 interface Input {
     apps?: string[];
@@ -82,11 +84,13 @@ try {
         await failRun(`Could not find your app "${appInputs[0]}": ${(resolved[0].reason as Error).message}`);
     }
     const apps: AppInfo[] = [];
+    const skipped: string[] = []; // shown in the report and the dataset item, so a typo is visible, not just logged
     resolved.forEach((r, i) => {
         if (r.status === 'fulfilled') {
             if (!apps.some((a) => a.id === r.value.id)) apps.push(r.value);
         } else {
             log.warning(`Skipping "${appInputs[i]}": ${(r.reason as Error).message}`);
+            skipped.push(`"${appInputs[i]}" (not found on ${storeName})`);
         }
     });
     if (apps.length < 2) await failRun('Fewer than 2 distinct apps were found. Check the app names, IDs or URLs.');
@@ -104,7 +108,10 @@ try {
     const withData = apps
         .map((app, i) => ({ app, reviews: reviewLists[i], stats: computeStats(reviewLists[i], app.currentVersion) }))
         .filter((x) => {
-            if (x.reviews.length < 10) log.warning(`Skipping ${x.app.name}: only ${x.reviews.length} reviews found`);
+            if (x.reviews.length < 10) {
+                log.warning(`Skipping ${x.app.name}: only ${x.reviews.length} reviews found`);
+                skipped.push(`${x.app.name} (only ${x.reviews.length} reviews found)`);
+            }
             return x.reviews.length >= 10;
         });
     if (!withData.length || withData[0].app.id !== apps[0].id) {
@@ -130,12 +137,24 @@ try {
                   return null;
               })
             : Promise.resolve(null);
+    // Accuracy check: a second, independent labelling pass on up to 30 of your reviews, in a different order and
+    // with different ids. How often both passes agree is reported with the battlecard. Optional, runs in parallel.
+    const checkSample = yourNeg.filter((_, i) => i % 2 === 0).slice(0, 30).reverse();
+    const checkPromise =
+        checkSample.length >= 10
+            ? classifyReviews(model, withData[0].app.name, checkSample).catch((err) => {
+                  log.warning(`Label check skipped: ${(err as Error).message}`);
+                  return null;
+              })
+            : Promise.resolve(null);
+    let yourLabels: Map<string, string> | null = null;
     const classified = await Promise.allSettled(
-        withData.map(async (x) => {
+        withData.map(async (x, i) => {
             const neg = x.reviews.filter(isNegative).slice(0, maxNeg);
             if (neg.length < 3) return computeThemes(neg, new Map());
             const { labels, usage: u } = await classifyReviews(model, x.app.name, neg);
             if (u) usage.push(u);
+            if (i === 0) yourLabels = labels;
             return computeThemes(neg, labels);
         }),
     );
@@ -174,6 +193,13 @@ try {
         yourIssues = computeIssues(yourNeg, issuesResult.issues, analysed[0].app.currentVersion);
         log.info(`Bug triage: ${yourIssues.length} named issues for ${you.name}`);
     }
+    let labelCheck: { checked: number; agreed: number; share: number } | null = null;
+    const check = await checkPromise;
+    if (check && yourLabels) {
+        if (check.usage) usage.push(check.usage);
+        labelCheck = labelAgreement(yourLabels, check.labels);
+        log.info(`Label check: ${labelCheck.agreed} of ${labelCheck.checked} labels agree (${labelCheck.share}%)`);
+    }
     const fixFirst = yourIssues
         .slice(0, 3)
         .map((i) => `${i.title} (mentioned in ${i.count} of ${yourNeg.length} recent 1–2★ reviews; owner: ${i.owner})`);
@@ -201,8 +227,8 @@ try {
 
     const evidence = (g: Gap, side: 'opp' | 'thr') =>
         side === 'opp'
-            ? `${g.rivalShare}% of ${g.rival}'s 1–2★ reviews are about ${g.themeLabel.toLowerCase()}, vs ${g.yourShare}% of yours.`
-            : `${g.yourShare}% of your 1–2★ reviews are about ${g.themeLabel.toLowerCase()}, vs ${g.rivalShare}% of ${g.rival}'s.`;
+            ? `${g.rivalShare}% of ${g.rival}'s specific 1–2★ complaints are about ${g.themeLabel.toLowerCase()}, vs ${g.yourShare}% of yours.`
+            : `${g.yourShare}% of your specific 1–2★ complaints are about ${g.themeLabel.toLowerCase()}, vs ${g.rivalShare}% of ${g.rival}'s.`;
     const toCards = (gaps: Gap[], side: 'opp' | 'thr'): CardItem[] =>
         gaps.map((g) => {
             const base = {
@@ -213,6 +239,7 @@ try {
                 yourShare: g.yourShare,
                 rivalShare: g.rivalShare,
                 gapPoints: g.gapPoints,
+                confidence: g.confidence,
                 evidence: evidence(g, side),
                 quotes: g.quotes,
             };
@@ -225,7 +252,7 @@ try {
                     ...base,
                     ...(clash
                         ? {
-                              caution: `⚠ Fix before you advertise this: "${clash.title}" is on your own fix-first list (mentioned in ${clash.count} of your ${yourNeg.length} recent 1–2★ reviews).`,
+                              caution: `Fix before you advertise this: "${clash.title}" is on your own fix-first list (mentioned in ${clash.count} of your ${yourNeg.length} recent 1–2★ reviews).`,
                           }
                         : {}),
                     headline: c?.headline || `${g.rival} users are angrier about ${label}`,
@@ -272,6 +299,8 @@ try {
         themeShares: a.themes.shares,
         themeCounts: a.themes.counts,
         classified: a.themes.classified,
+        concrete: a.themes.concrete,
+        sampled: a.themes.sampled,
     }));
 
     const generatedAt = new Date().toISOString();
@@ -289,14 +318,19 @@ try {
         switching,
         generatedAt,
         model,
+        labelCheck,
+        skipped,
     };
 
     const kv = await Actor.openKeyValueStore();
-    await kv.setValue('BATTLECARD', renderHtml(report), { contentType: 'text/html; charset=utf-8' });
+    // Two designs of the same report: "studio" (dark by default, with a light switch) and the light "classic" page.
+    await kv.setValue('BATTLECARD', renderHtmlStudio(report), { contentType: 'text/html; charset=utf-8' });
+    await kv.setValue('BATTLECARD_CLASSIC', renderHtml(report), { contentType: 'text/html; charset=utf-8' });
     await kv.setValue('BATTLECARD_MD', renderMarkdown(report), { contentType: 'text/markdown; charset=utf-8' });
     // Signed links (the SDK adds a signature when the store is private), so the report can be shared without logging in.
     const reportUrl = Actor.isAtHome() ? kv.getPublicUrl('BATTLECARD') : null;
     const markdownUrl = Actor.isAtHome() ? kv.getPublicUrl('BATTLECARD_MD') : null;
+    const classicReportUrl = Actor.isAtHome() ? kv.getPublicUrl('BATTLECARD_CLASSIC') : null;
 
     const tokens = usage.reduce((s, u) => s + (u.total_tokens ?? 0), 0);
     // Exactly one dataset item per run = one battlecard (the billable result).
@@ -316,7 +350,10 @@ try {
         switching,
         apps: appSummaries,
         reportUrl,
+        classicReportUrl,
         markdownUrl,
+        labelCheck,
+        skippedApps: skipped,
         model,
         aiCopy: Boolean(copy),
         tokensUsed: tokens,
@@ -324,7 +361,7 @@ try {
     });
 
     await status(
-        `Done: ${you.name} vs ${rivals.map((r) => r.name).join(', ')}. ${oppCards.length} opportunities, ${thrCards.length} threats, ${yourIssues.length} named issues. Open the Output tab for the battlecard.`,
+        `Done: ${you.name} vs ${rivals.map((r) => r.name).join(', ')}. ${oppCards.length} opportunities, ${thrCards.length} threats, ${yourIssues.length} named issues.${skipped.length ? ` Skipped: ${skipped.join(', ')}.` : ''} Open the Output tab for the battlecard.`,
     );
     await Actor.exit();
 } catch (err) {

@@ -10,6 +10,12 @@
             "description": "One-page report: verdict, opportunities, threats, complaint-mix table and real quotes",
             "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/BATTLECARD"
         },
+        "classic": {
+            "type": "string",
+            "title": "Battlecard (classic light layout)",
+            "description": "The same report in a light, print-friendly layout",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/BATTLECARD_CLASSIC"
+        },
         "markdown": {
             "type": "string",
             "title": "Battlecard (Markdown)",

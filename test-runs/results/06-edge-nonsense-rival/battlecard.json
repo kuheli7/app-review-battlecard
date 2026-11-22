@@ -1,0 +1,335 @@
+{
+  "type": "battlecard",
+  "yourApp": "Zepto",
+  "rivals": [
+    "Blinkit"
+  ],
+  "store": "Google Play",
+  "country": "in",
+  "verdict": "Zepto's 1–2★ share is 39.6% versus Blinkit's 14.8%, and the newest release is driving the gap, so fix quality and support before marketing.",
+  "topOpportunity": "Honest pricing, no surprise fees at checkout: 23% of Blinkit's specific 1–2★ complaints are about prices, fees & subscriptions, vs 9.8% of yours.",
+  "topThreat": "Blinkit is winning on product freshness and cleanliness: 37% of your specific 1–2★ complaints are about product, food, service or content quality, vs 14.8% of Blinkit's.",
+  "opportunities": [
+    {
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "rival": "Blinkit",
+      "yourShare": 9.8,
+      "rivalShare": 23,
+      "gapPoints": 13.2,
+      "confidence": "high",
+      "evidence": "23% of Blinkit's specific 1–2★ complaints are about prices, fees & subscriptions, vs 9.8% of yours.",
+      "quotes": [
+        "first showing 149 free delivery .. again i select order for 200...its shows delivery fee 30 rs... very fraud it is",
+        "taking money more and adding handling fees, and urs side not supported and not giving any offer like coupon"
+      ],
+      "headline": "Honest pricing, no surprise fees at checkout",
+      "message": "Know your final price before you order. No hidden handling fees, no shifting delivery charges. What you see is what you pay."
+    },
+    {
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "rival": "Blinkit",
+      "yourShare": 4.3,
+      "rivalShare": 9.8,
+      "gapPoints": 5.5,
+      "confidence": "medium",
+      "evidence": "9.8% of Blinkit's specific 1–2★ complaints are about payments & refunds, vs 4.3% of yours.",
+      "quotes": [
+        "while payment facing error every time that why ordering pay on delivery's",
+        "pay on delivery ka option lao blinkit plz"
+      ],
+      "headline": "Pay your way, with smooth, reliable payments",
+      "message": "Multiple payment options with fast, error-free checkout and quick refunds when something goes wrong."
+    },
+    {
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
+      "rival": "Blinkit",
+      "yourShare": 23.9,
+      "rivalShare": 32.8,
+      "gapPoints": 8.9,
+      "confidence": "low",
+      "evidence": "32.8% of Blinkit's specific 1–2★ complaints are about delivery & fulfilment (late, cancelled, missing, no-show), vs 23.9% of yours.",
+      "quotes": [
+        "the order is always delayed. verh bad service. i have an thought that it would be an good app but this is its opposite....",
+        "Nowadays Blinkit has started giving expired products, also they claim delivery in 10 min but actual time is more than 30 min."
+      ],
+      "caution": "Fix before you advertise this: \"Items missing from orders or wrong items delivered\" is on your own fix-first list (mentioned in 11 of your 100 recent 1–2★ reviews).",
+      "headline": "Your order, complete and on time, every time",
+      "message": "Get every item you ordered, on time. Track your delivery and know exactly when it arrives."
+    }
+  ],
+  "threats": [
+    {
+      "theme": "QUALITY",
+      "themeLabel": "Product, food, service or content quality",
+      "owner": "Operations & Partners",
+      "rival": "Blinkit",
+      "yourShare": 37,
+      "rivalShare": 14.8,
+      "gapPoints": 22.2,
+      "confidence": "high",
+      "evidence": "37% of your specific 1–2★ complaints are about product, food, service or content quality, vs 14.8% of Blinkit's.",
+      "quotes": [
+        "Koi saaf Safai nahin hai jo bhi item deliver hua sab per dust Chadha hua tha inke pass kapda Marne Tak ka bhi time nahin hai",
+        "very Bad n Dirty quality now they are delivering please stop using zepto ....it's harmful for health .all rotten vegetables."
+      ],
+      "headline": "Blinkit is winning on product freshness and cleanliness",
+      "action": "Audit dark-store hygiene and expiry checks for the latest release; Operations & Partners should own a weekly freshness QA sweep."
+    },
+    {
+      "theme": "SUPPORT",
+      "themeLabel": "Customer support",
+      "owner": "Support",
+      "rival": "Blinkit",
+      "yourShare": 15.2,
+      "rivalShare": 11.5,
+      "gapPoints": 3.7,
+      "confidence": "low",
+      "evidence": "15.2% of your specific 1–2★ complaints are about customer support, vs 11.5% of Blinkit's.",
+      "quotes": [
+        "such an idiotic app no one is there to solve the issue even they do not connect to a agent I have already uninstalled it",
+        "while complaining about the orders again and again but there is no resolution. No one even connects regarding the complaint. They just ignore"
+      ],
+      "headline": "Blinkit reaches customers faster when orders go wrong",
+      "action": "Add a live human agent path for order issues within the app; Support should own the handoff and resolution SLA."
+    },
+    {
+      "theme": "ACCOUNT",
+      "themeLabel": "Account, login & security",
+      "owner": "Engineering",
+      "rival": "Blinkit",
+      "yourShare": 3.3,
+      "rivalShare": 0,
+      "gapPoints": 3.3,
+      "confidence": "medium",
+      "evidence": "3.3% of your specific 1–2★ complaints are about account, login & security, vs 0% of Blinkit's.",
+      "quotes": [
+        "my account was hold plese rectified tha my account",
+        "puting account on hold without any reasons"
+      ],
+      "headline": "Account holds are blocking some users from ordering",
+      "action": "Review the account-hold rules and add a clear unlock flow with reasons; Engineering should own the fix."
+    }
+  ],
+  "fixFirst": [
+    "Customer support unresponsive, AI bot, no human agent (mentioned in 20 of 100 recent 1–2★ reviews; owner: Support)",
+    "Expired, rotten or spoiled products delivered (mentioned in 12 of 100 recent 1–2★ reviews; owner: Operations & Partners)",
+    "Items missing from orders or wrong items delivered (mentioned in 11 of 100 recent 1–2★ reviews; owner: Operations)"
+  ],
+  "yourIssues": [
+    {
+      "title": "Customer support unresponsive, AI bot, no human agent",
+      "theme": "SUPPORT",
+      "themeLabel": "Customer support",
+      "owner": "Support",
+      "count": 20,
+      "shareOfNegative": 20,
+      "inCurrentVersion": 11,
+      "quotes": [
+        "such an idiotic app no one is there to solve the issue even they do not connect to a agent I have already uninstalled it",
+        "scam aap yah Insan chor Hai dusre ka Paisa chori karke Le jata hai Inka customer care bhi bekar Hai bilkul kuchh jawab nahin milta"
+      ]
+    },
+    {
+      "title": "Expired, rotten or spoiled products delivered",
+      "theme": "QUALITY",
+      "themeLabel": "Product, food, service or content quality",
+      "owner": "Operations & Partners",
+      "count": 12,
+      "shareOfNegative": 12,
+      "inCurrentVersion": 9,
+      "quotes": [
+        "very Bad n Dirty quality now they are delivering please stop using zepto ....it's harmful for health .all rotten vegetables.",
+        "it's a fraud app. They scammed me by supplying expired items and the delivery person picked the item and refund was not processed."
+      ]
+    },
+    {
+      "title": "Items missing from orders or wrong items delivered",
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
+      "count": 11,
+      "shareOfNegative": 11,
+      "inCurrentVersion": 8,
+      "quotes": [
+        "not trust worthy ordered mountain dew 4 bottles received only 3 and not ready to accept either the seller or delivery person is a liar",
+        "no refer a friend section available, once I had ordered buy one get one order but recieved only one piece. very worst customer support services"
+      ]
+    },
+    {
+      "title": "Refund denied or not processed for bad products",
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "count": 10,
+      "shareOfNegative": 10,
+      "inCurrentVersion": 10,
+      "quotes": [
+        "worst service ever, the delivery person dropped my prepaid order in drain and cancel it in front of me, and they are not refunding it",
+        "rotten guavas were sent and even writing an email didn't help and they refuse to generate any refund."
+      ]
+    },
+    {
+      "title": "Handling fee and delivery charges increased",
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "count": 8,
+      "shareOfNegative": 8,
+      "inCurrentVersion": 5,
+      "quotes": [
+        "Now Zepto also charging Handing fees 12rs 13rs for 149 & 199 Delivery this is worst thing in Zepto",
+        "1) this app has serious problems. suppose you add 12 items for sure they Miss 1 item. 2) What is the difference between delivery charge and handling charges. new way to charge more money"
+      ]
+    },
+    {
+      "title": "Orders delayed beyond promised delivery time",
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
+      "count": 7,
+      "shareOfNegative": 7,
+      "inCurrentVersion": 5,
+      "quotes": [
+        "it's a fraud app advertise wrong about delivery. my order was an hour late. I was sick my wife have medical issues. today late samjh Ata h but an hour",
+        "open hi nahi ho Raha 2 ghante se 🤧"
+      ]
+    }
+  ],
+  "switching": [
+    {
+      "app": "Zepto",
+      "mentions": "Blinkit",
+      "count": 9,
+      "negativeReviews": 198,
+      "quotes": [
+        "hamesha adha ghnta lagate h or bolte h ki arriving in 5 to 7 minutes agar tumse nahi hota h too bandh kr do bhai blinkit hi kr liya kre ge",
+        "Bad customer support . use blinkit and bigbasket . there support is better than this"
+      ]
+    }
+  ],
+  "apps": [
+    {
+      "name": "Zepto",
+      "isYours": true,
+      "appId": "com.zeptoconsumerapp",
+      "url": "https://play.google.com/store/apps/details?id=com.zeptoconsumerapp&hl=en&gl=in",
+      "icon": "https://play-lh.googleusercontent.com/jrtmMFv4qjtgMPQeaQzUFZ3EYBkHd_8OFYl6O1Ngt5Pey52RJAR4u8K4IoPILkJz76a7s5U3DNaY3r3xnl7t8X4",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 198,
+      "negativeShare": 39.6,
+      "avgRatingRecent": 3.36,
+      "storeRating": 4.67,
+      "ratingCount": 5056886,
+      "currentVersion": "26.11.1",
+      "starMix": {
+        "1": 192,
+        "2": 6,
+        "3": 9,
+        "4": 15,
+        "5": 278
+      },
+      "replyRateToNegative": 95.5,
+      "from": "2026-11-18T10:56:29.756Z",
+      "to": "2026-11-21T08:17:45.270Z",
+      "daysCovered": 3,
+      "releaseNote": "v26.11.1 is worse than v26.10.4: 38.7% vs 26.4% of reviews are 1–2★ (282 vs 106 reviews).",
+      "themeShares": {
+        "BUGS": 5.4,
+        "PAYMENTS": 4.3,
+        "FULFILMENT": 23.9,
+        "QUALITY": 37,
+        "PRICING": 9.8,
+        "SUPPORT": 15.2,
+        "UX": 1.1,
+        "ACCOUNT": 3.3,
+        "OTHER": 8
+      },
+      "themeCounts": {
+        "BUGS": 5,
+        "PAYMENTS": 4,
+        "FULFILMENT": 22,
+        "QUALITY": 34,
+        "PRICING": 9,
+        "SUPPORT": 14,
+        "UX": 1,
+        "ACCOUNT": 3,
+        "OTHER": 8
+      },
+      "classified": 100,
+      "concrete": 92,
+      "sampled": 100
+    },
+    {
+      "name": "Blinkit",
+      "isYours": false,
+      "appId": "com.grofers.customerapp",
+      "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp&hl=en&gl=in",
+      "icon": "https://play-lh.googleusercontent.com/dY1ryTjOaVsnslxvNamNvSBulmDUkvW5f5FJ_HDApMfecSOIxjCafpNAv4LTG8TJVyp0XR9tAAaRI4K77Eiqfg",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 74,
+      "negativeShare": 14.8,
+      "avgRatingRecent": 4.25,
+      "storeRating": 4.59,
+      "ratingCount": 10634886,
+      "currentVersion": "18.41.1",
+      "starMix": {
+        "1": 58,
+        "2": 16,
+        "3": 19,
+        "4": 56,
+        "5": 351
+      },
+      "replyRateToNegative": 97.3,
+      "from": "2026-11-20T18:52:16.590Z",
+      "to": "2026-11-21T08:19:27.262Z",
+      "daysCovered": 1,
+      "releaseNote": "v18.41.1: 14.5% of 358 reviews are 1–2★.",
+      "themeShares": {
+        "BUGS": 3.3,
+        "PAYMENTS": 9.8,
+        "FULFILMENT": 32.8,
+        "QUALITY": 14.8,
+        "PRICING": 23,
+        "SUPPORT": 11.5,
+        "UX": 4.9,
+        "ACCOUNT": 0,
+        "OTHER": 17.6
+      },
+      "themeCounts": {
+        "BUGS": 2,
+        "PAYMENTS": 6,
+        "FULFILMENT": 20,
+        "QUALITY": 9,
+        "PRICING": 14,
+        "SUPPORT": 7,
+        "UX": 3,
+        "ACCOUNT": 0,
+        "OTHER": 13
+      },
+      "classified": 74,
+      "concrete": 61,
+      "sampled": 74
+    }
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/gnWwFf4l9PHwAxqch/records/BATTLECARD?signature=tnUatrVL8vf35rGv5GRX",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/gnWwFf4l9PHwAxqch/records/BATTLECARD_CLASSIC?signature=Mm1l6bDPJ99GEcfjlhRX",
+  "markdownUrl": "https://api.apify.com/v2/key-value-stores/gnWwFf4l9PHwAxqch/records/BATTLECARD_MD?signature=Hl3KpEvjmPbEbnfoiWi2",
+  "labelCheck": {
+    "checked": 30,
+    "agreed": 27,
+    "share": 90
+  },
+  "skippedApps": [
+    "\"qwzxkjhgfdsa\" (not found on Google Play)"
+  ],
+  "model": "anthropic/claude-haiku-5.5",
+  "aiCopy": true,
+  "tokensUsed": 22708,
+  "generatedAt": "2026-11-22T08:19:34.815Z"
+}

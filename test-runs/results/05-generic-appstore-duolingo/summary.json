@@ -1,0 +1,56 @@
+{
+  "name": "05-generic-appstore-duolingo",
+  "runId": "tKh80c3RGK5EVgMbd",
+  "status": "SUCCEEDED",
+  "statusMessage": "Done: Duolingo vs Babbel. 3 opportunities, 1 threats, 6 named issues. Open the Output tab for the battlecard.",
+  "build": "0.1.16",
+  "memoryMbytes": 1024,
+  "runTimeSecs": 13.415,
+  "usageTotalUsd": 0.00098563642570542,
+  "consoleUrl": "https://console.apify.com/view/runs/tKh80c3RGK5EVgMbd",
+  "apps": [
+    "Duolingo",
+    "Babbel"
+  ],
+  "reviews": [
+    150,
+    250
+  ],
+  "labelled": [
+    "31/31",
+    "92/92"
+  ],
+  "otherShare": [
+    6.5,
+    3.3
+  ],
+  "labelCheck": {
+    "checked": 16,
+    "agreed": 9,
+    "share": 56.3
+  },
+  "verdict": "Babbel's 1–2★ share is 36.8% versus Duolingo's 20.7%, but Duolingo's UX complaints run higher, so fix UX before attacking.",
+  "opportunities": [
+    "QUALITY vs Babbel +17.6 (medium)",
+    "ACCOUNT vs Babbel +5.4 (medium)",
+    "PRICING vs Babbel +5.7 (low)"
+  ],
+  "threats": [
+    "UX vs Babbel +20.2 (high)"
+  ],
+  "issues": [
+    "Too much gamification and taps before lessons",
+    "Puzzle piece duplicates and rigged gem rewards",
+    "Free version too limited, paywall for usable learning",
+    "Trial subscription cannot be cancelled, no support",
+    "Intrusive upgrade ads and spam notifications",
+    "Lesson quality declined, AI replaced real people"
+  ],
+  "switching": [
+    "Babbel -> Duolingo: 10"
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/Splo46HydVdwl3R41/records/BATTLECARD?signature=1fsPyfeRYvXZWWig1zxeh",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/Splo46HydVdwl3R41/records/BATTLECARD_CLASSIC?signature=1Cy6AxFLseZKZ7AJlTLh9",
+  "tokensUsed": 17632,
+  "aiCopy": true
+}

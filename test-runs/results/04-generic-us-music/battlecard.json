@@ -1,0 +1,288 @@
+{
+  "type": "battlecard",
+  "yourApp": "Spotify",
+  "rivals": [
+    "YouTube Music"
+  ],
+  "store": "Google Play",
+  "country": "us",
+  "verdict": "Spotify's 26.6% negative share beats YouTube Music's 40.4%, but Spotify's own ad and crash complaints must be fixed before it can lead on rival weaknesses.",
+  "topOpportunity": "Refunds and renewals that just work: 6% of YouTube Music's 1–2★ reviews are about payments & refunds, vs 2% of yours.",
+  "topThreat": "Free trials that feel like traps: 12% of your 1–2★ reviews are about prices, fees & subscriptions, vs 3% of YouTube Music's.",
+  "opportunities": [
+    {
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "rival": "YouTube Music",
+      "yourShare": 2,
+      "rivalShare": 6,
+      "gapPoints": 4,
+      "confidence": "medium",
+      "evidence": "6% of YouTube Music's 1–2★ reviews are about payments & refunds, vs 2% of yours.",
+      "quotes": [
+        "Can't even play one song or make my own que it's like I'm on free mode or something I'm canceling my subscription",
+        "Yall need to fix this stupid reactivation error where it's not letting you renew based on your location"
+      ],
+      "headline": "Refunds and renewals that just work",
+      "message": "Billing should never be the reason you cancel. Clear renewals and fast help when something goes wrong, wherever you are."
+    },
+    {
+      "theme": "QUALITY",
+      "themeLabel": "Product, food, service or content quality",
+      "owner": "Operations & Partners",
+      "rival": "YouTube Music",
+      "yourShare": 8,
+      "rivalShare": 11,
+      "gapPoints": 3,
+      "confidence": "low",
+      "evidence": "11% of YouTube Music's 1–2★ reviews are about product, food, service or content quality, vs 8% of yours.",
+      "quotes": [
+        "Insanely clunky. Making custom music playlists is tedious, and the algorithm is very bad at picking songs. It's frustrating when these playlists appear on my channel.",
+        "Home page is giving me irrelevant recommendations since yesterday."
+      ],
+      "headline": "YouTube Music users are angrier about product, food, service or content quality",
+      "message": "Lead with your strength in product, food, service or content quality in campaigns aimed at YouTube Music users."
+    }
+  ],
+  "threats": [
+    {
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "rival": "YouTube Music",
+      "yourShare": 12,
+      "rivalShare": 3,
+      "gapPoints": 9,
+      "confidence": "high",
+      "evidence": "12% of your 1–2★ reviews are about prices, fees & subscriptions, vs 3% of YouTube Music's.",
+      "quotes": [
+        "Offered 3 months for 0$ then tried to charge me 2 USD. Ridiculous false advertising. It was probably a plot to get people's info.",
+        "main online music sunti thi, lekin ab primium sub compalsary kiya h.. so isliye maine uninstall kr diya app"
+      ],
+      "headline": "Free trials that feel like traps",
+      "action": "Pricing & Growth should make trial terms and charges explicit at signup and send a reminder before the first charge."
+    }
+  ],
+  "fixFirst": [
+    "Too many ads, especially for free users (mentioned in 23 of 100 recent 1–2★ reviews; owner: Product)",
+    "App crashes, lags, or fails to load music (mentioned in 15 of 100 recent 1–2★ reviews; owner: Engineering)",
+    "Forced Premium needed to skip or replay songs (mentioned in 14 of 100 recent 1–2★ reviews; owner: Pricing & Growth)"
+  ],
+  "yourIssues": [
+    {
+      "title": "Too many ads, especially for free users",
+      "theme": "UX",
+      "themeLabel": "App design, features & ads",
+      "owner": "Product",
+      "count": 23,
+      "shareOfNegative": 23,
+      "inCurrentVersion": null,
+      "quotes": [
+        "Too many ads. Need to take subscription for basic features. Way better apps in the market. Spotify thinks it's irreplaceable lol.",
+        "used to have a 5 star review but now that I'm on the free version I'm disgusted. you hear more ads then music"
+      ]
+    },
+    {
+      "title": "App crashes, lags, or fails to load music",
+      "theme": "BUGS",
+      "themeLabel": "Crashes, bugs & app speed",
+      "owner": "Engineering",
+      "count": 15,
+      "shareOfNegative": 15,
+      "inCurrentVersion": null,
+      "quotes": [
+        "Oct 23 update broke the app. now stuck waiting for a new update. sucks that I can't listen to music still a month later",
+        "slow and doesnt load music even though u charge 12.99 every month for ad free I cant even listen to music."
+      ]
+    },
+    {
+      "title": "Forced Premium needed to skip or replay songs",
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "count": 14,
+      "shareOfNegative": 14,
+      "inCurrentVersion": null,
+      "quotes": [
+        "now u can skip only 6 track in one hr without premium.... disgusting...aisa kara to wynk jaise bnd karna pdega boss",
+        "very bad app we all need is premium we can't play one song more than one time. very 😞😞😞😞😞😞 😞🤬🤬🤬😡😡😡"
+      ]
+    },
+    {
+      "title": "Shuffle plays only part of playlist or repeats",
+      "theme": "BUGS",
+      "themeLabel": "Crashes, bugs & app speed",
+      "owner": "Engineering",
+      "count": 9,
+      "shareOfNegative": 9,
+      "inCurrentVersion": null,
+      "quotes": [
+        "When i played my liked song of my playlists suddenly a random song played this happening from last few days",
+        "everything is premium. please just make my Playlist shuffled stop putting in random songs. Bro I'm broke music is supposed to be free💔"
+      ]
+    },
+    {
+      "title": "Queue and add-to-queue features broken",
+      "theme": "BUGS",
+      "themeLabel": "Crashes, bugs & app speed",
+      "owner": "Engineering",
+      "count": 5,
+      "shareOfNegative": 5,
+      "inCurrentVersion": null,
+      "quotes": [
+        "pathetic we can't even select songs",
+        "even after a clean reinstall , the add to queue function Is missing . not to mention how laggy it is and the shuffle doesn't work properly if it's not on mobile .. Spotify is doing everything but s…"
+      ]
+    },
+    {
+      "title": "Random songs or podcasts auto-played unexpectedly",
+      "theme": "UX",
+      "themeLabel": "App design, features & ads",
+      "owner": "Product",
+      "count": 5,
+      "shareOfNegative": 5,
+      "inCurrentVersion": null,
+      "quotes": [
+        "Free version Spotify With the November update you it forces random songs to be played in your liked songs or any playlists dead app now",
+        "Repetitive. Doesn't give relevant selections. CONSTANTLY starts playing music WHEN I HAVEN'T EVEN HAD THE APP OPEN FOR DAYS. I'm about to delete the app, it's infuriating."
+      ]
+    }
+  ],
+  "switching": [
+    {
+      "app": "Spotify",
+      "mentions": "YouTube Music",
+      "count": 2,
+      "negativeReviews": 133,
+      "quotes": [
+        "Terrible you can get youtube premium with youtube music and watch Videos with no ads as well as listen music with no adds and its fairly priced with more benifits.",
+        "way overrated, honestly terrible, the ONLY reason I would think about using Spotify is because it can play in the background... but as a free listener it is awful, they're so greedy. youtube music…"
+      ]
+    },
+    {
+      "app": "YouTube Music",
+      "mentions": "Spotify",
+      "count": 12,
+      "negativeReviews": 202,
+      "quotes": [
+        "I was using YTM because it didn't have AI all over the place like Spotify does. I guess I'll have to move to Qobuz",
+        "Brought premium. No app for windows? Can't listen music while working? Not even on Alexa? This is how you compete with Spotify? Lol"
+      ]
+    }
+  ],
+  "apps": [
+    {
+      "name": "Spotify",
+      "isYours": true,
+      "appId": "com.spotify.music",
+      "url": "https://play.google.com/store/apps/details?id=com.spotify.music&hl=en&gl=us",
+      "icon": "https://play-lh.googleusercontent.com/IzQgYCcnCFCD08GR-3bdtcT8xzOvrNkC84avGT5CwTX2VIqmTmKKJcP_Cd4JoBOdmCMlTndlOzV6hrthg2fOWA",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 133,
+      "negativeShare": 26.6,
+      "avgRatingRecent": 3.74,
+      "storeRating": 4.35,
+      "ratingCount": 36657398,
+      "currentVersion": null,
+      "starMix": {
+        "1": 106,
+        "2": 27,
+        "3": 37,
+        "4": 51,
+        "5": 279
+      },
+      "replyRateToNegative": 33.8,
+      "from": "2026-11-20T06:49:53.855Z",
+      "to": "2026-11-21T08:01:08.652Z",
+      "daysCovered": 1,
+      "releaseNote": "v9.2.2.2585 is better than v9.1.98.621: 33.3% vs 50% of reviews are 1–2★ (6 vs 6 reviews).",
+      "themeShares": {
+        "BUGS": 20,
+        "PAYMENTS": 2,
+        "FULFILMENT": 0,
+        "QUALITY": 8,
+        "PRICING": 12,
+        "SUPPORT": 0,
+        "UX": 46,
+        "ACCOUNT": 1,
+        "OTHER": 11
+      },
+      "themeCounts": {
+        "BUGS": 20,
+        "PAYMENTS": 2,
+        "FULFILMENT": 0,
+        "QUALITY": 8,
+        "PRICING": 12,
+        "SUPPORT": 0,
+        "UX": 46,
+        "ACCOUNT": 1,
+        "OTHER": 11
+      },
+      "classified": 100,
+      "sampled": 100
+    },
+    {
+      "name": "YouTube Music",
+      "isYours": false,
+      "appId": "com.google.android.apps.youtube.music",
+      "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.music&hl=en&gl=us",
+      "icon": "https://play-lh.googleusercontent.com/MyptZXmcCyF59phIWPsNCfHq6zSO_ojEdw_4rMYYWPOGdikSjqeOXcoszBZ053VYpINe5K7ZR9KV1nkFWgxdOw",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 202,
+      "negativeShare": 40.4,
+      "avgRatingRecent": 3.19,
+      "storeRating": 4.44,
+      "ratingCount": 7914646,
+      "currentVersion": null,
+      "starMix": {
+        "1": 150,
+        "2": 52,
+        "3": 52,
+        "4": 46,
+        "5": 200
+      },
+      "replyRateToNegative": 0,
+      "from": "2026-11-17T18:59:16.276Z",
+      "to": "2026-11-21T07:20:54.531Z",
+      "daysCovered": 4,
+      "releaseNote": "v9.46.55 is worse than v9.42.52: 47.2% vs 40% of reviews are 1–2★ (89 vs 5 reviews).",
+      "themeShares": {
+        "BUGS": 22,
+        "PAYMENTS": 6,
+        "FULFILMENT": 0,
+        "QUALITY": 11,
+        "PRICING": 3,
+        "SUPPORT": 0,
+        "UX": 48,
+        "ACCOUNT": 0,
+        "OTHER": 10
+      },
+      "themeCounts": {
+        "BUGS": 22,
+        "PAYMENTS": 6,
+        "FULFILMENT": 0,
+        "QUALITY": 11,
+        "PRICING": 3,
+        "SUPPORT": 0,
+        "UX": 48,
+        "ACCOUNT": 0,
+        "OTHER": 10
+      },
+      "classified": 100,
+      "sampled": 100
+    }
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/hPbGdTXewHS3zLDKO/records/BATTLECARD?signature=TRdKg06drmDYifYP8bxj",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/hPbGdTXewHS3zLDKO/records/BATTLECARD_CLASSIC?signature=jWvVMTCEGa0Zdd5LeRwi",
+  "markdownUrl": "https://api.apify.com/v2/key-value-stores/hPbGdTXewHS3zLDKO/records/BATTLECARD_MD?signature=10sw1lWWJA3W7U7YHS72W",
+  "labelCheck": {
+    "checked": 30,
+    "agreed": 25,
+    "share": 83.3
+  },
+  "model": "anthropic/claude-haiku-5.5",
+  "aiCopy": true,
+  "tokensUsed": 22467,
+  "generatedAt": "2026-11-22T08:01:42.838Z"
+}

@@ -44,11 +44,24 @@ async function getJson(url: string, retries = 2): Promise<any> {
     }
 }
 
+/**
+ * Short display name for an app. Store titles are long ("PhonePe UPI Payments, Loan App"), so keep the name the
+ * user typed when the title starts with it as a whole word, otherwise cut the title at the first : - | or comma.
+ */
+export function displayName(title: string, typed: string | null): string {
+    const t = title.trim();
+    if (typed && typed.length >= 3 && t.toLowerCase().startsWith(typed.toLowerCase()) && !/[\p{L}\p{N}]/u.test(t.charAt(typed.length))) {
+        return t.slice(0, typed.length);
+    }
+    return t.split(/\s[-–|]\s|[:,|–]/)[0].trim() || t;
+}
+
 /** Accepts an App Store URL, a numeric app ID (optionally "id123..."), or an app name. */
 export async function resolveApp(input: string, country: string): Promise<AppInfo> {
     const raw = input.trim();
     const m = raw.match(/id(\d{5,})/) ?? raw.match(/^(\d{5,})$/);
     let id = m ? m[1] : null;
+    const typed = id ? null : raw;
 
     if (!id) {
         const s = await getJson(
@@ -68,7 +81,7 @@ export async function resolveApp(input: string, country: string): Promise<AppInf
     return {
         input: raw,
         id: String(r.trackId ?? id),
-        name: String(r.trackName ?? raw).split(/[:\-–|]/)[0].trim() || String(r.trackName ?? raw),
+        name: displayName(String(r.trackName ?? raw), typed),
         developer: r.sellerName ?? r.artistName ?? null,
         url: r.trackViewUrl ?? null,
         icon: r.artworkUrl100 ?? null,

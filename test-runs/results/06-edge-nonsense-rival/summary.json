@@ -1,0 +1,58 @@
+{
+  "name": "06-edge-nonsense-rival",
+  "runId": "tYol7pK6Whrg5V36d",
+  "status": "SUCCEEDED",
+  "statusMessage": "Done: Zepto vs Blinkit. 3 opportunities, 3 threats, 6 named issues. Skipped: \"qwzxkjhgfdsa\" (not found on Google Play). Open the Output tab for the battlecard.",
+  "build": "0.1.18",
+  "memoryMbytes": 1024,
+  "runTimeSecs": 9.015,
+  "usageTotalUsd": 0.0007310315313686928,
+  "consoleUrl": "https://console.apify.com/view/runs/tYol7pK6Whrg5V36d",
+  "apps": [
+    "Zepto",
+    "Blinkit"
+  ],
+  "reviews": [
+    500,
+    500
+  ],
+  "labelled": [
+    "100/100",
+    "74/74"
+  ],
+  "otherShare": [
+    8,
+    17.6
+  ],
+  "labelCheck": {
+    "checked": 30,
+    "agreed": 27,
+    "share": 90
+  },
+  "verdict": "Zepto's 1–2★ share is 39.6% versus Blinkit's 14.8%, and the newest release is driving the gap, so fix quality and support before marketing.",
+  "opportunities": [
+    "PRICING vs Blinkit +13.2 (high)",
+    "PAYMENTS vs Blinkit +5.5 (medium)",
+    "FULFILMENT vs Blinkit +8.9 (low)"
+  ],
+  "threats": [
+    "QUALITY vs Blinkit +22.2 (high)",
+    "SUPPORT vs Blinkit +3.7 (low)",
+    "ACCOUNT vs Blinkit +3.3 (medium)"
+  ],
+  "issues": [
+    "Customer support unresponsive, AI bot, no human agent",
+    "Expired, rotten or spoiled products delivered",
+    "Items missing from orders or wrong items delivered",
+    "Refund denied or not processed for bad products",
+    "Handling fee and delivery charges increased",
+    "Orders delayed beyond promised delivery time"
+  ],
+  "switching": [
+    "Zepto -> Blinkit: 9"
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/gnWwFf4l9PHwAxqch/records/BATTLECARD?signature=tnUatrVL8vf35rGv5GRX",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/gnWwFf4l9PHwAxqch/records/BATTLECARD_CLASSIC?signature=Mm1l6bDPJ99GEcfjlhRX",
+  "tokensUsed": 22708,
+  "aiCopy": true
+}

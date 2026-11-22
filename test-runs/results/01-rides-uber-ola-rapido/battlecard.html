@@ -1,0 +1,229 @@
+<script>
+Object.defineProperty(document, 'cookie', {
+    get: function() { return ''; },
+    set: function() { return true; }
+});
+if (cookieStore) {
+    cookieStore = {};
+}
+</script>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Battlecard: Uber vs Ola, Rapido</title>
+<style>
+:root{color-scheme:dark;--page:#13121a;--ink:#ecebf2;--ink2:#b6b4c6;--muted:#8d8aa0;--line:#2b2938;--faint:#1b1a25;--track:rgba(255,255,255,.1);--good:#7bd88f;--bad:#f08aa0;--warn:#f0c040;--a0:#8273e6;--a1:#d75a7f;--a2:#1b98bf;--a3:#b98317;--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;--sans:system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono","Cascadia Mono",Consolas,Menlo,monospace}
+:root:has(#light:checked){color-scheme:light;--page:#f6f4ef;--ink:#17150f;--ink2:#4a473f;--muted:#6b675c;--line:#d8d3c6;--faint:#ece8dd;--track:rgba(23,21,15,.09);--good:#1c7a3a;--bad:#b3261e;--warn:#b07d00;--a0:#00846b;--a1:#d9531e;--a2:#2b59c3;--a3:#b07d00}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--page);color:var(--ink);font:16px/1.6 var(--sans)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}
+.bar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--page) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1080px;margin:0 auto;padding:0 32px;height:56px;display:flex;align-items:center;gap:28px}
+.brand{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-right:auto}
+.bar a{font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:6px 0;border-bottom:1.5px solid transparent}
+.bar a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.mode{display:inline-flex;align-items:center;gap:10px;cursor:pointer;font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;user-select:none}
+.mode .pill{width:34px;height:18px;border-radius:9px;border:1.5px solid var(--ink);position:relative;display:block}
+.mode .pill i{position:absolute;top:2px;left:2px;width:11px;height:11px;border-radius:50%;background:var(--ink);transition:transform .2s}
+.m-dark{color:var(--ink)}.m-light{color:var(--muted)}
+:root:has(#light:checked) .mode .pill i{transform:translateX(16px)}
+:root:has(#light:checked) .m-dark{color:var(--muted)}:root:has(#light:checked) .m-light{color:var(--ink)}
+#light:focus-visible~.bar .mode{outline:2px solid var(--ink);outline-offset:5px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){.mode .pill i{transition:none}html{scroll-behavior:auto}}
+main{max-width:1080px;margin:0 auto;padding:0 32px 96px}
+.hero{padding:88px 0 8px}
+.kicker{margin:0 0 28px;font:600 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+h1{margin:0;font:400 clamp(40px,7vw,76px)/1.04 var(--serif);letter-spacing:-.02em;display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px}
+h1 .nm{display:inline-flex;align-items:center;gap:14px}h1 .nm img{width:clamp(34px,5vw,52px);height:clamp(34px,5vw,52px);border-radius:24%}
+h1 .vs{font:italic 400 .42em/1 var(--serif);color:var(--muted)}
+.meta{margin:26px 0 0;font:500 12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.verdict{margin-top:64px;padding-top:28px;border-top:1px solid var(--line);display:grid;grid-template-columns:140px 1fr;gap:12px 32px}
+.verdict .lbl{font:600 11px/2.6 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.verdict p{margin:0;max-width:30em;font:400 clamp(22px,3vw,32px)/1.3 var(--serif)}
+.lbl{display:block;font:600 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+section{margin-top:128px;scroll-margin-top:84px}
+.shead{display:grid;grid-template-columns:140px 1fr;gap:12px 32px;margin-bottom:48px;align-items:baseline}
+.shead .no{font:400 15px/1 var(--mono);color:var(--muted);letter-spacing:.1em}
+h2{margin:0;font:400 clamp(28px,3.6vw,40px)/1.15 var(--serif);letter-spacing:-.01em}
+.shead p{margin:12px 0 0;max-width:40em;color:var(--ink2);font-size:15px}
+h3{margin:0;font:400 22px/1.3 var(--serif)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--c);margin-right:8px;vertical-align:1px;flex:none}
+.you{font:600 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;border:1px solid currentColor;border-radius:3px;padding:2px 5px;margin-left:4px;vertical-align:2px;color:var(--ink2)}
+.tag{display:inline-block;font:600 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--warn);color:var(--warn);border-radius:3px;padding:3px 6px;margin-right:10px;vertical-align:2px}
+.fine{margin:6px 0 0;font-size:13px;color:var(--muted);line-height:1.5}
+
+.cols{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:0}
+.col{padding:0 36px;border-left:1px solid var(--line)}.col:first-child{padding-left:0;border-left:0}.col:last-child{padding-right:0}
+.who{display:flex;align-items:center;gap:10px;margin-bottom:36px;font-size:16px}.who img{width:30px;height:30px;border-radius:24%}
+.ring{--p:0;width:132px;height:132px;border-radius:50%;background:conic-gradient(var(--c) calc(var(--p)*1%),var(--track) 0);display:grid;place-items:center;position:relative}
+.ring::after{content:"";position:absolute;inset:11px;border-radius:50%;background:var(--page)}
+.ring span{position:relative;z-index:1;font:400 38px/1 var(--serif)}.ring small{font-size:.5em;margin-left:1px;color:var(--muted)}
+.rcap{margin:14px 0 36px;font-size:13px;color:var(--muted)}
+.stars{margin-bottom:36px}.sbar{display:flex;gap:2px;height:10px}.sbar span{display:block;background:var(--c);border-radius:2px;min-width:0}
+.scap{display:flex;justify-content:space-between;margin:8px 0 0;font:500 11px/1 var(--mono);color:var(--muted)}
+.facts{margin:0;display:grid;gap:14px}.facts div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.facts dt{font-size:13px;color:var(--ink2)}.facts dd{margin:0;font:400 24px/1 var(--serif)}
+.rel{margin-top:14px}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px 28px;margin:0 0 32px;font-size:14px}.key{display:inline-flex;align-items:center}
+.mchart{display:block}
+.mrow{display:grid;grid-template-columns:minmax(180px,1.1fr) 3fr 92px 104px;gap:28px;align-items:center;padding:20px 0;border-top:1px solid var(--line)}
+.maxis{border-top:0;padding:0 0 8px}
+.mlab span{display:block;font-size:15px;line-height:1.35}.mlab small{display:block;margin-top:4px;font:500 11px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.plot{position:relative;height:28px;margin:0 8px;background-image:linear-gradient(to right,var(--line) 1px,transparent 1px);background-size:calc(100%/var(--n)) 100%;border-right:1px solid var(--line)}
+.plot.ticks{height:auto;display:flex;justify-content:space-between;background:none;border:0;font:500 11px/1 var(--mono);color:var(--muted)}
+.rail{position:absolute;top:50%;height:2px;margin-top:-1px;background:var(--muted);opacity:.55}
+.pt{position:absolute;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;box-shadow:0 0 0 2px var(--page)}
+.mnums{display:flex;gap:12px;font:500 13px/1 var(--mono);color:var(--ink2);justify-content:flex-end}.mnums .dot{margin-right:5px}
+.mgap{font:600 11px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;text-align:right;color:var(--muted)}
+.mgap.worse{color:var(--bad)}.mgap.better{color:var(--good)}
+
+.group+.group{margin-top:80px}
+.gh{display:flex;align-items:baseline;gap:14px;font:400 26px/1.2 var(--serif);margin-bottom:8px}
+.gh small{font:400 14px/1.4 var(--sans);color:var(--muted)}.gh .mark{display:inline-block;width:12px;height:12px;border-radius:2px;background:var(--good);align-self:center}
+.group.thr .mark{background:var(--bad)}
+.move{display:grid;grid-template-columns:140px 1fr;gap:12px 32px;padding:44px 0;border-top:1px solid var(--line)}.group .move:first-of-type{margin-top:28px}
+.big b{display:block;font:400 64px/1 var(--serif);letter-spacing:-.02em}.big small{font:500 11px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.big .conf{display:block;margin-top:8px;color:var(--ink2)}.big .conf.low{color:var(--muted);opacity:.8}.big .conf.high{color:var(--ink)}
+.mbody{max-width:640px}.th{margin:0 0 10px;font:600 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.duel{margin:28px 0 8px}
+.b{display:grid;grid-template-columns:150px 1fr 44px;align-items:center;gap:14px;margin:12px 0;font-size:14px}
+.bn{display:flex;align-items:center;white-space:nowrap}.bt{display:block;height:6px;border-radius:3px;background:var(--track);overflow:hidden}.bt i{display:block;height:100%;border-radius:3px}
+.bv{text-align:right;font:500 13px/1 var(--mono)}
+.act{margin:28px 0 0;font-size:16px}.caution{margin:24px 0 0;padding-left:16px;border-left:2px solid var(--warn);font-size:14px;color:var(--ink2)}
+blockquote{margin:24px 0 0;padding-left:16px;border-left:1px solid var(--muted);font:italic 400 16px/1.55 var(--serif);color:var(--ink2)}
+blockquote+blockquote{margin-top:16px}
+details{margin-top:18px}summary{cursor:pointer;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}summary:hover{color:var(--ink)}
+
+.sigs{display:grid;grid-template-columns:1fr 1fr;gap:0 64px}
+.sig{display:grid;grid-template-columns:96px 1fr;gap:12px 24px;padding:40px 0;border-top:1px solid var(--line)}
+.sstat b{display:block;font:400 56px/1 var(--serif)}.sstat small{display:block;margin-top:8px;font:500 11px/1.4 var(--mono);color:var(--muted)}
+.flow{display:flex;flex-wrap:wrap;align-items:center;margin:0 0 10px;font-size:15px}.flow .arrow{margin:0 10px;font:italic 400 14px/1 var(--serif);color:var(--muted)}
+.flow .kind{width:100%;margin-top:8px;font:600 11px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.sig.thr .kind{color:var(--bad)}.sig.opp .kind{color:var(--good)}
+.sline{margin:0 0 16px;font-size:15px}.meter{height:6px;border-radius:3px;background:var(--track);overflow:hidden}.meter i{display:block;height:100%;background:var(--ink2);border-radius:3px}
+.sig blockquote{margin-top:20px;font-size:15px}
+
+.issues{width:100%;border-collapse:collapse}
+.issues th{text-align:left;font:600 11px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:0 24px 16px 0;border-bottom:1px solid var(--ink)}
+.issues td{vertical-align:top;padding:32px 24px 32px 0;border-bottom:1px solid var(--line)}
+.issues .rk{width:56px;font:400 15px/1.6 var(--mono);color:var(--muted)}
+.issues td b{font:400 19px/1.35 var(--serif)}.issues td small{display:block;margin-top:6px;font:500 11px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.issues q{display:block;margin-top:14px;max-width:34em;font:italic 400 15px/1.55 var(--serif);color:var(--ink2);quotes:"\201C" "\201D"}
+.issues .cnt{width:210px}.issues .cnt .b{grid-template-columns:1fr 32px;margin:6px 0 0}.issues .cnt small{text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:12px}
+.issues .ver{width:90px;font:400 26px/1.2 var(--serif)}
+.foot{margin:128px 0 0;padding-top:24px;border-top:1px solid var(--line);max-width:46em;font-size:13px;color:var(--muted)}
+.foot b{color:var(--ink2);font-weight:600}.foot .lbl{margin-bottom:8px}
+
+@media(max-width:900px){
+.mrow{grid-template-columns:1fr auto;gap:10px 16px}.mlab{grid-column:1/-1}.plot{grid-column:1/-1;order:2}.mnums{order:3;justify-content:flex-start}.mgap{order:3}.maxis{display:none}
+.sigs{grid-template-columns:1fr}.cols{grid-template-columns:1fr;gap:56px}.col,.col:first-child,.col:last-child{padding:0;border-left:0}
+}
+@media(max-width:700px){
+main,.bar-in{padding-left:20px;padding-right:20px}.bar-in{gap:16px}.bar a{display:none}
+.verdict,.shead,.move{grid-template-columns:1fr}.hero{padding-top:56px}section{margin-top:96px}
+.b{grid-template-columns:110px 1fr 40px}.issues .ver,.issues th:nth-child(4){display:none}.issues .cnt{width:130px}
+}
+@media print{.bar{display:none}body{-webkit-print-color-adjust:exact;print-color-adjust:exact}details{display:none}.move,.sig,tr{break-inside:avoid}}
+</style></head><body>
+<input type="checkbox" id="light" class="sr-only" autocomplete="off" aria-label="Light theme">
+<header class="bar"><div class="bar-in"><span class="brand">App Review Battlecard</span><a href="#scoreboard">Scoreboard</a><a href="#mix">Mix</a><a href="#moves">Moves</a><a href="#switching">Switching</a><a href="#triage">Triage</a><label for="light" class="mode" title="Switch theme"><span class="m-dark">Dark</span><span class="pill"><i></i></span><span class="m-light">Light</span></label></div></header>
+<main>
+<div class="hero"><p class="kicker">Head-to-head review comparison</p><h1><span class="nm"><img src="https://play-lh.googleusercontent.com/OXQnDlRtPa5ha6KCnKPqVmxHYBP7tjrAa7PXGNRqcwDC_J03HVeuEKcKrkcIqnfOqsF5uy3uwWxIXR067QHsNQ" alt="">Uber</span><span class="vs">vs</span><span class="nm"><img src="https://play-lh.googleusercontent.com/X2EES6J1Q6cf18gTsBX-yWvsLrDm31TjwjwbSGE8t8w-v1uEIpHDNExfTF3tw_bbOqeRuYZhPg5mOu-kLWKhJ64" alt="">Ola</span><span class="vs">vs</span><span class="nm"><img src="https://play-lh.googleusercontent.com/94XgU5OUmk5HIyv6gn9ZVJWudLxUjeAunu8QcORlmEx3sG_bw8NArUjvKx3lSAXsJAOYf7qfz1Fi7E-xEN4O" alt="">Rapido</span></h1>
+<p class="meta">Google Play · IN · 1,500 recent reviews · 22 Nov 2026</p>
+<div class="verdict"><span class="lbl">Verdict</span><p>Ola&#39;s 1–2★ reviews are 57.6% of its total, versus Uber&#39;s 24.8%, so Ola&#39;s trust problems are the clearest opening for Uber to win switchers.</p></div></div>
+<section id="scoreboard"><div class="shead"><span class="no">01</span><div><h2>Scoreboard</h2><p>Who is losing more reviews, and how they are replying.</p></div></div><div class="cols" style="--n:3"><div class="col" style="--c:var(--a0)">
+<div class="who"><img src="https://play-lh.googleusercontent.com/OXQnDlRtPa5ha6KCnKPqVmxHYBP7tjrAa7PXGNRqcwDC_J03HVeuEKcKrkcIqnfOqsF5uy3uwWxIXR067QHsNQ" alt=""><b>Uber</b> <span class="you">you</span></div>
+<div class="ring" style="--p:24.8" role="img" aria-label="24.8% of recent reviews are 1 or 2 stars"><span>25<small>%</small></span></div>
+<p class="rcap">of recent reviews are 1–2★</p>
+<div class="stars"><div class="sbar" role="img" aria-label="Star mix: 1★ 21%, 2★ 4%, 3★ 3%, 4★ 5%, 5★ 68%"><span style="flex:103;opacity:1" title="1★: 103 reviews"></span><span style="flex:21;opacity:0.72" title="2★: 21 reviews"></span><span style="flex:13;opacity:0.46" title="3★: 13 reviews"></span><span style="flex:25;opacity:0.3" title="4★: 25 reviews"></span><span style="flex:338;opacity:0.18" title="5★: 338 reviews"></span></div><p class="scap"><span>1★ 21%</span><span>5★ 68%</span></p></div>
+<dl class="facts"><div><dt>Recent average</dt><dd>4.0★</dd></div><div><dt>Store rating</dt><dd>4.7★</dd></div><div><dt>Replies to 1–2★</dt><dd>0%</dd></div></dl>
+<p class="fine">500 reviews, 20 Nov to 21 Nov</p>
+<p class="fine rel">v4.655.10001 is about the same as v4.652.10004: 15.4% vs 16.7% of reviews are 1–2★ (13 vs 6 reviews).</p>
+</div><div class="col" style="--c:var(--a1)">
+<div class="who"><img src="https://play-lh.googleusercontent.com/X2EES6J1Q6cf18gTsBX-yWvsLrDm31TjwjwbSGE8t8w-v1uEIpHDNExfTF3tw_bbOqeRuYZhPg5mOu-kLWKhJ64" alt=""><b>Ola</b></div>
+<div class="ring" style="--p:57.6" role="img" aria-label="57.6% of recent reviews are 1 or 2 stars"><span>58<small>%</small></span></div>
+<p class="rcap">of recent reviews are 1–2★</p>
+<div class="stars"><div class="sbar" role="img" aria-label="Star mix: 1★ 54%, 2★ 3%, 3★ 3%, 4★ 3%, 5★ 37%"><span style="flex:272;opacity:1" title="1★: 272 reviews"></span><span style="flex:16;opacity:0.72" title="2★: 16 reviews"></span><span style="flex:13;opacity:0.46" title="3★: 13 reviews"></span><span style="flex:13;opacity:0.3" title="4★: 13 reviews"></span><span style="flex:186;opacity:0.18" title="5★: 186 reviews"></span></div><p class="scap"><span>1★ 54%</span><span>5★ 37%</span></p></div>
+<dl class="facts"><div><dt>Recent average</dt><dd>2.6★</dd></div><div><dt>Store rating</dt><dd>4.6★</dd></div><div><dt>Replies to 1–2★</dt><dd>2.8%</dd></div></dl>
+<p class="fine">500 reviews, 6 Nov to 21 Nov · v7.6.2</p>
+<p class="fine rel">v7.6.2 is worse than v7.5.5: 57.5% vs 20% of reviews are 1–2★ (252 vs 5 reviews).</p>
+</div><div class="col" style="--c:var(--a2)">
+<div class="who"><img src="https://play-lh.googleusercontent.com/94XgU5OUmk5HIyv6gn9ZVJWudLxUjeAunu8QcORlmEx3sG_bw8NArUjvKx3lSAXsJAOYf7qfz1Fi7E-xEN4O" alt=""><b>Rapido</b></div>
+<div class="ring" style="--p:26.8" role="img" aria-label="26.8% of recent reviews are 1 or 2 stars"><span>27<small>%</small></span></div>
+<p class="rcap">of recent reviews are 1–2★</p>
+<div class="stars"><div class="sbar" role="img" aria-label="Star mix: 1★ 24%, 2★ 3%, 3★ 3%, 4★ 8%, 5★ 62%"><span style="flex:118;opacity:1" title="1★: 118 reviews"></span><span style="flex:16;opacity:0.72" title="2★: 16 reviews"></span><span style="flex:15;opacity:0.46" title="3★: 15 reviews"></span><span style="flex:41;opacity:0.3" title="4★: 41 reviews"></span><span style="flex:310;opacity:0.18" title="5★: 310 reviews"></span></div><p class="scap"><span>1★ 24%</span><span>5★ 62%</span></p></div>
+<dl class="facts"><div><dt>Recent average</dt><dd>3.8★</dd></div><div><dt>Store rating</dt><dd>4.8★</dd></div><div><dt>Replies to 1–2★</dt><dd>33.6%</dd></div></dl>
+<p class="fine">500 reviews, 20 Nov to 21 Nov · v8.132.0</p>
+<p class="fine rel">v8.132.0: 23.5% of 340 reviews are 1–2★.</p>
+</div></div></section>
+<section id="mix"><div class="shead"><span class="no">02</span><div><h2>Complaint mix</h2><p>Share of each app's own 1–2★ reviews that are about each theme. Compare the mix, not the average stars. Sorted from where you are worst to where you are best.</p></div></div>
+<div class="legend"><span class="key"><span class="dot" style="--c:var(--a0)"></span>Uber <span class="you">you</span></span><span class="key"><span class="dot" style="--c:var(--a1)"></span>Ola</span><span class="key"><span class="dot" style="--c:var(--a2)"></span>Rapido</span></div>
+<div class="mchart"><div class="mrow maxis"><div class="mlab"></div><div class="plot ticks"><span>0%</span><span>10%</span><span>20%</span><span>30%</span><span>40%</span></div><div class="mnums"></div><div class="mgap"></div></div><div class="mrow"><div class="mlab"><span>Prices, fees &amp; subscriptions</span><small>Pricing &amp; Growth</small></div>
+<div class="plot" style="--n:4"><span class="rail" style="left:47.50%;width:30.00%"></span><span class="pt" style="left:77.50%;background:var(--a0);z-index:3" title="Uber: 31 of 100 labelled 1–2★ reviews (31%)"></span><span class="pt" style="left:47.50%;background:var(--a1);z-index:2" title="Ola: 19 of 100 labelled 1–2★ reviews (19%)"></span><span class="pt" style="left:50.00%;background:var(--a2);z-index:1" title="Rapido: 20 of 100 labelled 1–2★ reviews (20%)"></span></div>
+<div class="mnums"><span><span class="dot" style="--c:var(--a0)"></span>31</span><span><span class="dot" style="--c:var(--a1)"></span>19</span><span><span class="dot" style="--c:var(--a2)"></span>20</span></div><div class="mgap worse">11 pts worse</div></div><div class="mrow"><div class="mlab"><span>Payments &amp; refunds</span><small>Payments &amp; Support</small></div>
+<div class="plot" style="--n:4"><span class="rail" style="left:17.50%;width:7.50%"></span><span class="pt" style="left:25.00%;background:var(--a0);z-index:3" title="Uber: 10 of 100 labelled 1–2★ reviews (10%)"></span><span class="pt" style="left:20.00%;background:var(--a1);z-index:2" title="Ola: 8 of 100 labelled 1–2★ reviews (8%)"></span><span class="pt" style="left:17.50%;background:var(--a2);z-index:1" title="Rapido: 7 of 100 labelled 1–2★ reviews (7%)"></span></div>
+<div class="mnums"><span><span class="dot" style="--c:var(--a0)"></span>10</span><span><span class="dot" style="--c:var(--a1)"></span>8</span><span><span class="dot" style="--c:var(--a2)"></span>7</span></div><div class="mgap worse">2 pts worse</div></div><div class="mrow"><div class="mlab"><span>App design, features &amp; ads</span><small>Product</small></div>
+<div class="plot" style="--n:4"><span class="rail" style="left:0.00%;width:7.50%"></span><span class="pt" style="left:7.50%;background:var(--a0);z-index:3" title="Uber: 3 of 100 labelled 1–2★ reviews (3%)"></span><span class="pt" style="left:0.00%;background:var(--a1);z-index:2" title="Ola: 0 of 100 labelled 1–2★ reviews (0%)"></span><span class="pt" style="left:2.50%;background:var(--a2);z-index:1" title="Rapido: 1 of 100 labelled 1–2★ reviews (1%)"></span></div>
+<div class="mnums"><span><span class="dot" style="--c:var(--a0)"></span>3</span><span><span class="dot" style="--c:var(--a1)"></span>0</span><span><span class="dot" style="--c:var(--a2)"></span>1</span></div><div class="mgap worse">2 pts worse</div></div><div class="mrow"><div class="mlab"><span>Crashes, bugs &amp; app speed</span><small>Engineering</small></div>
+<div class="plot" style="--n:4"><span class="rail" style="left:7.50%;width:2.50%"></span><span class="pt" style="left:7.50%;background:var(--a0);z-index:3" title="Uber: 3 of 100 labelled 1–2★ reviews (3%)"></span><span class="pt" style="left:7.50%;background:var(--a1);z-index:2" title="Ola: 3 of 100 labelled 1–2★ reviews (3%)"></span><span class="pt" style="left:10.00%;background:var(--a2);z-index:1" title="Rapido: 4 of 100 labelled 1–2★ reviews (4%)"></span></div>
+<div class="mnums"><span><span class="dot" style="--c:var(--a0)"></span>3</span><span><span class="dot" style="--c:var(--a1)"></span>3</span><span><span class="dot" style="--c:var(--a2)"></span>4</span></div><div class="mgap better">1 pts better</div></div><div class="mrow"><div class="mlab"><span>Product, food, service or content quality</span><small>Operations &amp; Partners</small></div>
+<div class="plot" style="--n:4"><span class="rail" style="left:27.50%;width:15.00%"></span><span class="pt" style="left:35.00%;background:var(--a0);z-index:3" title="Uber: 14 of 100 labelled 1–2★ reviews (14%)"></span><span class="pt" style="left:42.50%;background:var(--a1);z-index:2" title="Ola: 17 of 100 labelled 1–2★ reviews (17%)"></span><span class="pt" style="left:27.50%;background:var(--a2);z-index:1" title="Rapido: 11 of 100 labelled 1–2★ reviews (11%)"></span></div>
+<div class="mnums"><span><span class="dot" style="--c:var(--a0)"></span>14</span><span><span class="dot" style="--c:var(--a1)"></span>17</span><span><span class="dot" style="--c:var(--a2)"></span>11</span></div><div class="mgap better">3 pts better</div></div><div class="mrow"><div class="mlab"><span>Account, login &amp; security</span><small>Engineering</small></div>
+<div class="plot" style="--n:4"><span class="rail" style="left:2.50%;width:15.00%"></span><span class="pt" style="left:5.00%;background:var(--a0);z-index:3" title="Uber: 2 of 100 labelled 1–2★ reviews (2%)"></span><span class="pt" style="left:2.50%;background:var(--a1);z-index:2" title="Ola: 1 of 100 labelled 1–2★ reviews (1%)"></span><span class="pt" style="left:17.50%;background:var(--a2);z-index:1" title="Rapido: 7 of 100 labelled 1–2★ reviews (7%)"></span></div>
+<div class="mnums"><span><span class="dot" style="--c:var(--a0)"></span>2</span><span><span class="dot" style="--c:var(--a1)"></span>1</span><span><span class="dot" style="--c:var(--a2)"></span>7</span></div><div class="mgap better">5 pts better</div></div><div class="mrow"><div class="mlab"><span>Customer support</span><small>Support</small></div>
+<div class="plot" style="--n:4"><span class="rail" style="left:12.50%;width:17.50%"></span><span class="pt" style="left:12.50%;background:var(--a0);z-index:3" title="Uber: 5 of 100 labelled 1–2★ reviews (5%)"></span><span class="pt" style="left:30.00%;background:var(--a1);z-index:2" title="Ola: 12 of 100 labelled 1–2★ reviews (12%)"></span><span class="pt" style="left:12.50%;background:var(--a2);z-index:1" title="Rapido: 5 of 100 labelled 1–2★ reviews (5%)"></span></div>
+<div class="mnums"><span><span class="dot" style="--c:var(--a0)"></span>5</span><span><span class="dot" style="--c:var(--a1)"></span>12</span><span><span class="dot" style="--c:var(--a2)"></span>5</span></div><div class="mgap better">7 pts better</div></div><div class="mrow"><div class="mlab"><span>Delivery &amp; fulfilment (late, cancelled, missing, no-show)</span><small>Operations</small></div>
+<div class="plot" style="--n:4"><span class="rail" style="left:52.50%;width:22.50%"></span><span class="pt" style="left:52.50%;background:var(--a0);z-index:3" title="Uber: 21 of 100 labelled 1–2★ reviews (21%)"></span><span class="pt" style="left:62.50%;background:var(--a1);z-index:2" title="Ola: 25 of 100 labelled 1–2★ reviews (25%)"></span><span class="pt" style="left:75.00%;background:var(--a2);z-index:1" title="Rapido: 30 of 100 labelled 1–2★ reviews (30%)"></span></div>
+<div class="mnums"><span><span class="dot" style="--c:var(--a0)"></span>21</span><span><span class="dot" style="--c:var(--a1)"></span>25</span><span><span class="dot" style="--c:var(--a2)"></span>30</span></div><div class="mgap better">9 pts better</div></div></div></section>
+<section id="moves"><div class="shead"><span class="no">03</span><div><h2>Moves</h2><p>What to say where rivals are weak, and what to fix where you are.</p></div></div>
+<div class="group opp"><h3 class="gh"><span class="mark"></span>Opportunities<small>Where a rival's users complain more than yours.</small></h3><article class="move"><div class="big"><b>7</b><small>pts gap</small><small class="conf medium" title="Two-proportion z-test on the labelled reviews">medium confidence</small></div>
+<div class="mbody"><p class="th">Customer support</p><h3>Real people answer when a ride goes wrong</h3>
+<div class="duel" title="12% of Ola&#39;s 1–2★ reviews are about customer support, vs 5% of yours."><div class="b"><span class="bn"><span class="dot" style="--c:var(--a1)"></span>Ola</span><span class="bt" aria-hidden="true"><i style="width:38.7%;background:var(--a1)"></i></span><span class="bv">12%</span></div><div class="b"><span class="bn"><span class="dot" style="--c:var(--a0)"></span>Uber <span class="you">you</span></span><span class="bt" aria-hidden="true"><i style="width:16.1%;background:var(--a0)"></i></span><span class="bv">5%</span></div></div><p class="act"><span class="lbl">Message to run</span>When something goes wrong on your trip, you deserve a real response. Get help fast, with support that follows through.</p><blockquote>“very poor customer service....had to pay for wrong ride automatically booked by ola ....even after raising a concern ..no proper response..very poor support”</blockquote><details><summary>1 more review</summary><blockquote>“worst cab booking app. no customer support system available. No one should use this app ever. worst experience with driver in last trip but no support system available”</blockquote></details></div></article><article class="move"><div class="big"><b>5</b><small>pts gap</small><small class="conf medium" title="Two-proportion z-test on the labelled reviews">medium confidence</small></div>
+<div class="mbody"><p class="th">Account, login &amp; security</p><h3>Rapido users are angrier about account, login &amp; security</h3>
+<div class="duel" title="7% of Rapido&#39;s 1–2★ reviews are about account, login &amp; security, vs 2% of yours."><div class="b"><span class="bn"><span class="dot" style="--c:var(--a2)"></span>Rapido</span><span class="bt" aria-hidden="true"><i style="width:22.6%;background:var(--a2)"></i></span><span class="bv">7%</span></div><div class="b"><span class="bn"><span class="dot" style="--c:var(--a0)"></span>Uber <span class="you">you</span></span><span class="bt" aria-hidden="true"><i style="width:6.5%;background:var(--a0)"></i></span><span class="bv">2%</span></div></div><p class="act"><span class="lbl">Message to run</span>Lead with your strength in account, login &amp; security in campaigns aimed at Rapido users.</p><blockquote>“why same otps for all rides its not safe for customers. rapido is really rapid you have no time to change otps for next rides”</blockquote><details><summary>1 more review</summary><blockquote>“worst app profile doesn&#39;t get verified for bike driver in Pune City even after uploading documents since 2 weeks.”</blockquote></details></div></article><article class="move"><div class="big"><b>9</b><small>pts gap</small><small class="conf medium" title="Two-proportion z-test on the labelled reviews">medium confidence</small></div>
+<div class="mbody"><p class="th">Delivery &amp; fulfilment (late, cancelled, missing, no-show)</p><h3>Rides that actually get accepted and arrive on time</h3>
+<div class="duel" title="30% of Rapido&#39;s 1–2★ reviews are about delivery &amp; fulfilment (late, cancelled, missing, no-show), vs 21% of yours."><div class="b"><span class="bn"><span class="dot" style="--c:var(--a2)"></span>Rapido</span><span class="bt" aria-hidden="true"><i style="width:96.8%;background:var(--a2)"></i></span><span class="bv">30%</span></div><div class="b"><span class="bn"><span class="dot" style="--c:var(--a0)"></span>Uber <span class="you">you</span></span><span class="bt" aria-hidden="true"><i style="width:67.7%;background:var(--a0)"></i></span><span class="bv">21%</span></div></div><p class="caution"><span class="tag">Fix first</span>Fix before you advertise this: &quot;Driver cancels or demands extra cash after accepting&quot; is on your own fix-first list (mentioned in 23 of your 100 recent 1–2★ reviews).</p><p class="act"><span class="lbl">Message to run</span>Tired of drivers skipping your ride? With Uber, we match you quickly and keep you informed until you&#39;re picked up.</p><blockquote>“Worst app ever.. Drivers never takes ride. If don&#39;t want to work then shut down the business, why customers to waste their time ..”</blockquote><details><summary>1 more review</summary><blockquote>“These people hardly accept any rides these days. They prefer delivering parcels instead,so disappointed. Deleting this app right away”</blockquote></details></div></article></div>
+<div class="group thr"><h3 class="gh"><span class="mark"></span>Threats<small>Where your users complain more than a rival's.</small></h3><article class="move"><div class="big"><b>12</b><small>pts gap</small><small class="conf medium" title="Two-proportion z-test on the labelled reviews">medium confidence</small></div>
+<div class="mbody"><p class="th">Prices, fees &amp; subscriptions</p><h3>Rival fare surprises are pulling price-sensitive riders</h3>
+<div class="duel" title="31% of your 1–2★ reviews are about prices, fees &amp; subscriptions, vs 19% of Ola&#39;s."><div class="b"><span class="bn"><span class="dot" style="--c:var(--a0)"></span>Uber <span class="you">you</span></span><span class="bt" aria-hidden="true"><i style="width:100.0%;background:var(--a0)"></i></span><span class="bv">31%</span></div><div class="b"><span class="bn"><span class="dot" style="--c:var(--a1)"></span>Ola</span><span class="bt" aria-hidden="true"><i style="width:61.3%;background:var(--a1)"></i></span><span class="bv">19%</span></div></div><p class="act"><span class="lbl">Fix · Pricing &amp; Growth</span>Pricing &amp; Growth: publish a fare-transparency promise and show full price upfront to counter rival fare-mismatch complaints.</p><blockquote>“sabse bekar app hai kiraya dikhata kuchh aur hai leta kuchh aur hai isse achcha green sm hai uber is very bed app ☹️🫤”</blockquote><details><summary>1 more review</summary><blockquote>“Worst experience, drivers do not accept rides at night in Railway station, instead they charge triple amount as a private taxi”</blockquote></details></div></article><article class="move"><div class="big"><b>3</b><small>pts gap</small><small class="conf low" title="Two-proportion z-test on the labelled reviews">low confidence</small></div>
+<div class="mbody"><p class="th">Payments &amp; refunds</p><h3>Charge and refund complaints are spreading to rivals&#39; users</h3>
+<div class="duel" title="10% of your 1–2★ reviews are about payments &amp; refunds, vs 7% of Rapido&#39;s."><div class="b"><span class="bn"><span class="dot" style="--c:var(--a0)"></span>Uber <span class="you">you</span></span><span class="bt" aria-hidden="true"><i style="width:32.3%;background:var(--a0)"></i></span><span class="bv">10%</span></div><div class="b"><span class="bn"><span class="dot" style="--c:var(--a2)"></span>Rapido</span><span class="bt" aria-hidden="true"><i style="width:22.6%;background:var(--a2)"></i></span><span class="bv">7%</span></div></div><p class="act"><span class="lbl">Fix · Payments &amp; Support</span>Payments &amp; Support: audit cancellation-fee logic and make refunds visible in-app to keep users from switching over billing confusion.</p><blockquote>“not only are they terrible at actually finding you a driver, they will STILL charge you for a ride you cancelled.”</blockquote><details><summary>1 more review</summary><blockquote>“I always get charges I don&#39;t know about. maybe it&#39;s a way of extorting my account but y&#39;all can do without me.”</blockquote></details></div></article><article class="move"><div class="big"><b>3</b><small>pts gap</small><small class="conf low" title="Two-proportion z-test on the labelled reviews">low confidence</small></div>
+<div class="mbody"><p class="th">Product, food, service or content quality</p><h3>Rider experience complaints around driver conduct and contact</h3>
+<div class="duel" title="14% of your 1–2★ reviews are about product, food, service or content quality, vs 11% of Rapido&#39;s."><div class="b"><span class="bn"><span class="dot" style="--c:var(--a0)"></span>Uber <span class="you">you</span></span><span class="bt" aria-hidden="true"><i style="width:45.2%;background:var(--a0)"></i></span><span class="bv">14%</span></div><div class="b"><span class="bn"><span class="dot" style="--c:var(--a2)"></span>Rapido</span><span class="bt" aria-hidden="true"><i style="width:35.5%;background:var(--a2)"></i></span><span class="bv">11%</span></div></div><p class="act"><span class="lbl">Fix · Operations &amp; Partners</span>Operations &amp; Partners: set a driver-conduct standard and contact-policy review so Uber doesn&#39;t inherit similar rider-experience churn.</p><blockquote>“some one answering the call. after booking and call the driver. avoid this ASAP. good people struggle for that issue”</blockquote><details><summary>1 more review</summary><blockquote>“asks to be rated= 0 starts. instead of using text it sends a WhatsApp. this is what i consider exceptionally rude.”</blockquote></details></div></article></div></section>
+<section id="switching"><div class="shead"><span class="no">04</span><div><h2>Switching signals</h2><p>Unhappy reviews that name another app in this comparison.</p></div></div><div class="sigs"><article class="sig thr"><div class="sstat"><b>3</b><small>of 124 · 2.4%</small></div>
+<div class="sbody"><p class="flow"><span class="dot" style="--c:var(--a0)"></span>Uber<span class="arrow">to</span><span class="dot" style="--c:var(--a2)"></span>Rapido<span class="kind">Your unhappy users name a rival</span></p>
+<p class="sline">3 of Uber's recent 1–2★ reviews mention Rapido.</p>
+<div class="meter" aria-hidden="true"><i style="width:2.4%"></i></div><blockquote>“Now a days driver phone has shown different fare from customer fare... too poor service by Uber... rapido is excellent for this”</blockquote><details><summary>1 more review</summary><blockquote>“Sabse kharab Seva Hai uber ki, is se achcha rapido aur Bharat taxi hai.”</blockquote></details></div></article><article class="sig opp"><div class="sstat"><b>7</b><small>of 288 · 2.4%</small></div>
+<div class="sbody"><p class="flow"><span class="dot" style="--c:var(--a1)"></span>Ola<span class="arrow">to</span><span class="dot" style="--c:var(--a0)"></span>Uber<span class="kind">A rival's unhappy users name you</span></p>
+<p class="sline">7 of Ola's recent 1–2★ reviews mention Uber.</p>
+<div class="meter" aria-hidden="true"><i style="width:2.4%"></i></div><blockquote>“I have submitted a complaint but have not received a response. I recommend using Uber instead of Ola, as they address issues promptly.”</blockquote><details><summary>1 more review</summary><blockquote>“one of the worst service provider in field of cab service provider. fictitious and fraudsters only. never go for this fraud company. avoid this and prefer UBER or RAPIDO.”</blockquote></details></div></article><article class="sig neutral"><div class="sstat"><b>5</b><small>of 288 · 1.7%</small></div>
+<div class="sbody"><p class="flow"><span class="dot" style="--c:var(--a1)"></span>Ola<span class="arrow">to</span><span class="dot" style="--c:var(--a2)"></span>Rapido<span class="kind">Between rivals</span></p>
+<p class="sline">5 of Ola's recent 1–2★ reviews mention Rapido.</p>
+<div class="meter" aria-hidden="true"><i style="width:1.7%"></i></div><blockquote>“one of the worst service provider in field of cab service provider. fictitious and fraudsters only. never go for this fraud company. avoid this and prefer UBER or RAPIDO.”</blockquote><details><summary>1 more review</summary><blockquote>“Very high charges compare with other uber or Rapido”</blockquote></details></div></article><article class="sig opp"><div class="sstat"><b>4</b><small>of 134 · 3.0%</small></div>
+<div class="sbody"><p class="flow"><span class="dot" style="--c:var(--a2)"></span>Rapido<span class="arrow">to</span><span class="dot" style="--c:var(--a0)"></span>Uber<span class="kind">A rival's unhappy users name you</span></p>
+<p class="sline">4 of Rapido's recent 1–2★ reviews mention Uber.</p>
+<div class="meter" aria-hidden="true"><i style="width:3.0%"></i></div><blockquote>“RAPIO DIRTY TACTICS I CAN&#39;T MONEY IN MY RAPIDO WALLET WORST EXPERIENCE AGESE UBER MEIN KARLO ADD MONEY FOR MOTO RIDE”</blockquote><details><summary>1 more review</summary><blockquote>“guys, listen all. don&#39;t use rapido. If you get any problem they will not respond. there is no customer care for rapido. Uber and Ola is best. Uber have direct customer care number. Rapido is worst.”</blockquote></details></div></article><article class="sig neutral"><div class="sstat"><b>4</b><small>of 134 · 3.0%</small></div>
+<div class="sbody"><p class="flow"><span class="dot" style="--c:var(--a2)"></span>Rapido<span class="arrow">to</span><span class="dot" style="--c:var(--a1)"></span>Ola<span class="kind">Between rivals</span></p>
+<p class="sline">4 of Rapido's recent 1–2★ reviews mention Ola.</p>
+<div class="meter" aria-hidden="true"><i style="width:3.0%"></i></div><blockquote>“very worst app ola is better then this it&#39;s very costly ola is always less then this 25 to 40 ruppes 😡”</blockquote><details><summary>1 more review</summary><blockquote>“guys, listen all. don&#39;t use rapido. If you get any problem they will not respond. there is no customer care for rapido. Uber and Ola is best. Uber have direct customer care number. Rapido is worst.”</blockquote></details></div></article></div></section>
+<section id="triage"><div class="shead"><span class="no">05</span><div><h2>Bug triage: Uber</h2><p>Specific recurring issues in your 100 most recent 1–2★ reviews. Start with the first three. A review can mention several issues, so counts overlap.</p></div></div>
+<table class="issues"><thead><tr><th></th><th>Issue · owner team</th><th>Reviews mentioning it</th></tr></thead><tbody><tr class="first"><td class="rk">01</td>
+<td><b>Driver cancels or demands extra cash after accepting</b> <span class="tag">Fix first</span><small>Operations · Delivery &amp; fulfilment (late, cancelled, missing, no-show)</small><q>Worst experience, drivers do not accept rides at night in Railway station, instead they charge triple amount as a private taxi</q></td>
+<td class="cnt"><div class="b"><span class="bt" aria-hidden="true"><i style="width:100.0%;background:var(--a0)"></i></span><span class="bv">23</span></div><small>23% of 1–2★</small></td>
+</tr><tr class="first"><td class="rk">02</td>
+<td><b>Fare increases after booking or at trip end</b> <span class="tag">Fix first</span><small>Pricing &amp; Growth · Prices, fees &amp; subscriptions</small><q>booked an auto whose fare was around 383 rs but instead the driver charged me 400 rs. Tried to log a complaint but didn&#39;t get any response.</q></td>
+<td class="cnt"><div class="b"><span class="bt" aria-hidden="true"><i style="width:82.6%;background:var(--a0)"></i></span><span class="bv">19</span></div><small>19% of 1–2★</small></td>
+</tr><tr class="first"><td class="rk">03</td>
+<td><b>Long waits and rides not being accepted</b> <span class="tag">Fix first</span><small>Operations · Delivery &amp; fulfilment (late, cancelled, missing, no-show)</small><q>worst service ever when booking for vehicles for long trips and bigger vehicles worst possible service</q></td>
+<td class="cnt"><div class="b"><span class="bt" aria-hidden="true"><i style="width:65.2%;background:var(--a0)"></i></span><span class="bv">15</span></div><small>15% of 1–2★</small></td>
+</tr><tr class=""><td class="rk">04</td>
+<td><b>Customer support unresponsive, AI-only and unhelpful</b><small>Support · Customer support</small><q>customer service is not good and i have changed excess amount by uber driver but no resolution by uber team</q></td>
+<td class="cnt"><div class="b"><span class="bt" aria-hidden="true"><i style="width:52.2%;background:var(--a0)"></i></span><span class="bv">12</span></div><small>12% of 1–2★</small></td>
+</tr><tr class=""><td class="rk">05</td>
+<td><b>Cancellation fees charged though driver cancelled</b><small>Payments &amp; Support · Payments &amp; refunds</small><q>I always get charges I don&#39;t know about. maybe it&#39;s a way of extorting my account but y&#39;all can do without me.</q></td>
+<td class="cnt"><div class="b"><span class="bt" aria-hidden="true"><i style="width:30.4%;background:var(--a0)"></i></span><span class="bv">7</span></div><small>7% of 1–2★</small></td>
+</tr><tr class=""><td class="rk">06</td>
+<td><b>Unsafe or dangerous drivers and riders</b><small>Operations &amp; Partners · Product, food, service or content quality</small><q>dangerous driver, no safety, even they don&#39;t take any actions also</q></td>
+<td class="cnt"><div class="b"><span class="bt" aria-hidden="true"><i style="width:21.7%;background:var(--a0)"></i></span><span class="bv">5</span></div><small>5% of 1–2★</small></td>
+</tr></tbody></table></section>
+<p class="foot"><span class="lbl">Method</span>The most recent Google Play reviews per app. An AI model (anthropic/claude-haiku-5.5) labels every 1–2★ review with one theme; shares and gaps are computed in code. We compare the <b>mix</b> of complaints, not average stars, because in-app rating prompts inflate star averages. Each gap carries a confidence from a two-proportion z-test (high: about 95% sure it is not chance). Reviews labelled: Uber 100 of 100, Ola 100 of 100, Rapido 100 of 100. A second, independent AI pass re-labelled 30 of Uber's reviews and agreed on 86.7%. Quotes are real reviews; reviewer names are never stored. Made with App Review Battlecard on Apify.</p>
+</main></body></html>

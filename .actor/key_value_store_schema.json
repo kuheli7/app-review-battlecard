@@ -6,8 +6,17 @@
     "collections": {
         "battlecard": {
             "title": "Battlecard (HTML)",
-            "description": "One-page battlecard report",
+            "description": "One-page battlecard report (dark by default, with a light switch)",
             "key": "BATTLECARD",
+            "contentTypes": [
+                "text/html",
+                "text/html; charset=utf-8"
+            ]
+        },
+        "classic": {
+            "title": "Battlecard (classic HTML)",
+            "description": "The same report in the light classic layout",
+            "key": "BATTLECARD_CLASSIC",
             "contentTypes": [
                 "text/html",
                 "text/html; charset=utf-8"

@@ -1,0 +1,483 @@
+{
+  "type": "battlecard",
+  "yourApp": "Flipkart Online Shopping App",
+  "rivals": [
+    "Amazon India Shop, Pay, miniTV",
+    "Meesho",
+    "Myntra"
+  ],
+  "store": "Google Play",
+  "country": "in",
+  "verdict": "Flipkart's 16.4% negative share trails Meesho and Myntra, and fulfilment delays are its top problem, so fix that before any attack.",
+  "topOpportunity": "Amazon India Shop, Pay, miniTV users are angrier about crashes, bugs & app speed: 11% of Amazon India Shop, Pay, miniTV's 1–2★ reviews are about crashes, bugs & app speed, vs 3.7% of yours.",
+  "topThreat": "Image search rivals are pulling shoppers away: 4.9% of your 1–2★ reviews are about app design, features & ads, vs 0% of Meesho's.",
+  "opportunities": [
+    {
+      "theme": "BUGS",
+      "themeLabel": "Crashes, bugs & app speed",
+      "owner": "Engineering",
+      "rival": "Amazon India Shop, Pay, miniTV",
+      "yourShare": 3.7,
+      "rivalShare": 11,
+      "gapPoints": 7.3,
+      "confidence": "medium",
+      "evidence": "11% of Amazon India Shop, Pay, miniTV's 1–2★ reviews are about crashes, bugs & app speed, vs 3.7% of yours.",
+      "quotes": [
+        "why does it says this app is no longer compatible with the device now when I clearly used it before?",
+        "no good servie when open tho application mobile is going very heat. hot.come back in app"
+      ],
+      "headline": "Amazon India Shop, Pay, miniTV users are angrier about crashes, bugs & app speed",
+      "message": "Lead with your strength in crashes, bugs & app speed in campaigns aimed at Amazon India Shop, Pay, miniTV users."
+    },
+    {
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "rival": "Amazon India Shop, Pay, miniTV",
+      "yourShare": 2.4,
+      "rivalShare": 16,
+      "gapPoints": 13.6,
+      "confidence": "high",
+      "evidence": "16% of Amazon India Shop, Pay, miniTV's 1–2★ reviews are about payments & refunds, vs 2.4% of yours.",
+      "quotes": [
+        "your Amazon pay app very back dated, Paytm has also better then you. I have send money, that's details could not share this person.",
+        "this is very bad refund not be exchange parcel to the customer very bad customer care members"
+      ],
+      "caution": "Fix before you advertise this: \"Refund not credited after cancellation or missing items\" is on your own fix-first list (mentioned in 7 of your 82 recent 1–2★ reviews).",
+      "headline": "Refunds you can trust, credited on time",
+      "message": "Money back when it should be. Get your refund on time, every time, with a clear status at every step."
+    },
+    {
+      "theme": "SUPPORT",
+      "themeLabel": "Customer support",
+      "owner": "Support",
+      "rival": "Myntra",
+      "yourShare": 2.4,
+      "rivalShare": 10.7,
+      "gapPoints": 8.3,
+      "confidence": "high",
+      "evidence": "10.7% of Myntra's 1–2★ reviews are about customer support, vs 2.4% of yours.",
+      "quotes": [
+        "Everything is good but their customer support problem resolution is too bad.",
+        "no customer care, got the wrong product, agent refused to take back picture not matching with product....no one help ..so much disappointed going to delete your app...."
+      ],
+      "caution": "Fix before you advertise this: \"Customer support unreachable or unhelpful\" is on your own fix-first list (mentioned in 13 of your 82 recent 1–2★ reviews).",
+      "headline": "Real people who solve problems first time",
+      "message": "Stuck on an order? Talk to a real person who resolves it, not one who passes you around."
+    }
+  ],
+  "threats": [
+    {
+      "theme": "UX",
+      "themeLabel": "App design, features & ads",
+      "owner": "Product",
+      "rival": "Meesho",
+      "yourShare": 4.9,
+      "rivalShare": 0,
+      "gapPoints": 4.9,
+      "confidence": "medium",
+      "evidence": "4.9% of your 1–2★ reviews are about app design, features & ads, vs 0% of Meesho's.",
+      "quotes": [
+        "please add image search option again.. all time we have to search for anything there is no option for image search.",
+        "automatically goes to flipkart minutes page"
+      ],
+      "headline": "Image search rivals are pulling shoppers away",
+      "action": "Product should restore image search and stop unwanted redirects, prioritised against Meesho's feature set. Owner: Product."
+    },
+    {
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "rival": "Amazon India Shop, Pay, miniTV",
+      "yourShare": 4.9,
+      "rivalShare": 1,
+      "gapPoints": 3.9,
+      "confidence": "medium",
+      "evidence": "4.9% of your 1–2★ reviews are about prices, fees & subscriptions, vs 1% of Amazon India Shop, Pay, miniTV's.",
+      "quotes": [
+        "i wanted to use my super coin balance, and they increased the price of item and even removed the coin redeeming option. very bad experience",
+        "kesi sale late ho yar jo phone normal day me saste milte hai sale me mehnge kar dete ho kesi team hai tumari a36 23000 ka mil rha tha sale aaye to 33000 ka kr diya ye kaunsi sale hai"
+      ],
+      "headline": "Sale price hikes are eroding deal trust",
+      "action": "Pricing & Growth should audit sale pricing and coin redemption so deals never look inflated versus rivals. Owner: Pricing & Growth."
+    }
+  ],
+  "fixFirst": [
+    "Orders delayed, rescheduled repeatedly, then cancelled (mentioned in 24 of 82 recent 1–2★ reviews; owner: Operations)",
+    "Customer support unreachable or unhelpful (mentioned in 13 of 82 recent 1–2★ reviews; owner: Support)",
+    "Refund not credited after cancellation or missing items (mentioned in 7 of 82 recent 1–2★ reviews; owner: Payments & Support)"
+  ],
+  "yourIssues": [
+    {
+      "title": "Orders delayed, rescheduled repeatedly, then cancelled",
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
+      "count": 24,
+      "shareOfNegative": 29.3,
+      "inCurrentVersion": 19,
+      "quotes": [
+        "worst delivery ever i have seen. in online shopping apps... material took 15-16 day for delivery.. very very very bad dilevey",
+        "worst experience, not delivering my order also not cancelling my order. and not giving refund also no t connecting with customer support agent"
+      ]
+    },
+    {
+      "title": "Customer support unreachable or unhelpful",
+      "theme": "SUPPORT",
+      "themeLabel": "Customer support",
+      "owner": "Support",
+      "count": 13,
+      "shareOfNegative": 15.9,
+      "inCurrentVersion": 7,
+      "quotes": [
+        "worst online app no customer care support only AI that helps nothing my order got delayed multiple times prepaid order and no one is there to solve",
+        "Very poor service placed an order which was supposed to be delivered by 9 November still undelivered.Unabke to cancel or connect with customer support."
+      ]
+    },
+    {
+      "title": "Refund not credited after cancellation or missing items",
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "count": 7,
+      "shareOfNegative": 8.5,
+      "inCurrentVersion": 4,
+      "quotes": [
+        "they will scam you when you order more items by not sending few of them . so always order few items or do cash on delivery",
+        "flipkart minutes are new scamers, if we not received product also refund not providing,automatically closing the order"
+      ]
+    },
+    {
+      "title": "Items missing from delivery or delivered as not ordered",
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
+      "count": 7,
+      "shareOfNegative": 8.5,
+      "inCurrentVersion": 3,
+      "quotes": [
+        "third Class app delivery me bahut time leta hai sath me Refurbished Item bhi bhej deta hai",
+        "worst service don't buy anything from flipkart worst i purchased item but giving old item"
+      ]
+    },
+    {
+      "title": "App crashes, shows errors or fails to open",
+      "theme": "BUGS",
+      "themeLabel": "Crashes, bugs & app speed",
+      "owner": "Engineering",
+      "count": 4,
+      "shareOfNegative": 4.9,
+      "inCurrentVersion": 2,
+      "quotes": [
+        "Whats wrong with this application it always shows something went wrong I've deleted nd download, updated several times, but no response.",
+        "automatically goes to flipkart minutes page"
+      ]
+    },
+    {
+      "title": "Prices increased at checkout; super coins removed",
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "count": 3,
+      "shareOfNegative": 3.7,
+      "inCurrentVersion": 2,
+      "quotes": [
+        "i wanted to use my super coin balance, and they increased the price of item and even removed the coin redeeming option. very bad experience",
+        "kesi sale late ho yar jo phone normal day me saste milte hai sale me mehnge kar dete ho kesi team hai tumari a36 23000 ka mil rha tha sale aaye to 33000 ka kr diya ye kaunsi sale hai"
+      ]
+    }
+  ],
+  "switching": [
+    {
+      "app": "Flipkart Online Shopping App",
+      "mentions": "Amazon India Shop, Pay, miniTV",
+      "count": 3,
+      "negativeReviews": 82,
+      "quotes": [
+        "worst online platform to exist. ordered something for a very urgent function. didn't deliver even after 3 weeks and still counting. I suggest going for apps like Amazon or Myntra",
+        "scam kart delivery doesn't happen ... it's worse ... dates keep on extending.. sorry to say but flipkart it's done bro amazon is way better ... mine was cod so I am chill it's ur loss flipkart"
+      ]
+    },
+    {
+      "app": "Flipkart Online Shopping App",
+      "mentions": "Myntra",
+      "count": 1,
+      "negativeReviews": 82,
+      "quotes": [
+        "worst online platform to exist. ordered something for a very urgent function. didn't deliver even after 3 weeks and still counting. I suggest going for apps like Amazon or Myntra"
+      ]
+    },
+    {
+      "app": "Amazon India Shop, Pay, miniTV",
+      "mentions": "Flipkart Online Shopping App",
+      "count": 10,
+      "negativeReviews": 285,
+      "quotes": [
+        "so much bad shopping app. Use flipkart it is so good app and amazon is the worst shopping app ever used by me",
+        "worst customer care service Flipkart is better . They will not delivering our order correctly 👎"
+      ]
+    },
+    {
+      "app": "Amazon India Shop, Pay, miniTV",
+      "mentions": "Meesho",
+      "count": 4,
+      "negativeReviews": 285,
+      "quotes": [
+        "Amazon ki 3rd class Dilivery service h maine product 10 Din mai aata h isse to Meesho bahut hi achha h vo 2-3 din mai send kar deta h...Bhai Amazon sy achha ho Market sy ho buy kar lo",
+        "Worst return service ever! 3 pickup attempts failed, and still no proper response or resolution. Customers shouldn't have to beg just to return an item. Honestly, Amazon's service is now worse than…"
+      ]
+    },
+    {
+      "app": "Amazon India Shop, Pay, miniTV",
+      "mentions": "Myntra",
+      "count": 3,
+      "negativeReviews": 285,
+      "quotes": [
+        "wrong product received so I returned that products.. refund will issue.. take more than 15 days.. flipkart myntra after pickup instantly refund credit.. but amazon is worst",
+        "It seems Amazon wants to die in India. They have put compulsory validation of identity for their returns. I am installing *Flipkart* and *Myntra* and Never coming back to these idiots."
+      ]
+    },
+    {
+      "app": "Meesho",
+      "mentions": "Flipkart Online Shopping App",
+      "count": 1,
+      "negativeReviews": 73,
+      "quotes": [
+        "worst app ever... If I want to return any item then delivery boy pickup my order but they didn't refund my money back... my experience was very bad... flipkart / amazon has provide better service t…"
+      ]
+    },
+    {
+      "app": "Meesho",
+      "mentions": "Amazon India Shop, Pay, miniTV",
+      "count": 4,
+      "negativeReviews": 73,
+      "quotes": [
+        "not working with other best upi like Amazon upi or Airtel upi so people doesn't place order..... may be meesho have down fall now... bye bye👋👋👋👋",
+        "there delivery services are not good. it takes time to deliver. amazon delivery is far better than meesho. if you want one day delivery or fast delivery then don't order from meesho"
+      ]
+    },
+    {
+      "app": "Myntra",
+      "mentions": "Meesho",
+      "count": 1,
+      "negativeReviews": 75,
+      "quotes": [
+        "customer support is so weak. Its already 1 week im trying no response. Isse acha tho Meesho ka service hai Ordered 3 different brands of lipsticks recieved only 1 and They are not even responding.…"
+      ]
+    }
+  ],
+  "apps": [
+    {
+      "name": "Flipkart Online Shopping App",
+      "isYours": true,
+      "appId": "com.flipkart.android",
+      "url": "https://play.google.com/store/apps/details?id=com.flipkart.android&hl=en&gl=in",
+      "icon": "https://play-lh.googleusercontent.com/mlWjVjxflQoYJHBBgDQ08FqT8i3KnDG__2RH8P-GWOKlEPAIo8TllTZo3HDQ3J5zlO6oAhc1FAv0Bf2on0wL8w",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 82,
+      "negativeShare": 16.4,
+      "avgRatingRecent": 4.19,
+      "storeRating": 4.35,
+      "ratingCount": 78417265,
+      "currentVersion": "9.16",
+      "starMix": {
+        "1": 67,
+        "2": 15,
+        "3": 20,
+        "4": 54,
+        "5": 344
+      },
+      "replyRateToNegative": 42.7,
+      "from": "2026-11-21T01:42:55.169Z",
+      "to": "2026-11-21T07:58:48.859Z",
+      "daysCovered": 1,
+      "releaseNote": "v9.16: 15% of 406 reviews are 1–2★.",
+      "themeShares": {
+        "BUGS": 3.7,
+        "PAYMENTS": 2.4,
+        "FULFILMENT": 41.5,
+        "QUALITY": 9.8,
+        "PRICING": 4.9,
+        "SUPPORT": 2.4,
+        "UX": 4.9,
+        "ACCOUNT": 2.4,
+        "OTHER": 28
+      },
+      "themeCounts": {
+        "BUGS": 3,
+        "PAYMENTS": 2,
+        "FULFILMENT": 34,
+        "QUALITY": 8,
+        "PRICING": 4,
+        "SUPPORT": 2,
+        "UX": 4,
+        "ACCOUNT": 2,
+        "OTHER": 23
+      },
+      "classified": 82,
+      "sampled": 82
+    },
+    {
+      "name": "Amazon India Shop, Pay, miniTV",
+      "isYours": false,
+      "appId": "in.amazon.mShop.android.shopping",
+      "url": "https://play.google.com/store/apps/details?id=in.amazon.mShop.android.shopping&hl=en&gl=in",
+      "icon": "https://play-lh.googleusercontent.com/E2Nyw1kSrYFvi5DFOznWOR2iXY9mwxwfYHXV37aLHmuKtEW3gs7StIvVptoV2x8_ykiHQQmliwpfDsFm0Quuwbk",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 285,
+      "negativeShare": 57,
+      "avgRatingRecent": 2.63,
+      "storeRating": 4.17,
+      "ratingCount": 10488390,
+      "currentVersion": "32.20.2.300",
+      "starMix": {
+        "1": 267,
+        "2": 18,
+        "3": 15,
+        "4": 31,
+        "5": 169
+      },
+      "replyRateToNegative": 0,
+      "from": "2026-11-18T09:37:37.320Z",
+      "to": "2026-11-21T07:46:30.900Z",
+      "daysCovered": 3,
+      "releaseNote": "v32.20.2.300: 67.3% of 220 reviews are 1–2★.",
+      "themeShares": {
+        "BUGS": 11,
+        "PAYMENTS": 16,
+        "FULFILMENT": 43,
+        "QUALITY": 13,
+        "PRICING": 1,
+        "SUPPORT": 7,
+        "UX": 1,
+        "ACCOUNT": 1,
+        "OTHER": 7
+      },
+      "themeCounts": {
+        "BUGS": 11,
+        "PAYMENTS": 16,
+        "FULFILMENT": 43,
+        "QUALITY": 13,
+        "PRICING": 1,
+        "SUPPORT": 7,
+        "UX": 1,
+        "ACCOUNT": 1,
+        "OTHER": 7
+      },
+      "classified": 100,
+      "sampled": 100
+    },
+    {
+      "name": "Meesho",
+      "isYours": false,
+      "appId": "com.meesho.supply",
+      "url": "https://play.google.com/store/apps/details?id=com.meesho.supply&hl=en&gl=in",
+      "icon": "https://play-lh.googleusercontent.com/lQrsRJ7PT25f2J8n14Zp4j0695_2NIpIUEQpG6bEuljhk7oJ8q_GeA5iYgWm1DiDq0WFPBWP4iaJcXi4XPwoWCk",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 73,
+      "negativeShare": 14.6,
+      "avgRatingRecent": 4.34,
+      "storeRating": 4.38,
+      "ratingCount": 6228713,
+      "currentVersion": "30.0",
+      "starMix": {
+        "1": 71,
+        "2": 2,
+        "3": 6,
+        "4": 28,
+        "5": 393
+      },
+      "replyRateToNegative": 100,
+      "from": "2026-11-20T08:44:49.232Z",
+      "to": "2026-11-21T07:59:02.365Z",
+      "daysCovered": 1,
+      "releaseNote": "v30.0: 13.2% of 242 reviews are 1–2★.",
+      "themeShares": {
+        "BUGS": 1.4,
+        "PAYMENTS": 12.3,
+        "FULFILMENT": 46.6,
+        "QUALITY": 9.6,
+        "PRICING": 1.4,
+        "SUPPORT": 1.4,
+        "UX": 0,
+        "ACCOUNT": 5.5,
+        "OTHER": 21.9
+      },
+      "themeCounts": {
+        "BUGS": 1,
+        "PAYMENTS": 9,
+        "FULFILMENT": 34,
+        "QUALITY": 7,
+        "PRICING": 1,
+        "SUPPORT": 1,
+        "UX": 0,
+        "ACCOUNT": 4,
+        "OTHER": 16
+      },
+      "classified": 73,
+      "sampled": 73
+    },
+    {
+      "name": "Myntra",
+      "isYours": false,
+      "appId": "com.myntra.android",
+      "url": "https://play.google.com/store/apps/details?id=com.myntra.android&hl=en&gl=in",
+      "icon": "https://play-lh.googleusercontent.com/G4PzdZ4rHsX_itOqEa603UMdUmCcEgA4uvmuGJ4mSRkA8zJ8UkPGSGYptSK0yM9mmx6WlJCKEASy8WxXE8XBHg",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 75,
+      "negativeShare": 15,
+      "avgRatingRecent": 4.33,
+      "storeRating": 4.59,
+      "ratingCount": 5912355,
+      "currentVersion": null,
+      "starMix": {
+        "1": 66,
+        "2": 9,
+        "3": 8,
+        "4": 29,
+        "5": 388
+      },
+      "replyRateToNegative": 85.3,
+      "from": "2026-11-20T07:10:35.781Z",
+      "to": "2026-11-21T07:54:43.183Z",
+      "daysCovered": 1,
+      "releaseNote": "v4.2610.33 is about the same as v4.2611.11: 14.8% vs 10.6% of reviews are 1–2★ (54 vs 47 reviews).",
+      "themeShares": {
+        "BUGS": 5.3,
+        "PAYMENTS": 5.3,
+        "FULFILMENT": 38.7,
+        "QUALITY": 13.3,
+        "PRICING": 5.3,
+        "SUPPORT": 10.7,
+        "UX": 2.7,
+        "ACCOUNT": 6.7,
+        "OTHER": 12
+      },
+      "themeCounts": {
+        "BUGS": 4,
+        "PAYMENTS": 4,
+        "FULFILMENT": 29,
+        "QUALITY": 10,
+        "PRICING": 4,
+        "SUPPORT": 8,
+        "UX": 2,
+        "ACCOUNT": 5,
+        "OTHER": 9
+      },
+      "classified": 75,
+      "sampled": 75
+    }
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/iTh2ug5XhGf6d7Zry/records/BATTLECARD?signature=1RCaYwBx2Umyh8z6UPDLw",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/iTh2ug5XhGf6d7Zry/records/BATTLECARD_CLASSIC?signature=Xtby0nLqC9qecvQQpGQK",
+  "markdownUrl": "https://api.apify.com/v2/key-value-stores/iTh2ug5XhGf6d7Zry/records/BATTLECARD_MD?signature=eV6cLXxfYgFYFMQ28iBX",
+  "labelCheck": {
+    "checked": 30,
+    "agreed": 25,
+    "share": 83.3
+  },
+  "model": "anthropic/claude-haiku-5.5",
+  "aiCopy": true,
+  "tokensUsed": 32711,
+  "generatedAt": "2026-11-22T07:59:11.494Z"
+}

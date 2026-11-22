@@ -1,0 +1,73 @@
+{
+  "name": "08-user-console-run-4-ride-apps",
+  "runId": "cuUaDOME3DMXqE7wd",
+  "status": "SUCCEEDED",
+  "statusMessage": "Done: Uber vs Ola, Rapido, Namma Yatri. 3 opportunities, 3 threats, 6 named issues. Open the Output tab for the battlecard.",
+  "build": "0.1.16",
+  "memoryMbytes": 1024,
+  "runTimeSecs": 11.132,
+  "usageTotalUsd": 0.0008610318869915275,
+  "consoleUrl": "https://console.apify.com/view/runs/cuUaDOME3DMXqE7wd",
+  "apps": [
+    "Uber",
+    "Ola",
+    "Rapido",
+    "Namma Yatri"
+  ],
+  "reviews": [
+    500,
+    500,
+    500,
+    500
+  ],
+  "labelled": [
+    "100/100",
+    "100/100",
+    "100/100",
+    "100/100"
+  ],
+  "otherShare": [
+    12,
+    15,
+    16,
+    8
+  ],
+  "labelCheck": {
+    "checked": 30,
+    "agreed": 22,
+    "share": 73.3
+  },
+  "verdict": "Uber's bugs and support lag Namma Yatri and Ola, but its pricing and fulfilment complaints are the biggest exposure to fix first.",
+  "opportunities": [
+    "BUGS vs Namma Yatri +11 (high)",
+    "SUPPORT vs Ola +8 (high)",
+    "FULFILMENT vs Rapido +10 (medium)"
+  ],
+  "threats": [
+    "PAYMENTS vs Namma Yatri +11 (high)",
+    "PRICING vs Rapido +10 (medium)",
+    "UX vs Ola +6 (high)"
+  ],
+  "issues": [
+    "Driver cancels ride, fare or extra cash demanded",
+    "Fare increases after ride is booked",
+    "Long waiting times and no driver accepting rides",
+    "Customer support unresponsive, automated, unhelpful",
+    "Charged cancellation fee on cancelled ride or order",
+    "Wrong or missing food orders from Uber Eats"
+  ],
+  "switching": [
+    "Uber -> Rapido: 3",
+    "Ola -> Uber: 7",
+    "Ola -> Rapido: 5",
+    "Rapido -> Uber: 4",
+    "Rapido -> Ola: 4",
+    "Namma Yatri -> Uber: 6",
+    "Namma Yatri -> Ola: 3",
+    "Namma Yatri -> Rapido: 4"
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/X6LFokwJGLTZjWEuV/records/BATTLECARD?signature=1i6oDKHSmX92N4KkwiJAj",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/X6LFokwJGLTZjWEuV/records/BATTLECARD_CLASSIC?signature=ZeorRoVzRJTdTTxZkBA5",
+  "tokensUsed": 38009,
+  "aiCopy": true
+}

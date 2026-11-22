@@ -5,8 +5,8 @@ import type { Review } from './apple.js';
 export const THEMES = [
     { code: 'BUGS', label: 'Crashes, bugs & app speed', owner: 'Engineering' },
     { code: 'PAYMENTS', label: 'Payments & refunds', owner: 'Payments & Support' },
-    { code: 'FULFILMENT', label: 'Delivery & fulfilment (late, cancelled, missing)', owner: 'Operations' },
-    { code: 'QUALITY', label: 'Product, food or content quality', owner: 'Operations & Partners' },
+    { code: 'FULFILMENT', label: 'Delivery & fulfilment (late, cancelled, missing, no-show)', owner: 'Operations' },
+    { code: 'QUALITY', label: 'Product, food, service or content quality', owner: 'Operations & Partners' },
     { code: 'PRICING', label: 'Prices, fees & subscriptions', owner: 'Pricing & Growth' },
     { code: 'SUPPORT', label: 'Customer support', owner: 'Support' },
     { code: 'UX', label: 'App design, features & ads', owner: 'Product' },
@@ -111,7 +111,12 @@ export function computeStats(reviews: Review[], currentVersion: string | null): 
 }
 
 export interface ThemeResult {
+    /** Negative reviews sent to the AI. */
+    sampled: number;
+    /** Negative reviews the AI returned a label for. */
     classified: number;
+    /** Labelled reviews with a concrete complaint (classified minus OTHER). Theme shares use this as the base. */
+    concrete: number;
     counts: Record<string, number>;
     shares: Record<string, number>;
     quotes: Record<string, string[]>;
@@ -145,13 +150,16 @@ export function computeThemes(negReviews: Review[], labels: Map<string, ThemeCod
         counts[code]++;
         buckets[code].push(r);
     }
+    // Vague reviews ("bad", "ok", a thumbs-up with 1 star) are OTHER. They are left out of the base, so an app with
+    // many vague reviews does not look better on every theme. OTHER's own share is of all labelled reviews.
+    const concrete = classified - counts.OTHER;
     const shares: Record<string, number> = {};
     const quotes: Record<string, string[]> = {};
     for (const c of THEME_CODES) {
-        shares[c] = pct(counts[c], classified);
+        shares[c] = c === 'OTHER' ? pct(counts[c], classified) : pct(counts[c], concrete);
         quotes[c] = pickQuotes(buckets[c], 2);
     }
-    return { classified, counts, shares, quotes };
+    return { sampled: negReviews.length, classified, concrete, counts, shares, quotes };
 }
 
 export interface Gap {
@@ -164,7 +172,25 @@ export interface Gap {
     yourCount: number;
     rivalCount: number;
     gapPoints: number;
+    /** How sure we are that the gap is not sampling noise (two-proportion z-test on the labelled reviews). */
+    confidence: Confidence;
     quotes: string[];
+}
+
+export type Confidence = 'high' | 'medium' | 'low';
+
+/**
+ * Two-proportion z-test: is theme share c1/n1 really different from c2/n2, or could the gap be chance?
+ * high = |z| >= 1.96 (about 95% sure), medium = |z| >= 1.28 (about 80%), otherwise low.
+ */
+export function gapConfidence(c1: number, n1: number, c2: number, n2: number): Confidence {
+    // The z-test is unreliable on tiny samples, so fewer than 15 specific complaints on either side is always low.
+    if (n1 < 15 || n2 < 15) return 'low';
+    const p = (c1 + c2) / (n1 + n2);
+    const se = Math.sqrt(p * (1 - p) * (1 / n1 + 1 / n2));
+    if (!se) return 'low';
+    const z = Math.abs(c1 / n1 - c2 / n2) / se;
+    return z >= 1.96 ? 'high' : z >= 1.28 ? 'medium' : 'low';
 }
 
 export interface Competitor {
@@ -193,6 +219,12 @@ export function findGaps(you: Competitor, rivals: Competitor[], limit = 3): { op
                 rivalShare: rs,
                 yourCount: you.themes.counts[theme],
                 rivalCount: rv.themes.counts[theme],
+                confidence: gapConfidence(
+                    you.themes.counts[theme],
+                    you.themes.concrete,
+                    rv.themes.counts[theme],
+                    rv.themes.concrete,
+                ),
             };
             if (rs - ys >= 3 && rv.themes.counts[theme] >= 2) {
                 opp.push({ ...base, gapPoints: Math.round((rs - ys) * 10) / 10, quotes: rv.themes.quotes[theme] });
@@ -287,4 +319,17 @@ export function computeIssues(
             quotes,
         };
     });
+}
+
+/** Share of review ids that got the same theme in two independent labelling passes. */
+export function labelAgreement(a: Map<string, string>, b: Map<string, string>): { checked: number; agreed: number; share: number } {
+    let checked = 0;
+    let agreed = 0;
+    for (const [id, code] of b) {
+        const first = a.get(id);
+        if (!first) continue;
+        checked++;
+        if (first === code) agreed++;
+    }
+    return { checked, agreed, share: pct(agreed, checked) };
 }
