@@ -1,0 +1,35 @@
+{
+    "$schema": "https://apify.com/schemas/v1/key-value-store.ide.json",
+    "actorKeyValueStoreSchemaVersion": 1,
+    "title": "Battlecard records",
+    "description": "The battlecard report files and saved run state",
+    "collections": {
+        "battlecard": {
+            "title": "Battlecard (HTML)",
+            "description": "One-page battlecard report",
+            "key": "BATTLECARD",
+            "contentTypes": [
+                "text/html",
+                "text/html; charset=utf-8"
+            ]
+        },
+        "markdown": {
+            "title": "Battlecard (Markdown)",
+            "description": "The battlecard as Markdown",
+            "key": "BATTLECARD_MD",
+            "contentTypes": [
+                "text/markdown",
+                "text/markdown; charset=utf-8"
+            ]
+        },
+        "state": {
+            "title": "State",
+            "description": "Saved when the run fails or is aborted, to show which stage it reached",
+            "key": "STATE",
+            "contentTypes": [
+                "application/json",
+                "application/json; charset=utf-8"
+            ]
+        }
+    }
+}

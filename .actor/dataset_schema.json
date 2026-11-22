@@ -1,0 +1,165 @@
+{
+    "$schema": "https://apify.com/schemas/v1/dataset.ide.json",
+    "actorSpecification": 1,
+    "fields": {
+        "type": "object",
+        "properties": {
+            "type": {
+                "type": "string",
+                "description": "Always 'battlecard'"
+            },
+            "yourApp": {
+                "type": "string",
+                "description": "Your app (the first app in the input)"
+            },
+            "rivals": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "description": "Rival apps that were analysed"
+            },
+            "store": {
+                "type": "string",
+                "description": "Google Play or App Store"
+            },
+            "country": {
+                "type": "string",
+                "description": "Store country code (e.g. in, us)"
+            },
+            "verdict": {
+                "type": "string",
+                "description": "One-sentence takeaway"
+            },
+            "topOpportunity": {
+                "type": [
+                    "string",
+                    "null"
+                ],
+                "description": "Biggest rival weakness, with evidence"
+            },
+            "topThreat": {
+                "type": [
+                    "string",
+                    "null"
+                ],
+                "description": "Biggest weakness of your app vs a rival, with evidence"
+            },
+            "opportunities": {
+                "type": "array",
+                "description": "Up to 3 themes where a rival's users complain more than yours: shares, headline, marketing message, quotes, and a caution when the same theme is on your own fix-first list"
+            },
+            "threats": {
+                "type": "array",
+                "description": "Up to 3 themes where your users complain more than a rival's: shares, headline, action, owner team, quotes"
+            },
+            "fixFirst": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "description": "Bug triage: your app's top 3 named issues to fix first, with review counts and owner team"
+            },
+            "yourIssues": {
+                "type": "array",
+                "description": "Bug triage for your app: up to 6 concrete recurring issues (AI-named, counted in code) with theme, owner team, review count, share of 1-2 star reviews, count in the current version and a quote. Empty if the triage step was skipped"
+            },
+            "switching": {
+                "type": "array",
+                "description": "Switching signals: for each app, how many of its recent 1-2 star reviews mention another compared app by name, with quotes"
+            },
+            "apps": {
+                "type": "array",
+                "description": "Per-app stats: reviews analysed, date range, star mix, 1-2 star share, developer reply rate (Google Play), release health, theme shares and counts"
+            },
+            "reportUrl": {
+                "type": [
+                    "string",
+                    "null"
+                ],
+                "description": "Shareable link to the HTML battlecard (works without logging in)"
+            },
+            "markdownUrl": {
+                "type": [
+                    "string",
+                    "null"
+                ],
+                "description": "Shareable link to the Markdown battlecard"
+            },
+            "model": {
+                "type": "string",
+                "description": "AI model used"
+            },
+            "aiCopy": {
+                "type": "boolean",
+                "description": "True if the AI wrote the headlines; false if plain template sentences were used"
+            },
+            "tokensUsed": {
+                "type": "integer",
+                "description": "Total AI tokens used in the run"
+            },
+            "generatedAt": {
+                "type": "string",
+                "description": "When the battlecard was generated (ISO 8601)"
+            }
+        },
+        "required": [
+            "type",
+            "yourApp",
+            "rivals",
+            "verdict",
+            "opportunities",
+            "threats",
+            "apps"
+        ]
+    },
+    "views": {
+        "overview": {
+            "title": "Battlecard",
+            "transformation": {
+                "fields": [
+                    "yourApp",
+                    "rivals",
+                    "verdict",
+                    "topOpportunity",
+                    "topThreat",
+                    "fixFirst",
+                    "reportUrl"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "yourApp": {
+                        "label": "Your app",
+                        "format": "text"
+                    },
+                    "rivals": {
+                        "label": "Rivals",
+                        "format": "array"
+                    },
+                    "verdict": {
+                        "label": "Verdict",
+                        "format": "text"
+                    },
+                    "topOpportunity": {
+                        "label": "Top opportunity",
+                        "format": "text"
+                    },
+                    "topThreat": {
+                        "label": "Top threat",
+                        "format": "text"
+                    },
+                    "fixFirst": {
+                        "label": "Fix first (your app)",
+                        "format": "array"
+                    },
+                    "reportUrl": {
+                        "label": "Full battlecard",
+                        "format": "link"
+                    }
+                }
+            }
+        }
+    }
+}

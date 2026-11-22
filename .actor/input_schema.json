@@ -1,0 +1,115 @@
+{
+    "$schema": "https://apify.com/schemas/v1/input.ide.json",
+    "title": "App Review Battlecard input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "apps": {
+            "title": "Apps to compare (your app first)",
+            "type": "array",
+            "description": "2 to 4 apps. Put YOUR app first, then 1 to 3 rivals. Each entry can be an app name (Swiggy), a store URL (https://play.google.com/store/apps/details?id=in.swiggy.android or https://apps.apple.com/in/app/swiggy/id989540920), a Google Play package name (in.swiggy.android) or an App Store ID (989540920).",
+            "editor": "stringList",
+            "prefill": [
+                "Swiggy",
+                "Zomato"
+            ],
+            "default": [
+                "Swiggy",
+                "Zomato"
+            ]
+        },
+        "store": {
+            "title": "Store",
+            "type": "string",
+            "description": "Where to read reviews. Google Play gives up to 500 fresh reviews per app and is the main store in markets like India. App Store reads Apple's public review feed (max 500, and it sometimes returns fewer).",
+            "editor": "select",
+            "enum": [
+                "googlePlay",
+                "appStore"
+            ],
+            "enumTitles": [
+                "Google Play",
+                "Apple App Store"
+            ],
+            "default": "googlePlay"
+        },
+        "country": {
+            "title": "Country",
+            "type": "string",
+            "description": "Which country's store to read reviews from. Reviews are country-specific.",
+            "editor": "select",
+            "enum": [
+                "in",
+                "us",
+                "gb",
+                "ca",
+                "au",
+                "sg",
+                "ae",
+                "de",
+                "fr",
+                "es",
+                "it",
+                "nl",
+                "br",
+                "mx",
+                "id",
+                "jp",
+                "kr",
+                "za",
+                "ng"
+            ],
+            "enumTitles": [
+                "India",
+                "United States",
+                "United Kingdom",
+                "Canada",
+                "Australia",
+                "Singapore",
+                "United Arab Emirates",
+                "Germany",
+                "France",
+                "Spain",
+                "Italy",
+                "Netherlands",
+                "Brazil",
+                "Mexico",
+                "Indonesia",
+                "Japan",
+                "South Korea",
+                "South Africa",
+                "Nigeria"
+            ],
+            "default": "in"
+        },
+        "reviewsPerApp": {
+            "title": "Recent reviews per app",
+            "type": "integer",
+            "description": "How many of the most recent reviews to read per app (max 500).",
+            "minimum": 50,
+            "maximum": 500,
+            "default": 500,
+            "unit": "reviews",
+            "sectionCaption": "Advanced"
+        },
+        "maxNegativeReviewsForAI": {
+            "title": "Max 1-2 star reviews the AI labels per app",
+            "type": "integer",
+            "description": "Caps AI cost and run time. The most recent negative reviews are labelled first.",
+            "minimum": 20,
+            "maximum": 200,
+            "default": 100,
+            "unit": "reviews"
+        },
+        "model": {
+            "title": "AI model (OpenRouter ID)",
+            "type": "string",
+            "description": "Any model ID from openrouter.ai/models, called through Apify's OpenRouter Actor and billed to your Apify account. A small, fast model is enough.",
+            "editor": "textfield",
+            "default": "anthropic/claude-haiku-5.5"
+        }
+    },
+    "required": [
+        "apps"
+    ]
+}

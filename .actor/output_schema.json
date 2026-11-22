@@ -1,0 +1,26 @@
+{
+    "$schema": "https://apify.com/schemas/v1/output.ide.json",
+    "actorOutputSchemaVersion": 1,
+    "title": "App Review Battlecard output",
+    "description": "The battlecard as a one-page report, as Markdown, and as one structured dataset item",
+    "properties": {
+        "battlecard": {
+            "type": "string",
+            "title": "Battlecard (HTML report)",
+            "description": "One-page report: verdict, opportunities, threats, complaint-mix table and real quotes",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/BATTLECARD"
+        },
+        "markdown": {
+            "type": "string",
+            "title": "Battlecard (Markdown)",
+            "description": "The same battlecard as Markdown, for Slack, Notion or docs",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/BATTLECARD_MD"
+        },
+        "results": {
+            "type": "string",
+            "title": "Battlecard data (JSON)",
+            "description": "One dataset item with every number, theme share and quote",
+            "template": "{{links.apiDefaultDatasetUrl}}/items"
+        }
+    }
+}

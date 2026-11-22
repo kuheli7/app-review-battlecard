@@ -1,0 +1,20 @@
+{
+	"$schema": "https://apify.com/schemas/v1/actor.ide.json",
+	"actorSpecification": 1,
+	"name": "app-review-battlecard",
+	"title": "App Review Battlecard: Your App vs Rivals",
+	"description": "Compare your app's Google Play or App Store reviews with up to 3 rivals. AI sorts every 1-2 star review into complaint themes and returns a battlecard: where rivals' users are angrier (opportunities) and where yours are (threats), with real quotes.",
+	"version": "0.1",
+	"buildTag": "latest",
+	"meta": {
+		"templateId": "ts-empty",
+		"generatedBy": "Claude Code with Claude Opus 5.5"
+	},
+	"inputSchema": "./input_schema.json",
+	"outputSchema": "./output_schema.json",
+	"storages": {
+		"dataset": "./dataset_schema.json",
+		"keyValueStore": "./key_value_store_schema.json"
+	},
+	"dockerfile": "../Dockerfile"
+}
