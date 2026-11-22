@@ -2,7 +2,9 @@
 
 **Where are your rivals' users angry this week, and where are yours?** Give it your app and 1 to 3 rivals. It reads the latest Google Play reviews, sorts every 1–2★ review into a complaint theme, and hands back a one-page **battlecard** in about 15 seconds.
 
-![How it works: input, Google Play reviews, code and AI steps, output](https://raw.githubusercontent.com/kuheli7/app-review-battlecard/main/docs/architecture.png)
+**Try it now:** click **Start** with the default input (Swiggy vs Zomato). The battlecard is ready in about 15 seconds.
+
+![The battlecard report: Swiggy vs Zomato scoreboard with the share of 1–2★ reviews, star mix, ratings and reply rates](https://raw.githubusercontent.com/kuheli7/app-review-battlecard/main/docs/report-scoreboard.png)
 
 ## At a glance
 
@@ -14,7 +16,7 @@
 | **Basis of comparison** | Each theme's share of an app's *own* specific 1–2★ complaints (vague "worst app" reviews left out), not star averages |
 | **How it helps you do better** | Opportunity = a rival's weak spot you can message. Threat = your weak spot, with the owner team and a first action |
 | **Data** | Public Google Play reviews (App Store optional). No API key needed |
-| **Pricing** | Pay per battlecard (one dataset item per run) |
+| **Pricing** | **$0.49 per battlecard** (one per run). A failed run saves no battlecard, so it costs nothing |
 
 ## What you get
 
@@ -24,6 +26,8 @@
 - 🔁 **Switching signals:** unhappy reviews that name another app ("use Blinkit, their support is better"), counted both ways.
 - ⚖️ **Verdict:** one sentence you can paste into Slack.
 - 📊 **Complaint-mix table:** every theme, every app, side by side.
+
+![Opportunity cards: the gap in points, confidence, both apps' shares, a fix-first warning, a ready message and a real quote](https://raw.githubusercontent.com/kuheli7/app-review-battlecard/main/docs/report-moves.png)
 
 ## Works for any app category, not just food
 
@@ -143,6 +147,8 @@ Run it on a **schedule** (for example every Monday) and connect Slack or email i
 
 ## How it works
 
+![How it works: input, Google Play reviews, code and AI steps, output](https://raw.githubusercontent.com/kuheli7/app-review-battlecard/main/docs/architecture.png)
+
 1. **Data:** fetches each app's details and its newest reviews from Google Play, or from Apple's public review feed.
 2. **Stats in code:** star mix, share of 1–2★, recent vs store rating, developer reply rate, and latest-version vs previous-version health.
 3. **AI labelling:** an LLM tags every recent 1–2★ review with one of 8 fixed themes (bugs, payments, delivery, quality, pricing, support, UX, account), each mapped to an owner team.
@@ -155,7 +161,9 @@ The AI runs through Apify's OpenRouter integration, so **you don't need an API k
 
 ## Pricing
 
-You pay a fixed price **per battlecard** (one dataset item per run), plus the small AI model usage on your Apify account (about $0.01 per run with the default model; higher on the free plan).
+**$0.49 per battlecard.** One run gives one battlecard. The AI model usage is billed to your Apify account at cost (about $0.01 per run with the default model; higher on the free plan).
+
+Reading and sorting 1,000 reviews by hand takes hours. A weekly battlecard for one app and 3 rivals costs about $2 a month.
 
 ## Success and failure
 
