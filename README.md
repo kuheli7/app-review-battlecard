@@ -16,7 +16,7 @@
 | **Basis of comparison** | Each theme's share of an app's *own* specific 1–2★ complaints (vague "worst app" reviews left out), not star averages |
 | **How it helps you do better** | Opportunity = a rival's weak spot you can message. Threat = your weak spot, with the owner team and a first action |
 | **Data** | Public Google Play reviews (App Store optional). No API key needed |
-| **Pricing** | **$0.49 per battlecard** (one per run). A failed run saves no battlecard, so it costs nothing |
+| **Pricing** | **$0.49 per battlecard** (one per run). A failed run saves no battlecard, so you don't pay the $0.49 |
 
 ## What you get
 
