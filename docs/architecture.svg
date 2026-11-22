@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="860" viewBox="0 0 1280 860">
+  <title>App Review Battlecard: architecture</title>
+  <style>
+    text { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; fill: #0f172a; }
+    .h1 { font-size: 26px; font-weight: 700; }
+    .sub { font-size: 15px; fill: #475569; }
+    .cap { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; fill: #64748b; }
+    .ct { font-size: 17px; font-weight: 700; }
+    .lb { font-size: 12.5px; font-weight: 600; fill: #64748b; }
+    .v { font-size: 14px; }
+    .d { font-size: 13.5px; fill: #334155; }
+    .st { font-size: 16px; font-weight: 700; }
+    .num { font-size: 14px; font-weight: 700; fill: #ffffff; }
+    .note { font-size: 12.5px; font-style: italic; fill: #64748b; }
+    .mono { font-family: Consolas, 'Courier New', monospace; font-size: 13px; fill: #065f46; }
+    .tag { font-size: 11px; font-weight: 700; letter-spacing: 1px; fill: #ffffff; }
+    .out { font-size: 13.5px; font-weight: 600; fill: #c2410c; }
+    .ln { stroke: #475569; stroke-width: 1.8; fill: none; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="860" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="24" y="46" class="h1">App Review Battlecard: how it works</text>
+  <text x="24" y="74" class="sub">Input → reviews → code + AI → battlecard. Everything runs on Apify. Numbers come from code; words come from AI.</text>
+
+  <!-- LEFT: input -->
+  <rect x="24" y="100" width="260" height="300" rx="14" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
+  <text x="44" y="126" class="cap">INPUT</text>
+  <text x="44" y="150" class="ct">Apify input form</text>
+  <text x="44" y="180" class="lb">Apps (your app first)</text>
+  <text x="44" y="199" class="v">Swiggy, Zomato · 2–4 apps</text>
+  <text x="44" y="225" class="lb">Store</text>
+  <text x="44" y="244" class="v">Google Play or App Store</text>
+  <text x="44" y="270" class="lb">Country</text>
+  <text x="44" y="289" class="v">India · 19 countries</text>
+  <text x="44" y="315" class="lb">Reviews per app</text>
+  <text x="44" y="334" class="v">500 newest</text>
+  <text x="44" y="360" class="lb">AI model</text>
+  <text x="44" y="379" class="v">claude-haiku-5.5</text>
+
+  <!-- LEFT: data source -->
+  <rect x="24" y="420" width="260" height="170" rx="14" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="44" y="446" class="cap">DATA SOURCE</text>
+  <text x="44" y="470" class="ct">Google Play reviews</text>
+  <text x="44" y="494" class="mono">google-play-scraper (npm)</text>
+  <text x="44" y="514" class="d">runs inside our Actor, ~1 s/app</text>
+  <text x="44" y="534" class="d">App Store: Apple's review feed</text>
+  <text x="44" y="558" class="note">Store review scrapers cap free</text>
+  <text x="44" y="575" class="note">users at 10 reviews: not chained</text>
+
+  <!-- LEFT: AI -->
+  <rect x="24" y="610" width="260" height="170" rx="14" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="44" y="636" class="cap">AI · APIFY STORE ACTOR</text>
+  <text x="44" y="660" class="ct">apify/openrouter</text>
+  <text x="44" y="684" class="d">→ Claude Haiku 5.5</text>
+  <text x="44" y="704" class="d">No API key needed</text>
+  <text x="44" y="724" class="d">AI cost billed to the runner</text>
+  <text x="44" y="750" class="note">Used in steps 4 and 6</text>
+
+  <!-- MIDDLE: Actor container -->
+  <rect x="330" y="100" width="560" height="695" rx="16" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="354" y="128" class="cap">APIFY ACTOR · app-review-battlecard (TypeScript)</text>
+
+  <!-- Step 1 (code) -->
+  <rect x="354" y="146" width="512" height="80" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <circle cx="382" cy="174" r="14" fill="#3b82f6"/>
+  <text x="382" y="179" class="num" text-anchor="middle">1</text>
+  <text x="406" y="179" class="st">Find the apps</text>
+  <rect x="796" y="160" width="56" height="22" rx="11" fill="#3b82f6"/>
+  <text x="824" y="175" class="tag" text-anchor="middle">CODE</text>
+  <text x="406" y="202" class="d">Name, store link or ID → Google Play package</text>
+  <text x="406" y="220" class="d">e.g. Swiggy → in.swiggy.android</text>
+
+  <!-- Step 2 (code) -->
+  <rect x="354" y="244" width="512" height="80" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <circle cx="382" cy="272" r="14" fill="#3b82f6"/>
+  <text x="382" y="277" class="num" text-anchor="middle">2</text>
+  <text x="406" y="277" class="st">Get reviews</text>
+  <rect x="796" y="258" width="56" height="22" rx="11" fill="#3b82f6"/>
+  <text x="824" y="273" class="tag" text-anchor="middle">CODE</text>
+  <text x="406" y="300" class="d">500 newest reviews per app, all apps in parallel</text>
+  <text x="406" y="318" class="d">Public reviews only; reviewer names are not stored</text>
+
+  <!-- Step 3 (code) -->
+  <rect x="354" y="342" width="512" height="80" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <circle cx="382" cy="370" r="14" fill="#3b82f6"/>
+  <text x="382" y="375" class="num" text-anchor="middle">3</text>
+  <text x="406" y="375" class="st">Stats</text>
+  <rect x="796" y="356" width="56" height="22" rx="11" fill="#3b82f6"/>
+  <text x="824" y="371" class="tag" text-anchor="middle">CODE</text>
+  <text x="406" y="398" class="d">Star mix · share of 1–2★ · recent vs store rating</text>
+  <text x="406" y="416" class="d">Developer reply rate · current-version health</text>
+
+  <!-- Step 4 (AI) -->
+  <rect x="354" y="440" width="512" height="104" rx="12" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/>
+  <circle cx="382" cy="468" r="14" fill="#8b5cf6"/>
+  <text x="382" y="473" class="num" text-anchor="middle">4</text>
+  <text x="406" y="473" class="st">AI labels the complaints</text>
+  <rect x="796" y="454" width="56" height="22" rx="11" fill="#8b5cf6"/>
+  <text x="824" y="469" class="tag" text-anchor="middle">AI</text>
+  <text x="406" y="496" class="d">Each 1–2★ review → 1 of 8 complaint types</text>
+  <text x="406" y="515" class="d">(delivery, support, payments, pricing, quality, bugs…)</text>
+  <text x="406" y="534" class="d">Your app only: names concrete issues → bug triage</text>
+
+  <!-- Step 5 (code) -->
+  <rect x="354" y="562" width="512" height="104" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <circle cx="382" cy="590" r="14" fill="#3b82f6"/>
+  <text x="382" y="595" class="num" text-anchor="middle">5</text>
+  <text x="406" y="595" class="st">Compare</text>
+  <rect x="796" y="576" width="56" height="22" rx="11" fill="#3b82f6"/>
+  <text x="824" y="591" class="tag" text-anchor="middle">CODE</text>
+  <text x="406" y="618" class="d">Each type's share of that app's own 1–2★ reviews</text>
+  <text x="406" y="637" class="d">Gaps of 3+ points → opportunities and threats</text>
+  <text x="406" y="656" class="d">Plus switching signals: reviews that name a rival</text>
+
+  <!-- Step 6 (AI) -->
+  <rect x="354" y="684" width="512" height="88" rx="12" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/>
+  <circle cx="382" cy="712" r="14" fill="#8b5cf6"/>
+  <text x="382" y="717" class="num" text-anchor="middle">6</text>
+  <text x="406" y="717" class="st">AI writes the copy</text>
+  <rect x="796" y="698" width="56" height="22" rx="11" fill="#8b5cf6"/>
+  <text x="824" y="713" class="tag" text-anchor="middle">AI</text>
+  <text x="406" y="740" class="d">Verdict, headlines, marketing messages, actions</text>
+  <text x="406" y="759" class="d">Written only from the computed numbers + real quotes</text>
+
+  <!-- Arrows between steps -->
+  <line x1="610" y1="227" x2="610" y2="241" class="ln" marker-end="url(#a)"/>
+  <line x1="610" y1="325" x2="610" y2="339" class="ln" marker-end="url(#a)"/>
+  <line x1="610" y1="423" x2="610" y2="437" class="ln" marker-end="url(#a)"/>
+  <line x1="610" y1="545" x2="610" y2="559" class="ln" marker-end="url(#a)"/>
+  <line x1="610" y1="667" x2="610" y2="681" class="ln" marker-end="url(#a)"/>
+
+  <!-- Arrows from the left column -->
+  <path d="M284 186 H350" class="ln" marker-end="url(#a)"/>
+  <path d="M284 450 H306 V284 H350" class="ln" marker-end="url(#a)"/>
+  <path d="M284 650 H318 V492 H350" class="ln" marker-end="url(#a)"/>
+  <path d="M284 728 H350" class="ln" marker-end="url(#a)"/>
+
+  <!-- RIGHT: outputs -->
+  <text x="930" y="122" class="cap">OUTPUT · SAVED BY EACH RUN</text>
+
+  <rect x="930" y="136" width="326" height="128" rx="14" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/>
+  <text x="950" y="164" class="ct">BATTLECARD · HTML page</text>
+  <text x="950" y="188" class="d">One-page report: verdict, opportunities,</text>
+  <text x="950" y="207" class="d">threats, complaint-mix table, quotes</text>
+  <text x="950" y="226" class="d">Signed link opens without login</text>
+  <text x="950" y="250" class="out">→ growth, marketing and ops teams</text>
+
+  <rect x="930" y="282" width="326" height="106" rx="14" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/>
+  <text x="950" y="310" class="ct">BATTLECARD_MD · Markdown</text>
+  <text x="950" y="334" class="d">Same report as plain text</text>
+  <text x="950" y="353" class="d">Paste into Notion, Slack or Jira</text>
+  <text x="950" y="376" class="out">→ findings become tasks</text>
+
+  <rect x="930" y="406" width="326" height="128" rx="14" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/>
+  <text x="950" y="434" class="ct">Dataset item · JSON</text>
+  <text x="950" y="458" class="d">Every number, share and quote</text>
+  <text x="950" y="477" class="d">For the API and AI agents (MCP)</text>
+  <text x="950" y="496" class="d">1 run = 1 item = 1 battlecard</text>
+  <text x="950" y="520" class="out">→ the billed event (pay per result)</text>
+
+  <rect x="930" y="556" width="326" height="118" rx="14" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="950" y="582" class="cap">ALSO ON APIFY</text>
+  <text x="950" y="606" class="d">Schedules: rerun every Monday</text>
+  <text x="950" y="626" class="d">Integrations: Slack or email alert</text>
+  <text x="950" y="646" class="d">Public Store page, runs on demand</text>
+
+  <!-- Step 6 to outputs -->
+  <path d="M866 728 H900 V200" class="ln"/>
+  <path d="M900 200 H926" class="ln" marker-end="url(#a)"/>
+  <path d="M900 335 H926" class="ln" marker-end="url(#a)"/>
+  <path d="M900 470 H926" class="ln" marker-end="url(#a)"/>
+
+  <!-- Legend -->
+  <rect x="24" y="818" width="14" height="14" rx="3" fill="#f1f5f9" stroke="#64748b"/>
+  <text x="44" y="830" class="d">Input</text>
+  <rect x="104" y="818" width="14" height="14" rx="3" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="124" y="830" class="d">Data source</text>
+  <rect x="226" y="818" width="14" height="14" rx="3" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="246" y="830" class="d">Code step (numbers)</text>
+  <rect x="396" y="818" width="14" height="14" rx="3" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="416" y="830" class="d">AI step (labels and words)</text>
+  <rect x="598" y="818" width="14" height="14" rx="3" fill="#fff7ed" stroke="#f97316"/>
+  <text x="618" y="830" class="d">Output</text>
+  <text x="1256" y="830" class="note" text-anchor="end">Default run: Swiggy vs Zomato, about 11 s</text>
+</svg>
