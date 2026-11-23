@@ -1,0 +1,343 @@
+{
+  "type": "battlecard",
+  "yourApp": "Swiggy",
+  "rivals": [
+    "Zomato"
+  ],
+  "store": "Google Play",
+  "country": "in",
+  "verdict": "Swiggy's support complaints run 22.5% of Zomato's share versus 9.9% for Swiggy, but fulfilment at 34.6% is Swiggy's biggest threat.",
+  "topOpportunity": "Transparent charges, no surprises at checkout: 21.3% of Zomato's specific 1–2★ complaints are about prices, fees & subscriptions, vs 17.3% of yours.",
+  "topThreat": "Late and missing deliveries drive the most complaints: 34.6% of your specific 1–2★ complaints are about delivery & fulfilment (late, cancelled, missing, no-show), vs 26.3% of Zomato's.",
+  "opportunities": [
+    {
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "rival": "Zomato",
+      "yourShare": 17.3,
+      "rivalShare": 21.3,
+      "gapPoints": 4,
+      "confidence": "low",
+      "evidence": "21.3% of Zomato's specific 1–2★ complaints are about prices, fees & subscriptions, vs 17.3% of yours.",
+      "quotes": [
+        "such a useless app and there's a lot of charges and not worthy charges for anything. this app sucks",
+        "too much delivery charge rs 35 for just 2 km and that too for order above 200"
+      ],
+      "headline": "Transparent charges, no surprises at checkout",
+      "message": "See every fee before you pay. What you're shown is what you're charged, with no hidden extras."
+    },
+    {
+      "theme": "SUPPORT",
+      "themeLabel": "Customer support",
+      "owner": "Support",
+      "rival": "Zomato",
+      "yourShare": 9.9,
+      "rivalShare": 22.5,
+      "gapPoints": 12.6,
+      "confidence": "high",
+      "evidence": "22.5% of Zomato's specific 1–2★ complaints are about customer support, vs 9.9% of yours.",
+      "quotes": [
+        "worst experience. Fully automated responses no customer value and frustrating automatically generated responses from chat bots.",
+        "corrupt app hai koi support care nahi koi worst app stolen my order or money then no response 😡😡😡😡😡😡😡"
+      ],
+      "caution": "Fix before you advertise this: \"Customer support unresponsive, rude or unhelpful\" is on your own fix-first list (mentioned in 20 of your 100 recent 1–2★ reviews).",
+      "headline": "Real humans when your order goes wrong",
+      "message": "Stuck with a missing order or lost money? Talk to a real person who resolves it, not a bot that loops."
+    },
+    {
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "rival": "Zomato",
+      "yourShare": 8.6,
+      "rivalShare": 16.3,
+      "gapPoints": 7.7,
+      "confidence": "medium",
+      "evidence": "16.3% of Zomato's specific 1–2★ complaints are about payments & refunds, vs 8.6% of yours.",
+      "quotes": [
+        "not giving me cash on delivery only cuz of one cancellation......... apart frm tht I hv places many orders n completed.",
+        "very bad experience ,very disappointed,very very bad app don't order their is no COD available so please don't order please"
+      ],
+      "caution": "Fix before you advertise this: \"Refund denied or not issued for problem orders\" is on your own fix-first list (mentioned in 14 of your 100 recent 1–2★ reviews).",
+      "headline": "Refunds that actually land, without the chase",
+      "message": "When something goes wrong, your money comes back quickly and clearly. No ticket maze, no guesswork."
+    }
+  ],
+  "threats": [
+    {
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
+      "rival": "Zomato",
+      "yourShare": 34.6,
+      "rivalShare": 26.3,
+      "gapPoints": 8.3,
+      "confidence": "low",
+      "evidence": "34.6% of your specific 1–2★ complaints are about delivery & fulfilment (late, cancelled, missing, no-show), vs 26.3% of Zomato's.",
+      "quotes": [
+        "is app se order mat karo mene order Kiya payment online kiya delivery partner phone nhi uthaya or order delivered mark kar diya",
+        "Abysmal food delivery absolutely terrible food delivery! the delivery agent just abscondes with the food. it has happened 5 times now!"
+      ],
+      "headline": "Late and missing deliveries drive the most complaints",
+      "action": "Operations should prioritise delivery-partner reliability and no-show prevention in the highest-complaint cities this quarter."
+    },
+    {
+      "theme": "UX",
+      "themeLabel": "App design, features & ads",
+      "owner": "Product",
+      "rival": "Zomato",
+      "yourShare": 8.6,
+      "rivalShare": 1.3,
+      "gapPoints": 7.3,
+      "confidence": "high",
+      "evidence": "8.6% of your specific 1–2★ complaints are about app design, features & ads, vs 1.3% of Zomato's.",
+      "quotes": [
+        "worst app. The delivery and customer service is so poor. they show wrong location and delivery people are so nasty.",
+        "in this app ads are more important than functionality, can't find otp by scrolling from map because the ads have to show first instead of otp"
+      ],
+      "headline": "Ads crowd out core functions like finding OTP",
+      "action": "Product should audit the home and order flows, moving OTP and order-tracking above promotional content immediately."
+    },
+    {
+      "theme": "QUALITY",
+      "themeLabel": "Product, food, service or content quality",
+      "owner": "Operations & Partners",
+      "rival": "Zomato",
+      "yourShare": 17.3,
+      "rivalShare": 11.3,
+      "gapPoints": 6,
+      "confidence": "low",
+      "evidence": "17.3% of your specific 1–2★ complaints are about product, food, service or content quality, vs 11.3% of Zomato's.",
+      "quotes": [
+        "bekar app hai ekadam 4 din purana sada hua Pizza de Diya fenk Diya humne dustbin mein kabhi jisne install kara install kar do",
+        "I was given wrong order even though bill details were correct and their best resolution was to rate the restaurant. It was very pathetic resolution."
+      ],
+      "headline": "Wrong and poor-quality orders erode trust",
+      "action": "Operations and Partners should enforce order-accuracy checks and fix the resolution path so complaints aren't closed by rating the restaurant."
+    }
+  ],
+  "fixFirst": [
+    "Customer support unresponsive, rude or unhelpful (mentioned in 20 of 100 recent 1–2★ reviews; owner: Support)",
+    "Orders delivered late or delayed significantly (mentioned in 17 of 100 recent 1–2★ reviews; owner: Operations)",
+    "Refund denied or not issued for problem orders (mentioned in 14 of 100 recent 1–2★ reviews; owner: Payments & Support)"
+  ],
+  "yourIssues": [
+    {
+      "title": "Customer support unresponsive, rude or unhelpful",
+      "theme": "SUPPORT",
+      "themeLabel": "Customer support",
+      "owner": "Support",
+      "count": 20,
+      "shareOfNegative": 20,
+      "inCurrentVersion": 7,
+      "quotes": [
+        "worst customer care, never have experienced such a poor customer response... will suggest never use Swiggy",
+        "Do not order on this app and uninstall it. Just never use it as they have no support."
+      ]
+    },
+    {
+      "title": "Orders delivered late or delayed significantly",
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
+      "count": 17,
+      "shareOfNegative": 17,
+      "inCurrentVersion": 10,
+      "quotes": [
+        "too more delay food order. oder the food but delayed more than 30minutes delivery partner assigned another oder waiting is 30minutes more what the.",
+        "worst algorithm ever, never assigns delivery agent on time .. everytime we have to wait 1 hour and then cancel. the order.. such a waste of energy time and harrassing"
+      ]
+    },
+    {
+      "title": "Refund denied or not issued for problem orders",
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "count": 14,
+      "shareOfNegative": 14,
+      "inCurrentVersion": 5,
+      "quotes": [
+        "is app se order mat karo mene order Kiya payment online kiya delivery partner phone nhi uthaya or order delivered mark kar diya",
+        "I was given wrong order even though bill details were correct and their best resolution was to rate the restaurant. It was very pathetic resolution."
+      ]
+    },
+    {
+      "title": "Wrong, missing or damaged items delivered",
+      "theme": "QUALITY",
+      "themeLabel": "Product, food, service or content quality",
+      "owner": "Operations & Partners",
+      "count": 12,
+      "shareOfNegative": 12,
+      "inCurrentVersion": 6,
+      "quotes": [
+        "Horrible experience. Poor management. I have ordered a product and received a different product. I have send many complaints and they didn't take sufficient measures.",
+        "bad service always defective material nikalta hai"
+      ]
+    },
+    {
+      "title": "Prices and charges too high for orders",
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "count": 11,
+      "shareOfNegative": 11,
+      "inCurrentVersion": 10,
+      "quotes": [
+        "i only ordered 2 things for 120 and 50, but it's crossing 400-500. the rate is way too high, this isn't right 👎",
+        "after certain times they increases the price of food"
+      ]
+    },
+    {
+      "title": "Delivery partner marks order delivered without delivery",
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
+      "count": 7,
+      "shareOfNegative": 7,
+      "inCurrentVersion": 3,
+      "quotes": [
+        "Abysmal food delivery absolutely terrible food delivery! the delivery agent just abscondes with the food. it has happened 5 times now!",
+        "mostly delivery partner are scamer without delivering in app showing deliverd."
+      ]
+    }
+  ],
+  "switching": [
+    {
+      "app": "Swiggy",
+      "mentions": "Zomato",
+      "count": 7,
+      "negativeReviews": 156,
+      "quotes": [
+        "this app chiter app no1 falth app waste your time and money number one cheater fraud commitments go for Zomato",
+        "Your app doesn't allow deleting of food orders, zomato does allow. please add that feature. thanks 😊"
+      ]
+    },
+    {
+      "app": "Zomato",
+      "mentions": "Swiggy",
+      "count": 1,
+      "negativeReviews": 114,
+      "quotes": [
+        "worst service .. better to order it from Swiggy price might be a bit high compared.. however wrong order doesn't get delivered. sad part is escalating it to customer support they share generic resp…"
+      ]
+    }
+  ],
+  "apps": [
+    {
+      "name": "Swiggy",
+      "isYours": true,
+      "appId": "in.swiggy.android",
+      "url": "https://play.google.com/store/apps/details?id=in.swiggy.android&hl=en&gl=in",
+      "icon": "https://play-lh.googleusercontent.com/FJ5W5ygiN-DYfpd2-3LqyN5F-OxDtQ7z_9v5nAeD4vOrN8kQitoOwULactKgKvktXowVEM491wE-unmGmnt8OWM",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 156,
+      "negativeShare": 31.2,
+      "avgRatingRecent": 3.62,
+      "storeRating": 4.51,
+      "ratingCount": 13896664,
+      "currentVersion": "4.121.2",
+      "starMix": {
+        "1": 145,
+        "2": 11,
+        "3": 21,
+        "4": 37,
+        "5": 286
+      },
+      "replyRateToNegative": 100,
+      "from": "2026-11-19T16:38:54.777Z",
+      "to": "2026-11-21T08:18:27.257Z",
+      "daysCovered": 2,
+      "releaseNote": "v4.121.2: 28.4% of 327 reviews are 1–2★.",
+      "themeShares": {
+        "BUGS": 1.2,
+        "PAYMENTS": 8.6,
+        "FULFILMENT": 34.6,
+        "QUALITY": 17.3,
+        "PRICING": 17.3,
+        "SUPPORT": 9.9,
+        "UX": 8.6,
+        "ACCOUNT": 2.5,
+        "OTHER": 19
+      },
+      "themeCounts": {
+        "BUGS": 1,
+        "PAYMENTS": 7,
+        "FULFILMENT": 28,
+        "QUALITY": 14,
+        "PRICING": 14,
+        "SUPPORT": 8,
+        "UX": 7,
+        "ACCOUNT": 2,
+        "OTHER": 19
+      },
+      "classified": 100,
+      "concrete": 81,
+      "sampled": 100
+    },
+    {
+      "name": "Zomato",
+      "isYours": false,
+      "appId": "com.application.zomato",
+      "url": "https://play.google.com/store/apps/details?id=com.application.zomato&hl=en&gl=in",
+      "icon": "https://play-lh.googleusercontent.com/F3A40FhcqC9fAoPeYpC_olDg2Upkq1UsylJCvmZmB7a26R0S6L-2Zo35-exR8n-__0M-uFTHq3T_nbS9oxDQ15w",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 114,
+      "negativeShare": 22.8,
+      "avgRatingRecent": 3.94,
+      "storeRating": 4.57,
+      "ratingCount": 15132301,
+      "currentVersion": "20.0.4",
+      "starMix": {
+        "1": 102,
+        "2": 12,
+        "3": 18,
+        "4": 51,
+        "5": 317
+      },
+      "replyRateToNegative": 53.5,
+      "from": "2026-11-20T10:11:25.259Z",
+      "to": "2026-11-21T08:15:43.678Z",
+      "daysCovered": 1,
+      "releaseNote": "v20.0.4: 19.3% of 331 reviews are 1–2★.",
+      "themeShares": {
+        "BUGS": 1.3,
+        "PAYMENTS": 16.3,
+        "FULFILMENT": 26.3,
+        "QUALITY": 11.3,
+        "PRICING": 21.3,
+        "SUPPORT": 22.5,
+        "UX": 1.3,
+        "ACCOUNT": 0,
+        "OTHER": 20
+      },
+      "themeCounts": {
+        "BUGS": 1,
+        "PAYMENTS": 13,
+        "FULFILMENT": 21,
+        "QUALITY": 9,
+        "PRICING": 17,
+        "SUPPORT": 18,
+        "UX": 1,
+        "ACCOUNT": 0,
+        "OTHER": 20
+      },
+      "classified": 100,
+      "concrete": 80,
+      "sampled": 100
+    }
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/INKoWCQzlNQgdVx9b/records/BATTLECARD?signature=fA3X4zbk2U5umJFSRajq",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/INKoWCQzlNQgdVx9b/records/BATTLECARD_CLASSIC?signature=9k7YcfRBvo7rOzzqKzpe",
+  "markdownUrl": "https://api.apify.com/v2/key-value-stores/INKoWCQzlNQgdVx9b/records/BATTLECARD_MD?signature=nkfJ1s7j19ro9Jn6LeCk",
+  "labelCheck": {
+    "checked": 30,
+    "agreed": 24,
+    "share": 80
+  },
+  "skippedApps": [],
+  "model": "anthropic/claude-haiku-5.5",
+  "aiCopy": true,
+  "tokensUsed": 22416,
+  "generatedAt": "2026-11-22T08:19:33.763Z"
+}
