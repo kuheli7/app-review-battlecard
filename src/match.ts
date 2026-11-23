@@ -26,9 +26,13 @@ const CLOSE_SHARE = 0.25;
  * Picks the candidate with the most ratings; ties keep store order. "GPay" then means Google Pay
  * (12.5M ratings), not a small app titled "gpay" (355), and "Swiggy" still means the customer app,
  * not "Swiggy Delivery Partner". Also returns the other candidates popular enough to be what the user meant.
+ * If any candidate's rating count failed to load (`failed`), popularity can't be trusted (Swiggy's own app
+ * failing would hand the win to its partner app), so the first candidate is used: the store's top result
+ * when it is a candidate.
  */
-export function pickMatch<T extends { ratings: number | null }>(candidates: T[]): { chosen: T; close: T[] } | null {
+export function pickMatch<T extends { ratings: number | null; failed?: boolean }>(candidates: T[]): { chosen: T; close: T[] } | null {
     if (!candidates.length) return null;
+    if (candidates.some((c) => c.failed)) return { chosen: candidates[0], close: [] };
     let chosen = candidates[0];
     for (const c of candidates) if ((c.ratings ?? 0) > (chosen.ratings ?? 0)) chosen = c;
     const top = chosen.ratings ?? 0;

@@ -37,7 +37,8 @@ export async function resolvePlayApp(input: string, country: string): Promise<Ap
         // Search results carry no rating counts, so fetch details for the few candidates and pick the most-rated.
         const candidates = matchCandidates(raw, results.map((r) => ({ ...r, title: String(r.title ?? '') }))).slice(0, 4);
         const info = await Promise.all(candidates.map(async (c) => details(c.appId).catch(() => null)));
-        const pick = pickMatch(candidates.map((c, i) => ({ c, d: info[i], ratings: info[i]?.ratings ?? null })));
+        const pick = pickMatch(candidates.map((c, i) => ({ c, d: info[i], ratings: info[i]?.ratings ?? null, failed: !info[i] })));
+        // If the chosen app's details failed, fetch again so a real failure throws instead of picking another app.
         a = pick!.chosen.d ?? (await details(pick!.chosen.c.appId));
         otherMatches = pick!.close.map((x) => clipTitle(String(x.d?.title ?? x.c.title)));
     }

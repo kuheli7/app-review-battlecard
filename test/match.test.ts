@@ -53,6 +53,15 @@ describe('picking the app a name means', () => {
         expect(r?.close.map((x) => x.title)).toEqual(['JioSaavn - Music & Podcasts', 'JioHotstar']);
     });
 
+    it("uses the store's top result when a rating count failed to load, instead of a smaller app", () => {
+        const r = pickMatch([
+            { title: 'Swiggy: Food Instamart Dineout', ratings: null, failed: true },
+            { title: 'Swiggy Delivery Partner App', ratings: 423251 },
+        ]);
+        expect(r?.chosen.title).toBe('Swiggy: Food Instamart Dineout');
+        expect(r?.close).toEqual([]);
+    });
+
     it('keeps store order on a tie and copes with missing rating counts', () => {
         expect(resolveName('Ola', [app('Ola', null), app('Ola Driver', null)])?.chosen.title).toBe('Ola');
         expect(pickMatch([])).toBeNull();
