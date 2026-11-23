@@ -10,6 +10,12 @@ describe('displayName', () => {
         expect(displayName('Google Pay', 'Google Pay')).toBe('Google Pay');
     });
 
+    it('matches the typed words even when spacing or punctuation differ', () => {
+        expect(displayName('PhonePe UPI Payments, Loan App', 'Phone pe')).toBe('PhonePe');
+        expect(displayName('Uber - Driver: Drive & Deliver', 'Uber Driver')).toBe('Uber Driver');
+        expect(displayName('bigbasket: Groceries and more', 'Big basket')).toBe('bigbasket');
+    });
+
     it('does not cut a word in half', () => {
         expect(displayName('Paytm: Secure UPI Payments', 'Pay')).toBe('Paytm');
     });

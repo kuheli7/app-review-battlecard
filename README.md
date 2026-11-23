@@ -129,6 +129,7 @@ The same run also found that:
 ## How to use it
 
 1. Enter your app first, then 1 to 3 rivals. Use names (`Swiggy`), store URLs, Google Play package names (`in.swiggy.android`) or App Store IDs (`989540920`).
+   A name is matched to the most-rated app whose title starts with it, so `Swiggy` means the customer app, not Swiggy Delivery Partner, and nicknames like `GPay` find Google Pay. To get one exact app, paste its store link.
 2. Pick the store and country.
 3. Click **Start**. Open the **Output** tab for the battlecard.
 
@@ -169,7 +170,8 @@ Reading and sorting 1,000 reviews by hand takes hours. A weekly battlecard for o
 
 - **Success:** one battlecard item in the dataset, and the HTML and Markdown reports in the key-value store. The status message says "Done".
 - **Failure:** if your app can't be found, has too few recent reviews, or the AI step fails, the run **fails with a clear message** and no battlecard item is saved, so you're not charged for a broken result.
-- If a rival can't be found or has too few reviews, it's skipped and the rest of the comparison still runs. Skipped apps are named in the status message, the report and `skippedApps`.
+- If a rival can't be found, has too few reviews, or is the same app as another entry (`Swigy` and `Swiggy`), it's skipped and the rest of the comparison still runs. Skipped apps are named in the status message, the report and `skippedApps`.
+- When a typed name was matched to an app with a different title (`GPay` → Google Pay), or other popular apps share the name, the status message says which app was used. Each `apps[]` entry also has `typedName`, `storeTitle`, `developer` and `otherMatches`.
 - If the AI fails to write the headlines, plain template sentences are used and `aiCopy` is `false`.
 
 ## Limits

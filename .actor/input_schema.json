@@ -7,7 +7,7 @@
         "apps": {
             "title": "Apps to compare (your app first)",
             "type": "array",
-            "description": "2 to 4 apps. Put YOUR app first, then 1 to 3 rivals. Each entry can be an app name (Swiggy), a store URL (https://play.google.com/store/apps/details?id=in.swiggy.android or https://apps.apple.com/in/app/swiggy/id989540920), a Google Play package name (in.swiggy.android) or an App Store ID (989540920).",
+            "description": "2 to 4 apps. Put YOUR app first, then 1 to 3 rivals. Each entry can be an app name (Swiggy), a store URL (https://play.google.com/store/apps/details?id=in.swiggy.android or https://apps.apple.com/in/app/swiggy/id989540920), a Google Play package name (in.swiggy.android) or an App Store ID (989540920). A name is matched to the most-rated app whose title starts with it; paste a store link to get one exact app.",
             "editor": "stringList",
             "prefill": [
                 "Swiggy",

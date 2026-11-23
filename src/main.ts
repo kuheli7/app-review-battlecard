@@ -2,8 +2,6 @@
 // opportunities (where rivals' users are angrier) and threats (where yours are).
 import { Actor, log } from 'apify';
 
-import { type AppInfo, fetchReviews, type Review, resolveApp } from './apple.js';
-import { fetchPlayReviews, resolvePlayApp } from './play.js';
 import {
     type AppStats,
     type Competitor,
@@ -18,7 +16,10 @@ import {
     switchingSignals,
     type ThemeResult,
 } from './analysis.js';
+import { type AppInfo, fetchReviews, resolveApp, type Review } from './apple.js';
 import { type BattlecardCopy, classifyReviews, type LlmUsage, nameIssues, writeBattlecard } from './llm.js';
+import { matchNote } from './match.js';
+import { fetchPlayReviews, resolvePlayApp } from './play.js';
 import { type AppSummary, type CardItem, renderHtml, renderMarkdown, type ReportData } from './report.js';
 import { renderHtmlStudio } from './report_studio.js';
 
@@ -87,7 +88,11 @@ try {
     const skipped: string[] = []; // shown in the report and the dataset item, so a typo is visible, not just logged
     resolved.forEach((r, i) => {
         if (r.status === 'fulfilled') {
-            if (!apps.some((a) => a.id === r.value.id)) apps.push(r.value);
+            const same = apps.find((a) => a.id === r.value.id);
+            if (same) {
+                log.warning(`Skipping "${appInputs[i]}": it is the same app as ${same.name} (${same.id})`);
+                skipped.push(`"${appInputs[i]}" (same app as ${same.name})`);
+            } else apps.push(r.value);
         } else {
             log.warning(`Skipping "${appInputs[i]}": ${(r.reason as Error).message}`);
             skipped.push(`"${appInputs[i]}" (not found on ${storeName})`);
@@ -96,6 +101,14 @@ try {
     if (apps.length < 2) await failRun('Fewer than 2 distinct apps were found. Check the app names, IDs or URLs.');
     state.apps = apps.map((a) => `${a.name} (${a.id})`);
     log.info(`Apps: ${(state.apps as string[]).join(', ')}`);
+    // Say what each typed name was matched to, so a wrong pick is visible; a store link always gives an exact app.
+    for (const a of apps.filter((x) => x.typedName)) {
+        log.info(
+            `"${a.typedName}" matched ${a.storeTitle} by ${a.developer ?? 'unknown developer'} (${a.id})` +
+                `${a.otherMatches?.length ? `. Other popular matches: ${a.otherMatches.join(', ')}` : ''}`,
+        );
+    }
+    const matchNotes = apps.map((a) => matchNote(a)).filter((n): n is string => Boolean(n));
 
     // 2. Download recent reviews in parallel.
     await status(`Downloading up to ${reviewsPerApp} recent ${storeName} reviews per app…`);
@@ -282,6 +295,10 @@ try {
         isYours: i === 0,
         appId: a.app.id,
         url: a.app.url,
+        typedName: a.app.typedName ?? null,
+        storeTitle: a.app.storeTitle ?? a.app.name,
+        developer: a.app.developer,
+        otherMatches: a.app.otherMatches ?? [],
         icon: a.app.icon,
         reviewsAnalyzed: a.stats.reviewsAnalyzed,
         negativeReviews: a.stats.negativeReviews,
@@ -361,7 +378,7 @@ try {
     });
 
     await status(
-        `Done: ${you.name} vs ${rivals.map((r) => r.name).join(', ')}. ${oppCards.length} opportunities, ${thrCards.length} threats, ${yourIssues.length} named issues.${skipped.length ? ` Skipped: ${skipped.join(', ')}.` : ''} Open the Output tab for the battlecard.`,
+        `Done: ${you.name} vs ${rivals.map((r) => r.name).join(', ')}. ${oppCards.length} opportunities, ${thrCards.length} threats, ${yourIssues.length} named issues.${matchNotes.length ? ` Matched: ${matchNotes.join('; ')}.` : ''}${skipped.length ? ` Skipped: ${skipped.join(', ')}.` : ''} Open the Output tab for the battlecard.`,
     );
     await Actor.exit();
 } catch (err) {

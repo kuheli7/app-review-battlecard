@@ -1,6 +1,8 @@
 // App Store data: app lookup (iTunes Search/Lookup API) and recent reviews (public customer-reviews RSS feed).
 import { log } from 'apify';
 
+import { matchCandidates, normName, pickMatch } from './match.js';
+
 const UA = 'Mozilla/5.0 (compatible; AppReviewBattlecard/1.0; +https://apify.com)';
 
 export interface AppInfo {
@@ -14,6 +16,12 @@ export interface AppInfo {
     currentVersionReleaseDate: string | null;
     storeRating: number | null;
     ratingCount: number | null;
+    /** Full store title, e.g. "Google Pay: Secure UPI payments". */
+    storeTitle?: string;
+    /** What the user typed when the app was found by name search; null for a URL, package name or ID. */
+    typedName?: string | null;
+    /** Other popular apps that also match the typed name (at least a quarter of the chosen app's ratings). */
+    otherMatches?: string[];
 }
 
 export interface Review {
@@ -50,11 +58,23 @@ async function getJson(url: string, retries = 2): Promise<any> {
  */
 export function displayName(title: string, typed: string | null): string {
     const t = title.trim();
-    if (typed && typed.length >= 3 && t.toLowerCase().startsWith(typed.toLowerCase()) && !/[\p{L}\p{N}]/u.test(t.charAt(typed.length))) {
-        return t.slice(0, typed.length);
+    const want = typed ? normName(typed) : '';
+    if (want.length >= 3) {
+        // Walk the title until it covers the typed letters, ignoring spaces and punctuation, so "Phone pe" gives
+        // "PhonePe" and "Uber Driver" gives "Uber Driver" (from "Uber - Driver: Drive & Deliver").
+        let seen = '';
+        for (let i = 0; i < t.length && seen.length < want.length; i++) {
+            seen += normName(t.charAt(i));
+            if (seen === want && !/[\p{L}\p{N}]/u.test(t.charAt(i + 1))) {
+                return t.slice(0, i + 1).replace(/\s+[-–|]\s+|[:,]\s*/g, ' ').trim();
+            }
+        }
     }
     return t.split(/\s[-–|]\s|[:,|–]/)[0].trim() || t;
 }
+
+/** A store title cut to 40 characters, for short lists of other matches. */
+export const clipTitle = (t: string): string => (t.length > 40 ? `${t.slice(0, 39).trim()}…` : t);
 
 /** Accepts an App Store URL, a numeric app ID (optionally "id123..."), or an app name. */
 export async function resolveApp(input: string, country: string): Promise<AppInfo> {
@@ -62,6 +82,7 @@ export async function resolveApp(input: string, country: string): Promise<AppInf
     const m = raw.match(/id(\d{5,})/) ?? raw.match(/^(\d{5,})$/);
     let id = m ? m[1] : null;
     const typed = id ? null : raw;
+    let otherMatches: string[] = [];
 
     if (!id) {
         const s = await getJson(
@@ -69,10 +90,14 @@ export async function resolveApp(input: string, country: string): Promise<AppInf
         );
         const results: any[] = s?.results ?? [];
         if (!results.length) throw new Error(`No App Store app found for "${raw}" in country "${country}"`);
-        // Prefer a result whose name starts with the search term, otherwise take Apple's top hit.
-        const term = raw.toLowerCase();
-        const hit = results.find((r) => String(r.trackName ?? '').toLowerCase().startsWith(term)) ?? results[0];
-        id = String(hit.trackId);
+        // Apple's search results include rating counts, so pick the most-rated candidate directly.
+        const candidates = matchCandidates(
+            raw,
+            results.map((r) => ({ r, title: String(r.trackName ?? ''), ratings: typeof r.userRatingCount === 'number' ? r.userRatingCount : null })),
+        );
+        const pick = pickMatch(candidates)!;
+        id = String(pick.chosen.r.trackId);
+        otherMatches = pick.close.map((x) => clipTitle(x.title));
     }
 
     const l = await getJson(`https://itunes.apple.com/lookup?id=${id}&country=${country}`);
@@ -89,6 +114,9 @@ export async function resolveApp(input: string, country: string): Promise<AppInf
         currentVersionReleaseDate: r.currentVersionReleaseDate ?? null,
         storeRating: typeof r.averageUserRating === 'number' ? Math.round(r.averageUserRating * 100) / 100 : null,
         ratingCount: typeof r.userRatingCount === 'number' ? r.userRatingCount : null,
+        storeTitle: String(r.trackName ?? raw),
+        typedName: typed,
+        otherMatches,
     };
 }
 

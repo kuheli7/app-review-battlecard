@@ -25,6 +25,13 @@ export interface AppSummary {
     isYours: boolean;
     appId: string;
     url: string | null;
+    /** What the user typed when the app was found by name; null for a URL, package name or ID. */
+    typedName?: string | null;
+    /** Full store title of the app that was picked. */
+    storeTitle?: string;
+    developer?: string | null;
+    /** Other popular apps that also match the typed name. */
+    otherMatches?: string[];
     ratingCount: number | null;
     currentVersion: string | null;
     starMix: Record<string, number>;
