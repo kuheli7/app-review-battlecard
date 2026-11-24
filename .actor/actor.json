@@ -2,8 +2,8 @@
 	"$schema": "https://apify.com/schemas/v1/actor.ide.json",
 	"actorSpecification": 1,
 	"name": "app-review-battlecard",
-	"title": "App Review Battlecard: Your App vs Rivals",
-	"description": "Compare your app's Google Play or App Store reviews with up to 3 rivals. AI sorts every 1-2 star review into complaint themes and returns a battlecard: where rivals' users are angrier (opportunities) and where yours are (threats), with real quotes.",
+	"title": "App Review Analysis: Your App vs Competitors",
+	"description": "Compare the Google Play or App Store reviews of your app and up to 3 competitor apps. AI sorts each recent 1-2 star review into complaint themes and returns one battlecard: where competitors' users complain more (opportunities), where yours do (threats), issues to fix first, and real quotes.",
 	"version": "0.1",
 	"buildTag": "latest",
 	"meta": {

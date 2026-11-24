@@ -1,8 +1,22 @@
-# App Review Battlecard: Your App vs Rivals
+# App Review Analysis: Your App vs Competitors
 
-**Where are your rivals' users angry this week, and where are yours?** Give it your app and 1 to 3 rivals. It reads the latest Google Play reviews, sorts every 1–2★ review into a complaint theme, and hands back a one-page **battlecard** in about 15 seconds.
+**Where are your competitors' users angry this week, and where are yours?** Give it your app and 1 to 3 competitor apps. It reads the latest Google Play (or App Store) reviews, sorts every recent 1–2★ review into a complaint theme, and returns one **battlecard**: opportunities, threats, issues to fix first and real quotes. A run takes about 15 seconds.
 
-**Try it now:** click **Start** with the default input (Swiggy vs Zomato). The battlecard is ready in about 15 seconds.
+**Cost per run:** $0.49 per battlecard, plus the AI usage that Apify's OpenRouter Actor bills to your own Apify account. In our runs that was about **$0.04** for 2 apps on Apify's free plan. On paid plans it should be under 1 cent (estimated, not measured). No API key needed. A run that fails saves no battlecard, so the $0.49 isn't charged.
+
+**Input:** `{"apps": ["Swiggy", "Zomato"]}` (your app first). **Output:** one JSON item, plus an HTML and a Markdown report. From a real run (24 Nov 2026, shortened):
+
+```json
+{
+  "yourApp": "Swiggy",
+  "rivals": ["Zomato"],
+  "verdict": "Biggest risk: 39.5% of Swiggy's specific 1–2★ complaints are about delivery and fulfilment, vs 23.1% of Zomato's. Fix this before marketing against rivals.",
+  "topOpportunity": "Users frustrated by stacked fees and higher menu prices: 17.9% of Zomato's specific 1–2★ complaints are about prices, fees & subscriptions, vs 9.2% of yours.",
+  "fixFirst": ["Customer support slow, AI-only, unhelpful replies (mentioned in 19 of 100 recent 1–2★ reviews; owner: Support)"]
+}
+```
+
+**Try it now:** click **Start** with the example input (Swiggy vs Zomato).
 
 ![The battlecard report: Swiggy vs Zomato scoreboard with the share of 1–2★ reviews, star mix, ratings and reply rates](https://raw.githubusercontent.com/kuheli7/app-review-battlecard/main/docs/report-scoreboard.png)
 
@@ -16,7 +30,7 @@
 | **Basis of comparison** | Each theme's share of an app's *own* specific 1–2★ complaints (vague "worst app" reviews left out), not star averages |
 | **How it helps you do better** | Opportunity = a rival's weak spot you can message. Threat = your weak spot, with the owner team and a first action |
 | **Data** | Public Google Play reviews (App Store optional). No API key needed |
-| **Pricing** | **$0.49 per battlecard** (one per run). A failed run saves no battlecard, so you don't pay the $0.49 |
+| **Pricing** | **$0.49 per battlecard** (one per run) + AI usage on your Apify account (about $0.04 per 2-app run on the free plan). A failed run saves no battlecard, so you don't pay the $0.49 |
 
 ## What you get
 
@@ -144,7 +158,7 @@ Run it on a **schedule** (for example every Monday) and connect Slack or email i
 
 | Field | Default | Notes |
 |---|---|---|
-| `apps` | `["Swiggy", "Zomato"]` | 2 to 4 apps, yours first |
+| `apps` | none, **required** | 2 to 4 apps, yours first. Example: `["Swiggy", "Zomato"]` |
 | `store` | Google Play | Or Apple App Store |
 | `country` | India | Reviews are country-specific |
 | `reviewsPerApp` | 500 | Most recent reviews read per app (50–500) |
@@ -163,17 +177,27 @@ Run it on a **schedule** (for example every Monday) and connect Slack or email i
 6. **Bug triage:** a second AI call names concrete recurring issues in your app's 1–2★ reviews and points to the reviews behind each. Counts, shares and quotes are computed in code from those reviews. If this step fails, the battlecard still ships without it.
 7. **AI copy, checked:** the AI writes opportunity headlines, marketing messages and threat actions, with no numbers. Each line is checked in code; one that fails gets a plain template. The verdict and threat headlines are templates filled with the computed numbers.
 
-The AI runs through Apify's OpenRouter integration, so **you don't need an API key**. Model usage is billed to your Apify account at cost.
+The AI runs through Apify's OpenRouter integration, so **you don't need an API key**. Model usage is billed to your own Apify account (see Pricing).
 
 ## Pricing
 
-**$0.49 per battlecard.** One run gives one battlecard. The AI model usage is billed to your Apify account at cost (about $0.01 per run with the default model; higher on the free plan).
+**$0.49 per battlecard.** One run gives one battlecard. Apify's platform cost for this Actor is included.
 
-Reading and sorting 1,000 reviews by hand takes hours. A weekly battlecard for one app and 3 rivals costs about $2 a month.
+The AI usage is billed separately to your Apify account by Apify's OpenRouter Actor:
+
+| Your Apify plan | AI cost per run, default model, 2 apps |
+|---|---|
+| Free | about $0.04 (measured in two runs: $0.038 and $0.039) |
+| Paid | under 1 cent (estimated: OpenRouter on Apify bills free-plan users 10x the model price) |
+
+More apps means more reviews to label, so 3–4 apps cost more AI usage than 2. A larger model costs more too. To cap it, lower `maxNegativeReviewsForAI`.
+
+Reading and sorting 1,000 reviews by hand takes hours. A weekly battlecard costs $1.96 a month (4 × $0.49) plus AI usage (about $0.16 a month for 2 apps on the free plan).
 
 ## Success and failure
 
 - **Success:** one battlecard item in the dataset, and the HTML and Markdown reports in the key-value store. The status message says "Done".
+- **No apps given:** an input without `apps` is rejected with "Field apps is required". An empty list gets a message showing the input format. Either way it stops before any store lookup or AI call, and no battlecard is charged.
 - **Failure:** if your app can't be found, has too few recent reviews, or the AI step fails, the run **fails with a clear message** and no battlecard item is saved, so you're not charged for a broken result.
 - If a rival can't be found, has too few reviews, or is the same app as another entry (`Swigy` and `Swiggy`), it's skipped and the rest of the comparison still runs. Skipped apps are named in the status message, the report and `skippedApps`.
 - When a typed name was matched to an app with a different title (`GPay` → Google Pay), or other popular apps share the name, the status message says which app was used. Each `apps[]` entry also has `typedName`, `storeTitle`, `developer` and `otherMatches`.
@@ -200,6 +224,22 @@ apify call -i '{"apps":["Swiggy","Zomato"]}'
 ```
 
 ## FAQ
+
+**How do I compare my app's reviews with a competitor's?** Enter your app and 1 to 3 competitors by name, for example `{"apps": ["Swiggy", "Zomato"]}`, and click Start. You get one battlecard with the complaint themes side by side.
+
+**How much does a competitor review analysis cost?** $0.49 per battlecard, plus AI usage on your Apify account: about $0.04 for 2 apps on the free plan, less on paid plans. See Pricing.
+
+**Do I need an OpenAI or OpenRouter API key?** No. The AI runs through Apify's OpenRouter Actor and is billed to your Apify account.
+
+**Does it work for iPhone (App Store) reviews?** Yes. Set `store` to Apple App Store. Apple's feed sometimes returns fewer reviews than asked for.
+
+**Which countries and languages are supported?** 19 store countries (India, US, UK, Germany, Brazil, Japan and more). Google Play reviews are read in English only.
+
+**Can I get the raw reviews instead of a summary?** No. This Actor returns the analysis. Use a review scraper from Apify Store for raw rows.
+
+**Can I get a weekly report in Slack or email?** Yes. Create a schedule (for example every Monday) and add a Slack or email integration to the Actor.
+
+**Can an AI agent or MCP client run it?** Yes, through the Apify API or the Apify MCP server. The only required input is `apps`, and the result is one JSON item.
 
 **Is scraping app reviews legal?** The Actor reads publicly visible reviews and stores only review text, rating, date and version, never reviewer names or images. Check your local rules for your use case.
 

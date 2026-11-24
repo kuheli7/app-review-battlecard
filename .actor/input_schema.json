@@ -7,13 +7,9 @@
         "apps": {
             "title": "Apps to compare (your app first)",
             "type": "array",
-            "description": "2 to 4 apps. Put YOUR app first, then 1 to 3 rivals. Each entry can be an app name (Swiggy), a store URL (https://play.google.com/store/apps/details?id=in.swiggy.android or https://apps.apple.com/in/app/swiggy/id989540920), a Google Play package name (in.swiggy.android) or an App Store ID (989540920). A name is matched to the most-rated app whose title starts with it; paste a store link to get one exact app.",
+            "description": "Required. 2 to 4 apps: YOUR app first, then 1 to 3 rivals. Each entry can be an app name (Swiggy), a store URL (https://play.google.com/store/apps/details?id=in.swiggy.android or https://apps.apple.com/in/app/swiggy/id989540920), a Google Play package name (in.swiggy.android) or an App Store ID (989540920). A name is matched to the most-rated app whose title starts with it; paste a store link to get one exact app.",
             "editor": "stringList",
             "prefill": [
-                "Swiggy",
-                "Zomato"
-            ],
-            "default": [
                 "Swiggy",
                 "Zomato"
             ]
@@ -104,7 +100,7 @@
         "model": {
             "title": "AI model (OpenRouter ID)",
             "type": "string",
-            "description": "Any model ID from openrouter.ai/models, called through Apify's OpenRouter Actor and billed to your Apify account. A small, fast model is enough.",
+            "description": "Any model ID from openrouter.ai/models, called through Apify's OpenRouter Actor and billed to your Apify account, on top of the $0.49 per battlecard. With the default model a 2-app run used about $0.04 of AI on Apify's free plan (less on paid plans). A small, fast model is enough.",
             "editor": "textfield",
             "default": "anthropic/claude-haiku-5.5"
         }

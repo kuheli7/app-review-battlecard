@@ -33,7 +33,6 @@ interface Input {
     model?: string;
 }
 
-const DEFAULT_APPS = ['Swiggy', 'Zomato'];
 const clamp = (v: unknown, lo: number, hi: number, dflt: number) => {
     const n = Number(v);
     return v !== undefined && v !== null && Number.isFinite(n) ? Math.min(hi, Math.max(lo, Math.round(n))) : dflt;
@@ -63,7 +62,13 @@ async function failRun(msg: string): Promise<never> {
 
 try {
     const input = (await Actor.getInput<Input>()) ?? {};
-    let appInputs = (input.apps?.length ? input.apps : DEFAULT_APPS).map((s) => String(s).trim()).filter(Boolean);
+    // No fallback apps: a run without "apps" fails here, before any store lookup or AI call, and no battlecard is charged.
+    let appInputs = (Array.isArray(input.apps) ? input.apps : []).map((s) => String(s).trim()).filter(Boolean);
+    if (!appInputs.length) {
+        await failRun(
+            'Missing input "apps". Add 2 to 4 apps, your app first, for example {"apps": ["Swiggy", "Zomato"]}. Each can be an app name, a store link, a Google Play package name or an App Store ID.',
+        );
+    }
     if (appInputs.length < 2) await failRun('Add at least 2 apps: your app first, then 1 to 3 rivals.');
     if (appInputs.length > 4) {
         log.warning(`Only the first 4 apps are compared; ignoring ${appInputs.slice(4).join(', ')}`);

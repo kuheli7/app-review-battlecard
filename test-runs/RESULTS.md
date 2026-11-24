@@ -4,6 +4,8 @@ Platform runs on Apify (account `kuheli7`, Actor `app-review-battlecard`), 22 No
 Each folder in `results/` has the input, the dataset item (`battlecard.json`), both HTML reports, the Markdown report and a `summary.json`.
 Re-save any run with `python test-runs/fetch_run.py <name> <runId>`.
 
+From the next build, `apps` is required and has no default, so an empty input `{}` fails before any work. Input 00 is now `{"apps":["Swiggy","Zomato"]}`; the 00 runs below used `{}` on older builds.
+
 Unit tests: `npm test`, 57 passing (stats, theme shares, gaps and confidence, switching signals, issue counting, label agreement, name cleanup, name matching, report escaping, verdict and AI-line checks, quote picking).
 
 ## Runs
