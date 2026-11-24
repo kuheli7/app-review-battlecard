@@ -19,9 +19,12 @@ const SHORT: Record<string, string> = {
 };
 export const shortTheme = (code: string, label = code) => SHORT[code] ?? label.toLowerCase();
 
-const rank = (c: Confidence) => (c === 'high' ? 2 : c === 'medium' ? 1 : 0);
-/** Stronger evidence first, then the bigger gap. */
-export const byStrength = (a: Gap, b: Gap) => rank(b.confidence) - rank(a.confidence) || b.gapPoints - a.gapPoints;
+const isLow = (c: Confidence) => (c === 'low' ? 1 : 0);
+/**
+ * Low-confidence gaps last; otherwise the bigger gap first. A small gap the test is very sure about (5% vs 0%)
+ * should not lead over a big gap it is fairly sure about (36% vs 22%).
+ */
+export const byStrength = (a: Gap, b: Gap) => isLow(a.confidence) - isLow(b.confidence) || b.gapPoints - a.gapPoints;
 
 /**
  * The one-sentence verdict, built from the computed gaps (no AI). It leads with the stronger of the top threat and
@@ -78,6 +81,10 @@ export interface AiThreat {
     theme?: unknown;
     action?: unknown;
 }
+
+/** The AI's entry for a theme code. "payments " and "Payments" count as PAYMENTS. */
+export const aiEntryFor = <T extends { theme?: unknown }>(list: T[] | undefined, theme: string): T | undefined =>
+    list?.find((x) => String(x.theme ?? '').toUpperCase().trim() === theme);
 
 export interface CardCopy {
     headline: string;

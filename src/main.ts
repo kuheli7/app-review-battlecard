@@ -17,7 +17,7 @@ import {
     type ThemeResult,
 } from './analysis.js';
 import { type AppInfo, fetchReviews, resolveApp, type Review } from './apple.js';
-import { buildVerdict, byStrength, opportunityCopy, plural, threatCopy } from './copy.js';
+import { aiEntryFor, buildVerdict, byStrength, opportunityCopy, plural, threatCopy } from './copy.js';
 import { type BattlecardCopy, classifyReviews, type LlmUsage, nameIssues, writeBattlecard } from './llm.js';
 import { matchNote } from './match.js';
 import { fetchPlayReviews, resolvePlayApp } from './play.js';
@@ -246,6 +246,13 @@ try {
     // AI lines that failed the checks in src/copy.ts (a number, a claim the data can't back, too long) are replaced.
     const rejectedLines: string[] = [];
     const fixFirstThemes = new Set<string>(yourIssues.slice(0, 3).map((i) => i.theme));
+    // A missing AI entry on a card that would use it is counted like a rejected line, so a template never replaces
+    // AI copy silently.
+    const aiFor = <T extends { theme?: unknown }>(list: T[] | undefined, g: Gap, kind: string): T | undefined => {
+        const hit = aiEntryFor(list, g.theme);
+        if (copy && !hit && g.confidence !== 'low') rejectedLines.push(`${g.theme} ${kind} missing from the AI reply`);
+        return hit;
+    };
     const toCards = (gaps: Gap[], side: 'opp' | 'thr'): CardItem[] =>
         [...gaps].sort(byStrength).map((g) => {
             const base = {
@@ -261,7 +268,7 @@ try {
                 quotes: g.quotes,
             };
             if (side === 'opp') {
-                const c = opportunityCopy(g, copy?.opportunities.find((o) => o.theme === g.theme));
+                const c = opportunityCopy(g, aiFor(copy?.opportunities, g, 'opportunity'));
                 rejectedLines.push(...c.rejected.map((r) => `${g.theme} opportunity ${r}`));
                 // A rival can be worse at something that is still one of your own top problems. Say so on the card.
                 const clash = yourIssues.slice(0, 3).find((i) => i.theme === g.theme);
@@ -276,7 +283,7 @@ try {
                     message: c.message,
                 };
             }
-            const c = threatCopy(g, copy?.threats.find((t) => t.theme === g.theme));
+            const c = threatCopy(g, aiFor(copy?.threats, g, 'threat'));
             rejectedLines.push(...c.rejected.map((r) => `${g.theme} threat ${r}`));
             return { ...base, headline: c.headline, action: c.action };
         });

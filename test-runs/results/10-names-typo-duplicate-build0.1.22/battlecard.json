@@ -1,0 +1,337 @@
+{
+  "type": "battlecard",
+  "yourApp": "Swiggy",
+  "rivals": [
+    "Zomato"
+  ],
+  "store": "Google Play",
+  "country": "in",
+  "verdict": "Biggest risk: 5.1% of Swiggy's specific 1–2★ complaints are about crashes and bugs, vs 0% of Zomato's. Fix this before marketing against rivals.",
+  "topOpportunity": "Early sign: more of Zomato's complaints are about prices and fees: 16.7% of Zomato's specific 1–2★ complaints are about prices, fees & subscriptions, vs 10.3% of yours.",
+  "topThreat": "More of your complaints are about crashes and bugs than Zomato's: 5.1% of your specific 1–2★ complaints are about crashes, bugs & app speed, vs 0% of Zomato's.",
+  "opportunities": [
+    {
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "rival": "Zomato",
+      "yourShare": 10.3,
+      "rivalShare": 16.7,
+      "gapPoints": 6.4,
+      "confidence": "low",
+      "evidence": "16.7% of Zomato's specific 1–2★ complaints are about prices, fees & subscriptions, vs 10.3% of yours.",
+      "quotes": [
+        "I don't know why the prices of food items are high priced than the actual price at the restaurants or hotel! you are charging delivery fee, and several taxes on us and all over that you are chargin…",
+        "using high fees for every order"
+      ],
+      "headline": "Early sign: more of Zomato's complaints are about prices and fees",
+      "message": "Low confidence: this rests on 13 of Zomato's specific complaints and 8 of yours. Check again with more reviews before using it."
+    },
+    {
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "rival": "Zomato",
+      "yourShare": 12.8,
+      "rivalShare": 17.9,
+      "gapPoints": 5.1,
+      "confidence": "low",
+      "evidence": "17.9% of Zomato's specific 1–2★ complaints are about payments & refunds, vs 12.8% of yours.",
+      "quotes": [
+        "21 nov ko order Kiya tha, restaurant ne order accept karne ke baad order cancel kar diya uska refund kai ticket raise karne ke baad abhi tak nhi mila.abhi bhi 72 hours ka time de rhe hai.",
+        "Very disappointing experience with Zomato! I placed an order and requested a cancellation within just 2 minutes, yet they flatly refused to refund my ₹266. Charging a 100% cancellation fee within t…"
+      ],
+      "headline": "Early sign: more of Zomato's complaints are about payments and refunds",
+      "message": "Low confidence: this rests on 14 of Zomato's specific complaints and 10 of yours. Check again with more reviews before using it."
+    },
+    {
+      "theme": "SUPPORT",
+      "themeLabel": "Customer support",
+      "owner": "Support",
+      "rival": "Zomato",
+      "yourShare": 19.2,
+      "rivalShare": 23.1,
+      "gapPoints": 3.9,
+      "confidence": "low",
+      "evidence": "23.1% of Zomato's specific 1–2★ complaints are about customer support, vs 19.2% of yours.",
+      "quotes": [
+        "There is no proper customer support. When something goes wrong, we're forced to write an email and wait 24–48 hours for a resolution. I received non-vegetarian chicken despite ordering in Veg Mode.…",
+        "Unable to speak with customer service, an unprofessional restaurant which needs proper policies for delivering food. Ex: Proper packaging with brand identity. Right to information!"
+      ],
+      "caution": "Fix before you advertise this: \"Customer support unresponsive or only AI replies\" is on your own fix-first list (mentioned in 16 of your 100 recent 1–2★ reviews).",
+      "headline": "Early sign: more of Zomato's complaints are about customer support",
+      "message": "Low confidence: this rests on 18 of Zomato's specific complaints and 15 of yours. Check again with more reviews before using it."
+    }
+  ],
+  "threats": [
+    {
+      "theme": "BUGS",
+      "themeLabel": "Crashes, bugs & app speed",
+      "owner": "Engineering",
+      "rival": "Zomato",
+      "yourShare": 5.1,
+      "rivalShare": 0,
+      "gapPoints": 5.1,
+      "confidence": "high",
+      "evidence": "5.1% of your specific 1–2★ complaints are about crashes, bugs & app speed, vs 0% of Zomato's.",
+      "quotes": [
+        "Since one month faced this issue \"Some error creating your order\" multiple times and had to switch to Zomato",
+        "though the app is usually good...it has often happened that when I add the 1 rupees products into my cart...I don't get them in the delivery. I had added them but when I try to complain it shows I…"
+      ],
+      "headline": "More of your complaints are about crashes and bugs than Zomato's",
+      "action": "Prioritise fixing the 'error creating your order' failure and cart items not appearing after delivery, as these push users to switch apps."
+    },
+    {
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
+      "rival": "Zomato",
+      "yourShare": 35.9,
+      "rivalShare": 21.8,
+      "gapPoints": 14.1,
+      "confidence": "medium",
+      "evidence": "35.9% of your specific 1–2★ complaints are about delivery & fulfilment (late, cancelled, missing, no-show), vs 21.8% of Zomato's.",
+      "quotes": [
+        "Swiggy is becoming worst these days... they delivered the order 2 hrs after scheduled time. few days later, they delivered chicken biryani instead of veg biryani, and refused to give refund",
+        "always late, sometimes order is not delivered and marked as one item being missing from order is very common"
+      ],
+      "headline": "More of your complaints are about delivery and fulfilment than Zomato's",
+      "action": "Fix late, cancelled and missing orders first, since this is Swiggy's own top complaint and a larger share than Zomato's. Tighten delivery SLAs and wrong-item checks."
+    }
+  ],
+  "fixFirst": [
+    "Order not delivered or cancelled after long wait (mentioned in 18 of 100 recent 1–2★ reviews; owner: Operations)",
+    "Customer support unresponsive or only AI replies (mentioned in 16 of 100 recent 1–2★ reviews; owner: Support)",
+    "Delivery partner rude, fraudulent or stealing items (mentioned in 11 of 100 recent 1–2★ reviews; owner: Operations)"
+  ],
+  "yourIssues": [
+    {
+      "title": "Order not delivered or cancelled after long wait",
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
+      "count": 18,
+      "shareOfNegative": 18,
+      "inCurrentVersion": 4,
+      "quotes": [
+        "Swiggy is becoming worst these days... they delivered the order 2 hrs after scheduled time. few days later, they delivered chicken biryani instead of veg biryani, and refused to give refund",
+        "ordered food in lunch waiti g for order still in tea time. delivery time shown was about 30 min already past 2 hours no resolution. Requsting to change delivery person from 1 hour no response from…"
+      ]
+    },
+    {
+      "title": "Customer support unresponsive or only AI replies",
+      "theme": "SUPPORT",
+      "themeLabel": "Customer support",
+      "owner": "Support",
+      "count": 16,
+      "shareOfNegative": 16,
+      "inCurrentVersion": 4,
+      "quotes": [
+        "the food got missing in the order and the customer care isn't doing anything",
+        "only AI help. always late delivery. no human customer care is a major demerit"
+      ]
+    },
+    {
+      "title": "Delivery partner rude, fraudulent or stealing items",
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
+      "count": 11,
+      "shareOfNegative": 11,
+      "inCurrentVersion": 4,
+      "quotes": [
+        "I am an old customer of Swiggy but today Swiggy did wrong with me, I ordered pizza and garlic bread and the delivery boy spoke very rudely, when I complained, the reply came very late.When I asked…",
+        "fraud kar Rahe yeh bekar hai night me Cash on delivery ki magana paid oder sab bich me kha jate hai uske bad order delivered dikha denge fraud chal rha hai Naya"
+      ]
+    },
+    {
+      "title": "Refund denied for missing or wrong orders",
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "count": 9,
+      "shareOfNegative": 9,
+      "inCurrentVersion": 3,
+      "quotes": [
+        "The app shows that food delivery will be in 7 minutes for last 30 minutes. and when you ask for full refund as you don't get any food delivery they charge full cancellation fee and give none refund…",
+        "Items were missing in my order, after several long constant chats with the customer support, no refund or reparation provided. worst experience from a delivery app."
+      ]
+    },
+    {
+      "title": "Delivery time estimates are inaccurate and misleading",
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
+      "count": 8,
+      "shareOfNegative": 8,
+      "inCurrentVersion": 2,
+      "quotes": [
+        "Misinformation on delivery time showing 18 mins delivery time from more than 30mins",
+        "they tell you that order will take 20 minutes to get delivered i ordered at 8pm and it's 8.50pm now if you can't manage the orders don't show optimistic timing show what will be the real ETA been w…"
+      ]
+    },
+    {
+      "title": "Items missing from delivered orders",
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
+      "count": 7,
+      "shareOfNegative": 7,
+      "inCurrentVersion": 2,
+      "quotes": [
+        "always late, sometimes order is not delivered and marked as one item being missing from order is very common",
+        "My food order was delivered in less quantity and the agent issued a coupon without consulting with me. and the coupon is also such that I need to oder in next 7 days from.same restaurant and on a d…"
+      ]
+    }
+  ],
+  "switching": [
+    {
+      "app": "Swiggy",
+      "mentions": "Zomato",
+      "count": 7,
+      "negativeReviews": 162,
+      "quotes": [
+        "not delivered full items and no support. try zomato or other apps.",
+        "Pathetic services, they do not stick to the time they showcase to deliver the order, deliver spoilt food stuff and take no responsibility of providing refund when the fault is on their end. ZOMATO…"
+      ]
+    },
+    {
+      "app": "Zomato",
+      "mentions": "Swiggy",
+      "count": 3,
+      "negativeReviews": 121,
+      "quotes": [
+        "Pay On delivery option never gets available😤. why you guys have to add Pay on delivery option if it is meant to be kept unavailable?? Swiggy never compromises in terms of payment options, it never…",
+        "Today I deleted my zomato aap because of their chat system. Whenever I have any problem regarding food, only the robot comes to talk to me. Swiggy is much better than you. at least they responded.…"
+      ]
+    }
+  ],
+  "apps": [
+    {
+      "name": "Swiggy",
+      "isYours": true,
+      "appId": "in.swiggy.android",
+      "url": "https://play.google.com/store/apps/details?id=in.swiggy.android&hl=en&gl=in",
+      "typedName": "Swiggy",
+      "storeTitle": "Swiggy: Food Instamart Dineout",
+      "developer": "Swiggy",
+      "otherMatches": [],
+      "icon": "https://play-lh.googleusercontent.com/FJ5W5ygiN-DYfpd2-3LqyN5F-OxDtQ7z_9v5nAeD4vOrN8kQitoOwULactKgKvktXowVEM491wE-unmGmnt8OWM",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 162,
+      "negativeShare": 32.4,
+      "avgRatingRecent": 3.54,
+      "storeRating": 4.51,
+      "ratingCount": 13911196,
+      "currentVersion": "4.122.0",
+      "starMix": {
+        "1": 147,
+        "2": 15,
+        "3": 24,
+        "4": 47,
+        "5": 267
+      },
+      "replyRateToNegative": 100,
+      "from": "2026-11-21T19:07:00.108Z",
+      "to": "2026-11-23T13:45:02.782Z",
+      "daysCovered": 2,
+      "releaseNote": "v4.122.0 is about the same as v4.119.1: 31.5% vs 33.3% of reviews are 1–2★ (92 vs 6 reviews).",
+      "themeShares": {
+        "BUGS": 5.1,
+        "PAYMENTS": 12.8,
+        "FULFILMENT": 35.9,
+        "QUALITY": 15.4,
+        "PRICING": 10.3,
+        "SUPPORT": 19.2,
+        "UX": 1.3,
+        "ACCOUNT": 0,
+        "OTHER": 22
+      },
+      "themeCounts": {
+        "BUGS": 4,
+        "PAYMENTS": 10,
+        "FULFILMENT": 28,
+        "QUALITY": 12,
+        "PRICING": 8,
+        "SUPPORT": 15,
+        "UX": 1,
+        "ACCOUNT": 0,
+        "OTHER": 22
+      },
+      "classified": 100,
+      "concrete": 78,
+      "sampled": 100
+    },
+    {
+      "name": "Zomato",
+      "isYours": false,
+      "appId": "com.application.zomato",
+      "url": "https://play.google.com/store/apps/details?id=com.application.zomato&hl=en&gl=in",
+      "typedName": "Zomato",
+      "storeTitle": "Zomato: Food Delivery & Dining",
+      "developer": "Zomato",
+      "otherMatches": [],
+      "icon": "https://play-lh.googleusercontent.com/F3A40FhcqC9fAoPeYpC_olDg2Upkq1UsylJCvmZmB7a26R0S6L-2Zo35-exR8n-__0M-uFTHq3T_nbS9oxDQ15w",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 121,
+      "negativeShare": 24.2,
+      "avgRatingRecent": 3.82,
+      "storeRating": 4.57,
+      "ratingCount": 15161306,
+      "currentVersion": "20.0.4",
+      "starMix": {
+        "1": 106,
+        "2": 15,
+        "3": 33,
+        "4": 54,
+        "5": 292
+      },
+      "replyRateToNegative": 48.8,
+      "from": "2026-11-22T14:05:59.492Z",
+      "to": "2026-11-23T13:41:33.920Z",
+      "daysCovered": 1,
+      "releaseNote": "v20.0.4 is about the same as v19.9.6: 21.7% vs 20% of reviews are 1–2★ (203 vs 5 reviews).",
+      "themeShares": {
+        "BUGS": 0,
+        "PAYMENTS": 17.9,
+        "FULFILMENT": 21.8,
+        "QUALITY": 19.2,
+        "PRICING": 16.7,
+        "SUPPORT": 23.1,
+        "UX": 0,
+        "ACCOUNT": 1.3,
+        "OTHER": 22
+      },
+      "themeCounts": {
+        "BUGS": 0,
+        "PAYMENTS": 14,
+        "FULFILMENT": 17,
+        "QUALITY": 15,
+        "PRICING": 13,
+        "SUPPORT": 18,
+        "UX": 0,
+        "ACCOUNT": 1,
+        "OTHER": 22
+      },
+      "classified": 100,
+      "concrete": 78,
+      "sampled": 100
+    }
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/ROniORxxvNbvGtGKV/records/BATTLECARD?signature=tJN7wWKMAdtvzieFrIvS",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/ROniORxxvNbvGtGKV/records/BATTLECARD_CLASSIC?signature=VlaDsMI6JuAMTUXa8sAv",
+  "markdownUrl": "https://api.apify.com/v2/key-value-stores/ROniORxxvNbvGtGKV/records/BATTLECARD_MD?signature=1u2BOEFGAJ8QCNxRwQa89",
+  "labelCheck": {
+    "checked": 30,
+    "agreed": 24,
+    "share": 80
+  },
+  "skippedApps": [
+    "\"Swigy\" (same app as Swiggy)"
+  ],
+  "model": "anthropic/claude-haiku-5.5",
+  "aiCopy": true,
+  "aiLinesReplaced": 0,
+  "tokensUsed": 21264,
+  "generatedAt": "2026-11-24T13:46:42.985Z"
+}

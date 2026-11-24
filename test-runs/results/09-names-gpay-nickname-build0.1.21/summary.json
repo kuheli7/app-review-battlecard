@@ -1,0 +1,58 @@
+{
+  "name": "09-names-gpay-nickname",
+  "runId": "Ifd1hiBgjhUY31eDe",
+  "status": "SUCCEEDED",
+  "statusMessage": "Done: Google Pay vs PhonePe, Paytm. 3 opportunities, 2 threats, 3 named issues. Matched: \"GPay\" = Google Pay: Secure UPI payment by Google LLC. Open the Output tab for the battlecard.",
+  "build": "0.1.21",
+  "memoryMbytes": 1024,
+  "runTimeSecs": 10.426,
+  "usageTotalUsd": 0.0008185268923921716,
+  "consoleUrl": "https://console.apify.com/view/runs/Ifd1hiBgjhUY31eDe",
+  "apps": [
+    "Google Pay",
+    "PhonePe",
+    "Paytm"
+  ],
+  "reviews": [
+    500,
+    500,
+    500
+  ],
+  "labelled": [
+    "46/46",
+    "49/49",
+    "38/38"
+  ],
+  "otherShare": [
+    58.7,
+    55.1,
+    44.7
+  ],
+  "labelCheck": {
+    "checked": 23,
+    "agreed": 22,
+    "share": 95.7
+  },
+  "verdict": "Google Pay's biggest exposure is money not arriving, where PhonePe trails on 36.4% of complaints versus our 63.2%; fix payments before pitching.",
+  "opportunities": [
+    "UX vs Paytm +19 (high)",
+    "SUPPORT vs PhonePe +18.2 (medium)",
+    "QUALITY vs Paytm +9.5 (medium)"
+  ],
+  "threats": [
+    "PAYMENTS vs PhonePe +26.8 (medium)",
+    "PRICING vs Paytm +15.8 (medium)"
+  ],
+  "issues": [
+    "Cashback and rewards missing or not credited",
+    "Money sent but not received in account",
+    "Platform fee and tax charged on payments"
+  ],
+  "switching": [
+    "Paytm -> PhonePe: 1"
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/AysztXQzMiPHrluwp/records/BATTLECARD?signature=14zs6pSNJNfoH35eumtVK",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/AysztXQzMiPHrluwp/records/BATTLECARD_CLASSIC?signature=vbbt1VSUt2ZYvzUR5oH3",
+  "tokensUsed": 11496,
+  "aiCopy": true
+}

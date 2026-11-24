@@ -1,13 +1,13 @@
 {
   "name": "09-names-gpay-nickname",
-  "runId": "Ifd1hiBgjhUY31eDe",
+  "runId": "j5MYvLd5vv7mL43PE",
   "status": "SUCCEEDED",
-  "statusMessage": "Done: Google Pay vs PhonePe, Paytm. 3 opportunities, 2 threats, 3 named issues. Matched: \"GPay\" = Google Pay: Secure UPI payment by Google LLC. Open the Output tab for the battlecard.",
-  "build": "0.1.21",
+  "statusMessage": "Done: Google Pay vs PhonePe, Paytm. 3 opportunities, 3 threats, 2 named issues. Matched: \"GPay\" = Google Pay: Secure UPI payment by Google LLC. Open the Output tab for the battlecard.",
+  "build": "0.1.22",
   "memoryMbytes": 1024,
-  "runTimeSecs": 10.426,
-  "usageTotalUsd": 0.0008185268923921716,
-  "consoleUrl": "https://console.apify.com/view/runs/Ifd1hiBgjhUY31eDe",
+  "runTimeSecs": 11.346,
+  "usageTotalUsd": 0.0008696970027883849,
+  "consoleUrl": "https://console.apify.com/view/runs/j5MYvLd5vv7mL43PE",
   "apps": [
     "Google Pay",
     "PhonePe",
@@ -19,40 +19,41 @@
     500
   ],
   "labelled": [
-    "46/46",
-    "49/49",
-    "38/38"
+    "34/34",
+    "52/52",
+    "30/30"
   ],
   "otherShare": [
-    58.7,
-    55.1,
-    44.7
+    67.6,
+    32.7,
+    36.7
   ],
   "labelCheck": {
-    "checked": 23,
-    "agreed": 22,
-    "share": 95.7
+    "checked": 17,
+    "agreed": 15,
+    "share": 88.2
   },
-  "verdict": "Google Pay's biggest exposure is money not arriving, where PhonePe trails on 36.4% of complaints versus our 63.2%; fix payments before pitching.",
+  "verdict": "No clear gap yet. The biggest difference is customer support (27.3% of Google Pay's specific 1–2★ complaints vs 5.3% of Paytm's), but it rests on few complaints, so check again with more reviews.",
   "opportunities": [
-    "UX vs Paytm +19 (high)",
-    "SUPPORT vs PhonePe +18.2 (medium)",
-    "QUALITY vs Paytm +9.5 (medium)"
+    "FULFILMENT vs Paytm +10.5 (low)",
+    "QUALITY vs Paytm +10.5 (low)",
+    "PAYMENTS vs Paytm +33 (low)"
   ],
   "threats": [
-    "PAYMENTS vs PhonePe +26.8 (medium)",
-    "PRICING vs Paytm +15.8 (medium)"
+    "SUPPORT vs Paytm +22 (low)",
+    "PRICING vs Paytm +18.2 (low)",
+    "UX vs PhonePe +6.8 (low)"
   ],
   "issues": [
-    "Cashback and rewards missing or not credited",
-    "Money sent but not received in account",
-    "Platform fee and tax charged on payments"
+    "Customer support unhelpful and unresponsive",
+    "Rewards not reliable"
   ],
   "switching": [
+    "PhonePe -> Paytm: 1",
     "Paytm -> PhonePe: 1"
   ],
-  "reportUrl": "https://api.apify.com/v2/key-value-stores/AysztXQzMiPHrluwp/records/BATTLECARD?signature=14zs6pSNJNfoH35eumtVK",
-  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/AysztXQzMiPHrluwp/records/BATTLECARD_CLASSIC?signature=vbbt1VSUt2ZYvzUR5oH3",
-  "tokensUsed": 11496,
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/SLl8TrHaarqKxeF1Y/records/BATTLECARD?signature=1bjMI8VozBsvi3NX1uC5O",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/SLl8TrHaarqKxeF1Y/records/BATTLECARD_CLASSIC?signature=oS50JN6M3rSjhHTNolh9",
+  "tokensUsed": 11098,
   "aiCopy": true
 }

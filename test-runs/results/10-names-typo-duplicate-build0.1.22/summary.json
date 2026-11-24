@@ -1,0 +1,58 @@
+{
+  "name": "10-names-typo-duplicate",
+  "runId": "cXtnRAziIDbdYezW5",
+  "status": "SUCCEEDED",
+  "statusMessage": "Done: Swiggy vs Zomato. 3 opportunities, 2 threats, 6 named issues. Skipped: \"Swigy\" (same app as Swiggy). Open the Output tab for the battlecard.",
+  "build": "0.1.22",
+  "memoryMbytes": 1024,
+  "runTimeSecs": 10.889,
+  "usageTotalUsd": 0.0008455849571492937,
+  "consoleUrl": "https://console.apify.com/view/runs/cXtnRAziIDbdYezW5",
+  "apps": [
+    "Swiggy",
+    "Zomato"
+  ],
+  "reviews": [
+    500,
+    500
+  ],
+  "labelled": [
+    "100/100",
+    "100/100"
+  ],
+  "otherShare": [
+    22,
+    22
+  ],
+  "labelCheck": {
+    "checked": 30,
+    "agreed": 24,
+    "share": 80
+  },
+  "verdict": "Biggest risk: 5.1% of Swiggy's specific 1–2★ complaints are about crashes and bugs, vs 0% of Zomato's. Fix this before marketing against rivals.",
+  "opportunities": [
+    "PRICING vs Zomato +6.4 (low)",
+    "PAYMENTS vs Zomato +5.1 (low)",
+    "SUPPORT vs Zomato +3.9 (low)"
+  ],
+  "threats": [
+    "BUGS vs Zomato +5.1 (high)",
+    "FULFILMENT vs Zomato +14.1 (medium)"
+  ],
+  "issues": [
+    "Order not delivered or cancelled after long wait",
+    "Customer support unresponsive or only AI replies",
+    "Delivery partner rude, fraudulent or stealing items",
+    "Refund denied for missing or wrong orders",
+    "Delivery time estimates are inaccurate and misleading",
+    "Items missing from delivered orders"
+  ],
+  "switching": [
+    "Swiggy -> Zomato: 7",
+    "Zomato -> Swiggy: 3"
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/ROniORxxvNbvGtGKV/records/BATTLECARD?signature=tJN7wWKMAdtvzieFrIvS",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/ROniORxxvNbvGtGKV/records/BATTLECARD_CLASSIC?signature=VlaDsMI6JuAMTUXa8sAv",
+  "tokensUsed": 21264,
+  "aiCopy": true
+}

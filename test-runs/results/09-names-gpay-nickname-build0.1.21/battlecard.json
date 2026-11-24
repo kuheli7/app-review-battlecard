@@ -1,0 +1,333 @@
+{
+  "type": "battlecard",
+  "yourApp": "Google Pay",
+  "rivals": [
+    "PhonePe",
+    "Paytm"
+  ],
+  "store": "Google Play",
+  "country": "in",
+  "verdict": "Google Pay's biggest exposure is money not arriving, where PhonePe trails on 36.4% of complaints versus our 63.2%; fix payments before pitching.",
+  "topOpportunity": "Fewer interruptions, a smoother experience every day: 19% of Paytm's specific 1–2★ complaints are about app design, features & ads, vs 0% of yours.",
+  "topThreat": "Money sent but not received is our top complaint: 63.2% of your specific 1–2★ complaints are about payments & refunds, vs 36.4% of PhonePe's.",
+  "opportunities": [
+    {
+      "theme": "UX",
+      "themeLabel": "App design, features & ads",
+      "owner": "Product",
+      "rival": "Paytm",
+      "yourShare": 0,
+      "rivalShare": 19,
+      "gapPoints": 19,
+      "confidence": "high",
+      "evidence": "19% of Paytm's specific 1–2★ complaints are about app design, features & ads, vs 0% of yours.",
+      "quotes": [
+        "please improve your system please upgrade your new features please",
+        "why are you asking me again and again to rate this app"
+      ],
+      "headline": "Fewer interruptions, a smoother experience every day",
+      "message": "Get things done without repeated prompts or clutter. Our app moves you forward, not around in circles."
+    },
+    {
+      "theme": "SUPPORT",
+      "themeLabel": "Customer support",
+      "owner": "Support",
+      "rival": "PhonePe",
+      "yourShare": 0,
+      "rivalShare": 18.2,
+      "gapPoints": 18.2,
+      "confidence": "medium",
+      "evidence": "18.2% of PhonePe's specific 1–2★ complaints are about customer support, vs 0% of yours.",
+      "quotes": [
+        "very bad ..want to talk customer care for 5 days ..they r irritating press 1..pres2 then also cannot connect!!",
+        "Do not use this app fake app my 20 days same issue 5 times ticket raise but Problem not Resolve"
+      ],
+      "headline": "Real help when you need it, not endless waiting",
+      "message": "Problems get resolved, not recycled. When something goes wrong, you get a clear answer instead of tickets that keep reopening."
+    },
+    {
+      "theme": "QUALITY",
+      "themeLabel": "Product, food, service or content quality",
+      "owner": "Operations & Partners",
+      "rival": "Paytm",
+      "yourShare": 0,
+      "rivalShare": 9.5,
+      "gapPoints": 9.5,
+      "confidence": "medium",
+      "evidence": "9.5% of Paytm's specific 1–2★ complaints are about product, food, service or content quality, vs 0% of yours.",
+      "quotes": [],
+      "headline": "Paytm users are angrier about product, food, service or content quality",
+      "message": "Lead with your strength in product, food, service or content quality in campaigns aimed at Paytm users."
+    }
+  ],
+  "threats": [
+    {
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "rival": "PhonePe",
+      "yourShare": 63.2,
+      "rivalShare": 36.4,
+      "gapPoints": 26.8,
+      "confidence": "medium",
+      "evidence": "63.2% of your specific 1–2★ complaints are about payments & refunds, vs 36.4% of PhonePe's.",
+      "quotes": [
+        "payment mujhe bheji kisi ne or show ho rha he lekin check balance me ad ho kr nhi aa rha hr",
+        "message about transferring is received but the amount is not received"
+      ],
+      "headline": "Money sent but not received is our top complaint",
+      "action": "Payments & Support: audit transfer-credit failures and set a clear, fast resolution path for missing money before any rival comparison campaigns run."
+    },
+    {
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "rival": "Paytm",
+      "yourShare": 15.8,
+      "rivalShare": 0,
+      "gapPoints": 15.8,
+      "confidence": "medium",
+      "evidence": "15.8% of your specific 1–2★ complaints are about prices, fees & subscriptions, vs 0% of Paytm's.",
+      "quotes": [
+        "no cash back, and charging more. please fully avoid the platform fee and give more cash back .(eg: like supermoney(flipkart's payment app)",
+        "The worst thing about this app is that it doesn't provide a direct option for 'autopay'—this is outright cheating the user. An average user, who may not be very tech-savvy, could end up losing a lo…"
+      ],
+      "headline": "Users are pushing back on fees and missing cashback",
+      "action": "Pricing & Growth: review platform fee and tax handling and cashback crediting, and communicate changes transparently to users."
+    }
+  ],
+  "fixFirst": [
+    "Cashback and rewards missing or not credited (mentioned in 8 of 46 recent 1–2★ reviews; owner: Payments & Support)",
+    "Money sent but not received in account (mentioned in 5 of 46 recent 1–2★ reviews; owner: Payments & Support)",
+    "Platform fee and tax charged on payments (mentioned in 2 of 46 recent 1–2★ reviews; owner: Pricing & Growth)"
+  ],
+  "yourIssues": [
+    {
+      "title": "Cashback and rewards missing or not credited",
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "count": 8,
+      "shareOfNegative": 17.4,
+      "inCurrentVersion": null,
+      "quotes": [
+        "no cash back, and charging more. please fully avoid the platform fee and give more cash back .(eg: like supermoney(flipkart's payment app)",
+        "Pathetic Rewards system. Always display fake name"
+      ]
+    },
+    {
+      "title": "Money sent but not received in account",
+      "theme": "PAYMENTS",
+      "themeLabel": "Payments & refunds",
+      "owner": "Payments & Support",
+      "count": 5,
+      "shareOfNegative": 10.9,
+      "inCurrentVersion": null,
+      "quotes": [
+        "payment mujhe bheji kisi ne or show ho rha he lekin check balance me ad ho kr nhi aa rha hr",
+        "message about transferring is received but the amount is not received"
+      ]
+    },
+    {
+      "title": "Platform fee and tax charged on payments",
+      "theme": "PRICING",
+      "themeLabel": "Prices, fees & subscriptions",
+      "owner": "Pricing & Growth",
+      "count": 2,
+      "shareOfNegative": 4.3,
+      "inCurrentVersion": null,
+      "quotes": []
+    }
+  ],
+  "switching": [
+    {
+      "app": "Paytm",
+      "mentions": "PhonePe",
+      "count": 1,
+      "negativeReviews": 38,
+      "quotes": [
+        "PhonePe and GooglePe are better than not giving cashback by giving cashback."
+      ]
+    }
+  ],
+  "apps": [
+    {
+      "name": "Google Pay",
+      "isYours": true,
+      "appId": "com.google.android.apps.nbu.paisa.user",
+      "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.paisa.user&hl=en&gl=in",
+      "typedName": "GPay",
+      "storeTitle": "Google Pay: Secure UPI payment",
+      "developer": "Google LLC",
+      "otherMatches": [],
+      "icon": "https://play-lh.googleusercontent.com/Wbik2RoUSGgWEg8ybAhFaMJO2fE7x9gqCXfwbmW0YPjh6TKcjKzecth8GaYkbUBYtLZXhyfVMpqkIuJgTM8p",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 46,
+      "negativeShare": 9.2,
+      "avgRatingRecent": 4.47,
+      "storeRating": 4.62,
+      "ratingCount": 12574890,
+      "currentVersion": null,
+      "starMix": {
+        "1": 36,
+        "2": 10,
+        "3": 20,
+        "4": 51,
+        "5": 383
+      },
+      "replyRateToNegative": 19.6,
+      "from": "2026-11-22T13:29:09.911Z",
+      "to": "2026-11-22T19:28:13.381Z",
+      "daysCovered": 1,
+      "releaseNote": "v356.1.7 (arm64-v8a_release_flutter) is about the same as v358.1.1 (arm64-v8a_release_flutter): 11.1% vs 8.3% of reviews are 1–2★ (9 vs 12 reviews).",
+      "themeShares": {
+        "BUGS": 15.8,
+        "PAYMENTS": 63.2,
+        "FULFILMENT": 0,
+        "QUALITY": 0,
+        "PRICING": 15.8,
+        "SUPPORT": 0,
+        "UX": 0,
+        "ACCOUNT": 5.3,
+        "OTHER": 58.7
+      },
+      "themeCounts": {
+        "BUGS": 3,
+        "PAYMENTS": 12,
+        "FULFILMENT": 0,
+        "QUALITY": 0,
+        "PRICING": 3,
+        "SUPPORT": 0,
+        "UX": 0,
+        "ACCOUNT": 1,
+        "OTHER": 27
+      },
+      "classified": 46,
+      "concrete": 19,
+      "sampled": 46
+    },
+    {
+      "name": "PhonePe",
+      "isYours": false,
+      "appId": "com.phonepe.app",
+      "url": "https://play.google.com/store/apps/details?id=com.phonepe.app&hl=en&gl=in",
+      "typedName": "PhonePe",
+      "storeTitle": "PhonePe UPI Payments, Loan App",
+      "developer": "PhonePe",
+      "otherMatches": [],
+      "icon": "https://play-lh.googleusercontent.com/ARGoCZk-5QCKPpyTsGhn1WahhPbVMa95T1U7clwnI8gjtW-YNY96rAANqFkuENbU35IbYF2Gjg2UjZXA495x0A",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 49,
+      "negativeShare": 9.8,
+      "avgRatingRecent": 4.42,
+      "storeRating": 4.43,
+      "ratingCount": 14399421,
+      "currentVersion": "26.10.23.0",
+      "starMix": {
+        "1": 41,
+        "2": 8,
+        "3": 26,
+        "4": 50,
+        "5": 375
+      },
+      "replyRateToNegative": 67.3,
+      "from": "2026-11-21T15:16:31.992Z",
+      "to": "2026-11-22T19:19:05.313Z",
+      "daysCovered": 1,
+      "releaseNote": "v26.10.23.0 is better than v26.09.25.0: 8.8% vs 14.3% of reviews are 1–2★ (342 vs 7 reviews).",
+      "themeShares": {
+        "BUGS": 13.6,
+        "PAYMENTS": 36.4,
+        "FULFILMENT": 4.5,
+        "QUALITY": 0,
+        "PRICING": 13.6,
+        "SUPPORT": 18.2,
+        "UX": 4.5,
+        "ACCOUNT": 9.1,
+        "OTHER": 55.1
+      },
+      "themeCounts": {
+        "BUGS": 3,
+        "PAYMENTS": 8,
+        "FULFILMENT": 1,
+        "QUALITY": 0,
+        "PRICING": 3,
+        "SUPPORT": 4,
+        "UX": 1,
+        "ACCOUNT": 2,
+        "OTHER": 27
+      },
+      "classified": 49,
+      "concrete": 22,
+      "sampled": 49
+    },
+    {
+      "name": "Paytm",
+      "isYours": false,
+      "appId": "net.one97.paytm",
+      "url": "https://play.google.com/store/apps/details?id=net.one97.paytm&hl=en&gl=in",
+      "typedName": "Paytm",
+      "storeTitle": "Paytm: Secure UPI Payments",
+      "developer": "Paytm - One97 Communications Ltd.",
+      "otherMatches": [],
+      "icon": "https://play-lh.googleusercontent.com/WDGsMRuVENnZPEpV4DEaXw12qtMY3em85xpmZqcXzeh0iT_eXFtAU9VUj-Z7xNQQd5DMqrkKSs9D0qbI1rlt",
+      "reviewsAnalyzed": 500,
+      "negativeReviews": 38,
+      "negativeShare": 7.6,
+      "avgRatingRecent": 4.63,
+      "storeRating": 4.7,
+      "ratingCount": 24675356,
+      "currentVersion": "10.86.13",
+      "starMix": {
+        "1": 31,
+        "2": 7,
+        "3": 7,
+        "4": 26,
+        "5": 429
+      },
+      "replyRateToNegative": 89.5,
+      "from": "2026-11-21T12:43:19.624Z",
+      "to": "2026-11-22T19:18:14.347Z",
+      "daysCovered": 1,
+      "releaseNote": "v10.86.13: 6.7% of 315 reviews are 1–2★.",
+      "themeShares": {
+        "BUGS": 14.3,
+        "PAYMENTS": 42.9,
+        "FULFILMENT": 0,
+        "QUALITY": 9.5,
+        "PRICING": 0,
+        "SUPPORT": 4.8,
+        "UX": 19,
+        "ACCOUNT": 9.5,
+        "OTHER": 44.7
+      },
+      "themeCounts": {
+        "BUGS": 3,
+        "PAYMENTS": 9,
+        "FULFILMENT": 0,
+        "QUALITY": 2,
+        "PRICING": 0,
+        "SUPPORT": 1,
+        "UX": 4,
+        "ACCOUNT": 2,
+        "OTHER": 17
+      },
+      "classified": 38,
+      "concrete": 21,
+      "sampled": 38
+    }
+  ],
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/AysztXQzMiPHrluwp/records/BATTLECARD?signature=14zs6pSNJNfoH35eumtVK",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/AysztXQzMiPHrluwp/records/BATTLECARD_CLASSIC?signature=vbbt1VSUt2ZYvzUR5oH3",
+  "markdownUrl": "https://api.apify.com/v2/key-value-stores/AysztXQzMiPHrluwp/records/BATTLECARD_MD?signature=52TzhqCpLRLgdXDWLNrI",
+  "labelCheck": {
+    "checked": 23,
+    "agreed": 22,
+    "share": 95.7
+  },
+  "skippedApps": [],
+  "model": "anthropic/claude-haiku-5.5",
+  "aiCopy": true,
+  "tokensUsed": 11496,
+  "generatedAt": "2026-11-23T19:31:12.637Z"
+}

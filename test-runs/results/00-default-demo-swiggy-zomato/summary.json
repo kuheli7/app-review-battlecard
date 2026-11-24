@@ -1,13 +1,13 @@
 {
   "name": "00-default-demo-swiggy-zomato",
-  "runId": "Bc2lZTbVyIuM3V9y8",
+  "runId": "heUqJCfMPUCJaZ4vz",
   "status": "SUCCEEDED",
-  "statusMessage": "Done: Swiggy vs Zomato. 1 opportunities, 1 threats, 6 named issues. Open the Output tab for the battlecard.",
-  "build": "0.1.21",
+  "statusMessage": "Done: Swiggy vs Zomato. 3 opportunities, 3 threats, 6 named issues. Open the Output tab for the battlecard.",
+  "build": "0.1.22",
   "memoryMbytes": 1024,
-  "runTimeSecs": 11.379,
-  "usageTotalUsd": 0.0008728354450116555,
-  "consoleUrl": "https://console.apify.com/view/runs/Bc2lZTbVyIuM3V9y8",
+  "runTimeSecs": 11.397,
+  "usageTotalUsd": 0.0008719874681929749,
+  "consoleUrl": "https://console.apify.com/view/runs/heUqJCfMPUCJaZ4vz",
   "apps": [
     "Swiggy",
     "Zomato"
@@ -21,35 +21,39 @@
     "100/100"
   ],
   "otherShare": [
-    21,
-    20
+    24,
+    22
   ],
   "labelCheck": {
     "checked": 30,
     "agreed": 25,
     "share": 83.3
   },
-  "verdict": "Swiggy's 32.6% negative share trails Zomato's 22.2%; fix delivery and ETA accuracy before pushing any competitive message.",
+  "verdict": "Biggest risk: 39.5% of Swiggy's specific 1–2★ complaints are about delivery and fulfilment, vs 23.1% of Zomato's. Fix this before marketing against rivals.",
   "opportunities": [
-    "PAYMENTS vs Zomato +4.9 (low)"
+    "PRICING vs Zomato +8.7 (medium)",
+    "PAYMENTS vs Zomato +4.9 (low)",
+    "SUPPORT vs Zomato +8.6 (medium)"
   ],
   "threats": [
-    "FULFILMENT vs Zomato +6.6 (low)"
+    "FULFILMENT vs Zomato +16.4 (high)",
+    "BUGS vs Zomato +3.9 (medium)",
+    "QUALITY vs Zomato +4.3 (low)"
   ],
   "issues": [
-    "Delivery late, ETA shown wrong or unrealistic",
-    "Customer support slow, AI bot, no human help",
-    "Refund denied or not issued for failed orders",
-    "Items missing, wrong or less quantity delivered",
-    "Stale, expired or spoiled food and products",
-    "Order cancelled without notice after long wait"
+    "Customer support slow, AI-only, unhelpful replies",
+    "Orders delivered late, ETA shown is inaccurate",
+    "Items missing or wrong items delivered",
+    "Delivery partners rude, fraudulent or steal items",
+    "Orders cancelled after long wait, no refund",
+    "Extra fees, GST and charges make orders costly"
   ],
   "switching": [
-    "Swiggy -> Zomato: 9",
-    "Zomato -> Swiggy: 4"
+    "Swiggy -> Zomato: 7",
+    "Zomato -> Swiggy: 3"
   ],
-  "reportUrl": "https://api.apify.com/v2/key-value-stores/ziK7cgkoE403oEKam/records/BATTLECARD?signature=1cZ2kaeXkbF0p684rT81N",
-  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/ziK7cgkoE403oEKam/records/BATTLECARD_CLASSIC?signature=1h9D8D716BwSG4wxNV4wS",
-  "tokensUsed": 21030,
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/P50m6dAOKmbmYTCHz/records/BATTLECARD?signature=1OQgbc4gfdok7WGUuE4sc",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/P50m6dAOKmbmYTCHz/records/BATTLECARD_CLASSIC?signature=psMPeLm26zTlXMt7tbc4",
+  "tokensUsed": 21407,
   "aiCopy": true
 }

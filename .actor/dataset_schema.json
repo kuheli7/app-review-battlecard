@@ -117,7 +117,7 @@
             },
             "aiLinesReplaced": {
                 "type": "integer",
-                "description": "AI lines that failed a check (a number, a claim the data can't back, too long) and were replaced by a template"
+                "description": "AI lines that failed a check (a number, a claim the data can't back, too long) or were missing, and were replaced by a template"
             },
             "tokensUsed": {
                 "type": "integer",

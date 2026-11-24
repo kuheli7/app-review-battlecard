@@ -7,43 +7,26 @@
   ],
   "store": "Google Play",
   "country": "in",
-  "verdict": "Google Pay's biggest exposure is money not arriving, where PhonePe trails on 36.4% of complaints versus our 63.2%; fix payments before pitching.",
-  "topOpportunity": "Fewer interruptions, a smoother experience every day: 19% of Paytm's specific 1–2★ complaints are about app design, features & ads, vs 0% of yours.",
-  "topThreat": "Money sent but not received is our top complaint: 63.2% of your specific 1–2★ complaints are about payments & refunds, vs 36.4% of PhonePe's.",
+  "verdict": "No clear gap yet. The biggest difference is customer support (27.3% of Google Pay's specific 1–2★ complaints vs 5.3% of Paytm's), but it rests on few complaints, so check again with more reviews.",
+  "topOpportunity": "Early sign: more of Paytm's complaints are about delivery and fulfilment: 10.5% of Paytm's specific 1–2★ complaints are about delivery & fulfilment (late, cancelled, missing, no-show), vs 0% of yours.",
+  "topThreat": "Early sign: more of your complaints are about customer support than Paytm's: 27.3% of your specific 1–2★ complaints are about customer support, vs 5.3% of Paytm's.",
   "opportunities": [
     {
-      "theme": "UX",
-      "themeLabel": "App design, features & ads",
-      "owner": "Product",
+      "theme": "FULFILMENT",
+      "themeLabel": "Delivery & fulfilment (late, cancelled, missing, no-show)",
+      "owner": "Operations",
       "rival": "Paytm",
       "yourShare": 0,
-      "rivalShare": 19,
-      "gapPoints": 19,
-      "confidence": "high",
-      "evidence": "19% of Paytm's specific 1–2★ complaints are about app design, features & ads, vs 0% of yours.",
+      "rivalShare": 10.5,
+      "gapPoints": 10.5,
+      "confidence": "low",
+      "evidence": "10.5% of Paytm's specific 1–2★ complaints are about delivery & fulfilment (late, cancelled, missing, no-show), vs 0% of yours.",
       "quotes": [
-        "please improve your system please upgrade your new features please",
-        "why are you asking me again and again to rate this app"
+        "We were not given refund for our bus tickets even when we were stranded on highway for three hourseamd after that we were given sitting seats instead of sleeper for which we paid... I want full refund",
+        "I booked a bus ticket through Paytm, but the service provided was extremely poor. I generally don't give ratings, but this time I was forced to give a negative rating because of such a terrible exp…"
       ],
-      "headline": "Fewer interruptions, a smoother experience every day",
-      "message": "Get things done without repeated prompts or clutter. Our app moves you forward, not around in circles."
-    },
-    {
-      "theme": "SUPPORT",
-      "themeLabel": "Customer support",
-      "owner": "Support",
-      "rival": "PhonePe",
-      "yourShare": 0,
-      "rivalShare": 18.2,
-      "gapPoints": 18.2,
-      "confidence": "medium",
-      "evidence": "18.2% of PhonePe's specific 1–2★ complaints are about customer support, vs 0% of yours.",
-      "quotes": [
-        "very bad ..want to talk customer care for 5 days ..they r irritating press 1..pres2 then also cannot connect!!",
-        "Do not use this app fake app my 20 days same issue 5 times ticket raise but Problem not Resolve"
-      ],
-      "headline": "Real help when you need it, not endless waiting",
-      "message": "Problems get resolved, not recycled. When something goes wrong, you get a clear answer instead of tickets that keep reopening."
+      "headline": "Early sign: more of Paytm's complaints are about delivery and fulfilment",
+      "message": "Low confidence: this rests on 2 of Paytm's specific complaints and 0 of yours. Check again with more reviews before using it."
     },
     {
       "theme": "QUALITY",
@@ -51,102 +34,131 @@
       "owner": "Operations & Partners",
       "rival": "Paytm",
       "yourShare": 0,
-      "rivalShare": 9.5,
-      "gapPoints": 9.5,
-      "confidence": "medium",
-      "evidence": "9.5% of Paytm's specific 1–2★ complaints are about product, food, service or content quality, vs 0% of yours.",
-      "quotes": [],
-      "headline": "Paytm users are angrier about product, food, service or content quality",
-      "message": "Lead with your strength in product, food, service or content quality in campaigns aimed at Paytm users."
-    }
-  ],
-  "threats": [
+      "rivalShare": 10.5,
+      "gapPoints": 10.5,
+      "confidence": "low",
+      "evidence": "10.5% of Paytm's specific 1–2★ complaints are about product, food, service or content quality, vs 0% of yours.",
+      "quotes": [
+        "worst app ever, they always promise something but after payment they retract that contract"
+      ],
+      "headline": "Early sign: more of Paytm's complaints are about product or service quality",
+      "message": "Low confidence: this rests on 2 of Paytm's specific complaints and 0 of yours. Check again with more reviews before using it."
+    },
     {
       "theme": "PAYMENTS",
       "themeLabel": "Payments & refunds",
       "owner": "Payments & Support",
-      "rival": "PhonePe",
-      "yourShare": 63.2,
-      "rivalShare": 36.4,
-      "gapPoints": 26.8,
-      "confidence": "medium",
-      "evidence": "63.2% of your specific 1–2★ complaints are about payments & refunds, vs 36.4% of PhonePe's.",
+      "rival": "Paytm",
+      "yourShare": 9.1,
+      "rivalShare": 42.1,
+      "gapPoints": 33,
+      "confidence": "low",
+      "evidence": "42.1% of Paytm's specific 1–2★ complaints are about payments & refunds, vs 9.1% of yours.",
       "quotes": [
-        "payment mujhe bheji kisi ne or show ho rha he lekin check balance me ad ho kr nhi aa rha hr",
-        "message about transferring is received but the amount is not received"
+        "Dear Paytm Insurance Support Team, I am writing to formally request a full refund of ₹1,211.85 paid towards my Two-Wheeler Insurance on 21 November 2026. Despite making the payment successfully, I…",
+        "when ever iam trying to check Bank balances after entering UPI pin it's going back to home page and when payment time after entering UPI pin the payment is done but again going back to enter UPI pi…"
       ],
-      "headline": "Money sent but not received is our top complaint",
-      "action": "Payments & Support: audit transfer-credit failures and set a clear, fast resolution path for missing money before any rival comparison campaigns run."
+      "caution": "Fix before you advertise this: \"Rewards not reliable\" is on your own fix-first list (mentioned in 2 of your 34 recent 1–2★ reviews).",
+      "headline": "Early sign: more of Paytm's complaints are about payments and refunds",
+      "message": "Low confidence: this rests on 8 of Paytm's specific complaints and 1 of yours. Check again with more reviews before using it."
+    }
+  ],
+  "threats": [
+    {
+      "theme": "SUPPORT",
+      "themeLabel": "Customer support",
+      "owner": "Support",
+      "rival": "Paytm",
+      "yourShare": 27.3,
+      "rivalShare": 5.3,
+      "gapPoints": 22,
+      "confidence": "low",
+      "evidence": "27.3% of your specific 1–2★ complaints are about customer support, vs 5.3% of Paytm's.",
+      "quotes": [
+        "for the customer care support",
+        "you are not supported customer 😡"
+      ],
+      "headline": "Early sign: more of your complaints are about customer support than Paytm's",
+      "action": "Low confidence: this rests on 3 of your specific complaints and 1 of Paytm's. Owner: Support. Check again with more reviews before acting."
     },
     {
       "theme": "PRICING",
       "themeLabel": "Prices, fees & subscriptions",
       "owner": "Pricing & Growth",
       "rival": "Paytm",
-      "yourShare": 15.8,
+      "yourShare": 18.2,
       "rivalShare": 0,
-      "gapPoints": 15.8,
-      "confidence": "medium",
-      "evidence": "15.8% of your specific 1–2★ complaints are about prices, fees & subscriptions, vs 0% of Paytm's.",
+      "gapPoints": 18.2,
+      "confidence": "low",
+      "evidence": "18.2% of your specific 1–2★ complaints are about prices, fees & subscriptions, vs 0% of Paytm's.",
+      "quotes": [],
+      "headline": "Early sign: more of your complaints are about prices and fees than Paytm's",
+      "action": "Low confidence: this rests on 2 of your specific complaints and 0 of Paytm's. Owner: Pricing & Growth. Check again with more reviews before acting."
+    },
+    {
+      "theme": "UX",
+      "themeLabel": "App design, features & ads",
+      "owner": "Product",
+      "rival": "PhonePe",
+      "yourShare": 18.2,
+      "rivalShare": 11.4,
+      "gapPoints": 6.8,
+      "confidence": "low",
+      "evidence": "18.2% of your specific 1–2★ complaints are about app design, features & ads, vs 11.4% of PhonePe's.",
       "quotes": [
-        "no cash back, and charging more. please fully avoid the platform fee and give more cash back .(eg: like supermoney(flipkart's payment app)",
-        "The worst thing about this app is that it doesn't provide a direct option for 'autopay'—this is outright cheating the user. An average user, who may not be very tech-savvy, could end up losing a lo…"
+        "Hi Google Pay Kindly launch GPay PPI Wallet which is issued by Reserve Bank of India and launch also FD against credit card...and kindly add Additional Authentication Security features like face an…",
+        "now 2 f**king stars for taking me to the loan page without my consent. The next time it happens I'm going to delete the application for good."
       ],
-      "headline": "Users are pushing back on fees and missing cashback",
-      "action": "Pricing & Growth: review platform fee and tax handling and cashback crediting, and communicate changes transparently to users."
+      "headline": "Early sign: more of your complaints are about app design, features and ads than PhonePe's",
+      "action": "Low confidence: this rests on 2 of your specific complaints and 4 of PhonePe's. Owner: Product. Check again with more reviews before acting."
     }
   ],
   "fixFirst": [
-    "Cashback and rewards missing or not credited (mentioned in 8 of 46 recent 1–2★ reviews; owner: Payments & Support)",
-    "Money sent but not received in account (mentioned in 5 of 46 recent 1–2★ reviews; owner: Payments & Support)",
-    "Platform fee and tax charged on payments (mentioned in 2 of 46 recent 1–2★ reviews; owner: Pricing & Growth)"
+    "Customer support unhelpful and unresponsive (mentioned in 3 of 34 recent 1–2★ reviews; owner: Support)",
+    "Rewards not reliable (mentioned in 2 of 34 recent 1–2★ reviews; owner: Payments & Support)"
   ],
   "yourIssues": [
     {
-      "title": "Cashback and rewards missing or not credited",
-      "theme": "PAYMENTS",
-      "themeLabel": "Payments & refunds",
-      "owner": "Payments & Support",
-      "count": 8,
-      "shareOfNegative": 17.4,
+      "title": "Customer support unhelpful and unresponsive",
+      "theme": "SUPPORT",
+      "themeLabel": "Customer support",
+      "owner": "Support",
+      "count": 3,
+      "shareOfNegative": 8.8,
       "inCurrentVersion": null,
       "quotes": [
-        "no cash back, and charging more. please fully avoid the platform fee and give more cash back .(eg: like supermoney(flipkart's payment app)",
-        "Pathetic Rewards system. Always display fake name"
+        "for the customer care support",
+        "you are not supported customer 😡"
       ]
     },
     {
-      "title": "Money sent but not received in account",
+      "title": "Rewards not reliable",
       "theme": "PAYMENTS",
       "themeLabel": "Payments & refunds",
       "owner": "Payments & Support",
-      "count": 5,
-      "shareOfNegative": 10.9,
-      "inCurrentVersion": null,
-      "quotes": [
-        "payment mujhe bheji kisi ne or show ho rha he lekin check balance me ad ho kr nhi aa rha hr",
-        "message about transferring is received but the amount is not received"
-      ]
-    },
-    {
-      "title": "Platform fee and tax charged on payments",
-      "theme": "PRICING",
-      "themeLabel": "Prices, fees & subscriptions",
-      "owner": "Pricing & Growth",
       "count": 2,
-      "shareOfNegative": 4.3,
+      "shareOfNegative": 5.9,
       "inCurrentVersion": null,
       "quotes": []
     }
   ],
   "switching": [
     {
+      "app": "PhonePe",
+      "mentions": "Paytm",
+      "count": 1,
+      "negativeReviews": 52,
+      "quotes": [
+        "​Worst experience with PhonePe. Earlier it charged nothing, but now it deducts ₹2 to ₹3 extra on every recharge and transaction. Other apps like Paytm don't charge a single rupee—even for FASTag re…"
+      ]
+    },
+    {
       "app": "Paytm",
       "mentions": "PhonePe",
       "count": 1,
-      "negativeReviews": 38,
+      "negativeReviews": 30,
       "quotes": [
-        "PhonePe and GooglePe are better than not giving cashback by giving cashback."
+        "PAYTM APP KA UI VERY BAD BUT UI COLORFUL HONA CHAHIYE AND ICON SARAL AND MANAGEMENT BEST HONA CHAHIYE , PHONEPE KA UI AND ICON MANAGEMENT IS BEST IN THE WORLD"
       ]
     }
   ],
@@ -162,49 +174,49 @@
       "otherMatches": [],
       "icon": "https://play-lh.googleusercontent.com/Wbik2RoUSGgWEg8ybAhFaMJO2fE7x9gqCXfwbmW0YPjh6TKcjKzecth8GaYkbUBYtLZXhyfVMpqkIuJgTM8p",
       "reviewsAnalyzed": 500,
-      "negativeReviews": 46,
-      "negativeShare": 9.2,
-      "avgRatingRecent": 4.47,
-      "storeRating": 4.62,
-      "ratingCount": 12574890,
+      "negativeReviews": 34,
+      "negativeShare": 6.8,
+      "avgRatingRecent": 4.55,
+      "storeRating": 4.63,
+      "ratingCount": 12614263,
       "currentVersion": null,
       "starMix": {
-        "1": 36,
+        "1": 24,
         "2": 10,
-        "3": 20,
-        "4": 51,
-        "5": 383
+        "3": 28,
+        "4": 42,
+        "5": 396
       },
-      "replyRateToNegative": 19.6,
-      "from": "2026-11-22T13:29:09.911Z",
-      "to": "2026-11-22T19:28:13.381Z",
+      "replyRateToNegative": 20.6,
+      "from": "2026-11-23T09:46:07.506Z",
+      "to": "2026-11-23T13:44:28.216Z",
       "daysCovered": 1,
-      "releaseNote": "v356.1.7 (arm64-v8a_release_flutter) is about the same as v358.1.1 (arm64-v8a_release_flutter): 11.1% vs 8.3% of reviews are 1–2★ (9 vs 12 reviews).",
+      "releaseNote": "v356.1.6 (arm64-v8a_release_flutter) is worse than v356.1.7 (arm64-v8a_release_flutter): 5.3% vs 0% of reviews are 1–2★ (19 vs 8 reviews).",
       "themeShares": {
-        "BUGS": 15.8,
-        "PAYMENTS": 63.2,
+        "BUGS": 18.2,
+        "PAYMENTS": 9.1,
         "FULFILMENT": 0,
         "QUALITY": 0,
-        "PRICING": 15.8,
-        "SUPPORT": 0,
-        "UX": 0,
-        "ACCOUNT": 5.3,
-        "OTHER": 58.7
+        "PRICING": 18.2,
+        "SUPPORT": 27.3,
+        "UX": 18.2,
+        "ACCOUNT": 9.1,
+        "OTHER": 67.6
       },
       "themeCounts": {
-        "BUGS": 3,
-        "PAYMENTS": 12,
+        "BUGS": 2,
+        "PAYMENTS": 1,
         "FULFILMENT": 0,
         "QUALITY": 0,
-        "PRICING": 3,
-        "SUPPORT": 0,
-        "UX": 0,
+        "PRICING": 2,
+        "SUPPORT": 3,
+        "UX": 2,
         "ACCOUNT": 1,
-        "OTHER": 27
+        "OTHER": 23
       },
-      "classified": 46,
-      "concrete": 19,
-      "sampled": 46
+      "classified": 34,
+      "concrete": 11,
+      "sampled": 34
     },
     {
       "name": "PhonePe",
@@ -217,49 +229,49 @@
       "otherMatches": [],
       "icon": "https://play-lh.googleusercontent.com/ARGoCZk-5QCKPpyTsGhn1WahhPbVMa95T1U7clwnI8gjtW-YNY96rAANqFkuENbU35IbYF2Gjg2UjZXA495x0A",
       "reviewsAnalyzed": 500,
-      "negativeReviews": 49,
-      "negativeShare": 9.8,
-      "avgRatingRecent": 4.42,
+      "negativeReviews": 52,
+      "negativeShare": 10.4,
+      "avgRatingRecent": 4.41,
       "storeRating": 4.43,
-      "ratingCount": 14399421,
+      "ratingCount": 14401223,
       "currentVersion": "26.10.23.0",
       "starMix": {
         "1": 41,
-        "2": 8,
-        "3": 26,
-        "4": 50,
-        "5": 375
+        "2": 11,
+        "3": 25,
+        "4": 47,
+        "5": 376
       },
-      "replyRateToNegative": 67.3,
-      "from": "2026-11-21T15:16:31.992Z",
-      "to": "2026-11-22T19:19:05.313Z",
+      "replyRateToNegative": 71.2,
+      "from": "2026-11-22T09:54:52.460Z",
+      "to": "2026-11-23T13:44:03.289Z",
       "daysCovered": 1,
-      "releaseNote": "v26.10.23.0 is better than v26.09.25.0: 8.8% vs 14.3% of reviews are 1–2★ (342 vs 7 reviews).",
+      "releaseNote": "v26.10.23.0: 9.2% of 338 reviews are 1–2★.",
       "themeShares": {
-        "BUGS": 13.6,
-        "PAYMENTS": 36.4,
-        "FULFILMENT": 4.5,
+        "BUGS": 28.6,
+        "PAYMENTS": 17.1,
+        "FULFILMENT": 2.9,
         "QUALITY": 0,
-        "PRICING": 13.6,
-        "SUPPORT": 18.2,
-        "UX": 4.5,
-        "ACCOUNT": 9.1,
-        "OTHER": 55.1
+        "PRICING": 17.1,
+        "SUPPORT": 5.7,
+        "UX": 11.4,
+        "ACCOUNT": 17.1,
+        "OTHER": 32.7
       },
       "themeCounts": {
-        "BUGS": 3,
-        "PAYMENTS": 8,
+        "BUGS": 10,
+        "PAYMENTS": 6,
         "FULFILMENT": 1,
         "QUALITY": 0,
-        "PRICING": 3,
-        "SUPPORT": 4,
-        "UX": 1,
-        "ACCOUNT": 2,
-        "OTHER": 27
+        "PRICING": 6,
+        "SUPPORT": 2,
+        "UX": 4,
+        "ACCOUNT": 6,
+        "OTHER": 17
       },
-      "classified": 49,
-      "concrete": 22,
-      "sampled": 49
+      "classified": 52,
+      "concrete": 35,
+      "sampled": 52
     },
     {
       "name": "Paytm",
@@ -272,62 +284,63 @@
       "otherMatches": [],
       "icon": "https://play-lh.googleusercontent.com/WDGsMRuVENnZPEpV4DEaXw12qtMY3em85xpmZqcXzeh0iT_eXFtAU9VUj-Z7xNQQd5DMqrkKSs9D0qbI1rlt",
       "reviewsAnalyzed": 500,
-      "negativeReviews": 38,
-      "negativeShare": 7.6,
-      "avgRatingRecent": 4.63,
+      "negativeReviews": 30,
+      "negativeShare": 6,
+      "avgRatingRecent": 4.67,
       "storeRating": 4.7,
-      "ratingCount": 24675356,
+      "ratingCount": 24680690,
       "currentVersion": "10.86.13",
       "starMix": {
-        "1": 31,
-        "2": 7,
-        "3": 7,
-        "4": 26,
-        "5": 429
+        "1": 28,
+        "2": 2,
+        "3": 13,
+        "4": 23,
+        "5": 434
       },
-      "replyRateToNegative": 89.5,
-      "from": "2026-11-21T12:43:19.624Z",
-      "to": "2026-11-22T19:18:14.347Z",
+      "replyRateToNegative": 96.7,
+      "from": "2026-11-22T07:18:39.445Z",
+      "to": "2026-11-23T13:44:20.606Z",
       "daysCovered": 1,
-      "releaseNote": "v10.86.13: 6.7% of 315 reviews are 1–2★.",
+      "releaseNote": "v10.86.13: 5% of 318 reviews are 1–2★.",
       "themeShares": {
-        "BUGS": 14.3,
-        "PAYMENTS": 42.9,
-        "FULFILMENT": 0,
-        "QUALITY": 9.5,
+        "BUGS": 15.8,
+        "PAYMENTS": 42.1,
+        "FULFILMENT": 10.5,
+        "QUALITY": 10.5,
         "PRICING": 0,
-        "SUPPORT": 4.8,
-        "UX": 19,
-        "ACCOUNT": 9.5,
-        "OTHER": 44.7
+        "SUPPORT": 5.3,
+        "UX": 15.8,
+        "ACCOUNT": 0,
+        "OTHER": 36.7
       },
       "themeCounts": {
         "BUGS": 3,
-        "PAYMENTS": 9,
-        "FULFILMENT": 0,
+        "PAYMENTS": 8,
+        "FULFILMENT": 2,
         "QUALITY": 2,
         "PRICING": 0,
         "SUPPORT": 1,
-        "UX": 4,
-        "ACCOUNT": 2,
-        "OTHER": 17
+        "UX": 3,
+        "ACCOUNT": 0,
+        "OTHER": 11
       },
-      "classified": 38,
-      "concrete": 21,
-      "sampled": 38
+      "classified": 30,
+      "concrete": 19,
+      "sampled": 30
     }
   ],
-  "reportUrl": "https://api.apify.com/v2/key-value-stores/AysztXQzMiPHrluwp/records/BATTLECARD?signature=14zs6pSNJNfoH35eumtVK",
-  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/AysztXQzMiPHrluwp/records/BATTLECARD_CLASSIC?signature=vbbt1VSUt2ZYvzUR5oH3",
-  "markdownUrl": "https://api.apify.com/v2/key-value-stores/AysztXQzMiPHrluwp/records/BATTLECARD_MD?signature=52TzhqCpLRLgdXDWLNrI",
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/SLl8TrHaarqKxeF1Y/records/BATTLECARD?signature=1bjMI8VozBsvi3NX1uC5O",
+  "classicReportUrl": "https://api.apify.com/v2/key-value-stores/SLl8TrHaarqKxeF1Y/records/BATTLECARD_CLASSIC?signature=oS50JN6M3rSjhHTNolh9",
+  "markdownUrl": "https://api.apify.com/v2/key-value-stores/SLl8TrHaarqKxeF1Y/records/BATTLECARD_MD?signature=1OPJPwuROy7G9PTTYucQq",
   "labelCheck": {
-    "checked": 23,
-    "agreed": 22,
-    "share": 95.7
+    "checked": 17,
+    "agreed": 15,
+    "share": 88.2
   },
   "skippedApps": [],
   "model": "anthropic/claude-haiku-5.5",
   "aiCopy": true,
-  "tokensUsed": 11496,
-  "generatedAt": "2026-11-23T19:31:12.637Z"
+  "aiLinesReplaced": 0,
+  "tokensUsed": 11098,
+  "generatedAt": "2026-11-24T13:44:39.099Z"
 }

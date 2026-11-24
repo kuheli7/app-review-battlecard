@@ -2,7 +2,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { type Gap, quoteScore } from '../src/analysis.js';
-import { buildVerdict, opportunityCopy, plural, threatCopy, vetLine } from '../src/copy.js';
+import { aiEntryFor, buildVerdict, opportunityCopy, plural, threatCopy, vetLine } from '../src/copy.js';
 
 const gap = (over: Partial<Gap>): Gap => ({
     theme: 'FULFILMENT',
@@ -28,10 +28,13 @@ describe('buildVerdict', () => {
         );
     });
 
-    it('leads with the stronger signal: confidence first, then the bigger gap', () => {
-        const thr = gap({ gapPoints: 20, confidence: 'medium' });
+    it('leads with the bigger gap unless it rests on few complaints (run 10: 5% vs 0% led over 36% vs 22%)', () => {
+        const bugs = gap({ theme: 'BUGS', yourShare: 5.1, rivalShare: 0, gapPoints: 5.1, confidence: 'high' });
+        const late = gap({ yourShare: 35.9, rivalShare: 21.8, gapPoints: 14.1, confidence: 'medium' });
+        expect(buildVerdict('Swiggy', [], [bugs, late])).toMatch(/^Biggest risk: 35.9% of Swiggy's .* delivery and fulfilment/);
         const opp = gap({ theme: 'SUPPORT', yourShare: 6, rivalShare: 18, gapPoints: 12, confidence: 'high' });
-        expect(buildVerdict('Swiggy', [opp], [thr])).toMatch(/^Biggest opening: 18% of Zomato's .* customer support, vs 6% of Swiggy's\./);
+        const lowThr = gap({ gapPoints: 20, confidence: 'low' });
+        expect(buildVerdict('Swiggy', [opp], [lowThr])).toMatch(/^Biggest opening: 18% of Zomato's .* customer support, vs 6% of Swiggy's\./);
     });
 
     it('does not lead with an opportunity that is on your own fix-first list', () => {
@@ -86,6 +89,14 @@ describe('card copy', () => {
         expect(c.headline).toBe('Zomato support ignores users');
         expect(c.message).toMatch(/^Speak to Zomato users/);
         expect(c.rejected).toHaveLength(1);
+    });
+
+    it('finds the AI entry for a theme whatever its case or spacing', () => {
+        const list = [{ theme: ' payments ', action: 'a' }, { theme: 'Support', action: 'b' }];
+        expect(aiEntryFor(list, 'PAYMENTS')?.action).toBe('a');
+        expect(aiEntryFor(list, 'SUPPORT')?.action).toBe('b');
+        expect(aiEntryFor(list, 'BUGS')).toBeUndefined();
+        expect(aiEntryFor(undefined, 'BUGS')).toBeUndefined();
     });
 
     it('uses no marketing line on a low-confidence gap', () => {

@@ -86,46 +86,50 @@ Also saved to the run's key-value store:
 - `BATTLECARD_CLASSIC`: the same report in a plain light layout.
 - `BATTLECARD_MD`: the same report as Markdown, ready for Notion, Slack or a doc.
 
-### Example output (real run, Swiggy vs Zomato, Google Play India, 22 Nov 2026, shortened)
+### Example output (real run, Swiggy vs Zomato, Google Play India, 24 Nov 2026, shortened)
 
 ```json
 {
   "yourApp": "Swiggy",
   "rivals": ["Zomato"],
   "store": "Google Play",
-  "verdict": "Swiggy's complaint mix is dominated by late or missing deliveries, a gap rivals show far less, so reliability is the lead to fix and to contrast.",
-  "topOpportunity": "Real humans answer when your order goes wrong: 18% of Zomato's 1–2★ reviews are about customer support, vs 6% of yours.",
+  "verdict": "Biggest risk: 39.5% of Swiggy's specific 1–2★ complaints are about delivery and fulfilment, vs 23.1% of Zomato's. Fix this before marketing against rivals.",
+  "topOpportunity": "Users frustrated by stacked fees and higher menu prices: 17.9% of Zomato's specific 1–2★ complaints are about prices, fees & subscriptions, vs 9.2% of yours.",
   "opportunities": [
     {
-      "theme": "SUPPORT",
+      "theme": "PRICING",
       "rival": "Zomato",
-      "rivalShare": 18,
-      "yourShare": 6,
-      "headline": "Real humans answer when your order goes wrong",
-      "message": "Stolen order or money lost? Swiggy support replies with people, not bots. Help you can actually reach when it matters.",
-      "quotes": ["worst experience. Fully automated responses no customer value and frustrating automatically generated responses from chat bots."]
+      "rivalShare": 17.9,
+      "yourShare": 9.2,
+      "confidence": "medium",
+      "headline": "Users frustrated by stacked fees and higher menu prices",
+      "message": "Clear pricing on every order, with fees shown upfront so you know what you pay before checkout.",
+      "quotes": ["I don't know why the prices of food items are high priced than the actual price at the restaurants or hotel! you are charging delivery fee, and several taxes on us…"]
     }
   ],
   "threats": [
     {
       "theme": "FULFILMENT",
       "rival": "Zomato",
-      "yourShare": 39,
-      "rivalShare": 27,
+      "yourShare": 39.5,
+      "rivalShare": 23.1,
+      "confidence": "high",
       "owner": "Operations",
-      "headline": "Late and missing deliveries are your top complaint",
-      "action": "Launch a delivery-reliability sprint on wrong-location and rider-conduct failures, with weekly tracking; owner: Operations."
+      "headline": "More of your complaints are about delivery and fulfilment than Zomato's",
+      "action": "Operations should fix late-delivery and wrong-item root causes first, and make ETAs match real delivery times."
     }
   ],
+  "aiCopy": true,
+  "aiLinesReplaced": 0,
   "reportUrl": "https://api.apify.com/v2/key-value-stores/<id>/records/BATTLECARD?signature=<signature>"
 }
 ```
 
 The same run also found that:
 
-- Swiggy replied to **100%** of its recent 1–2★ reviews on Google Play, while Zomato replied to about **51%**.
-- **8** of Swiggy's 161 recent 1–2★ reviews name Zomato; only **1** of Zomato's names Swiggy.
-- Swiggy's fix-first list: unresponsive customer support (18 of 100 reviews), late deliveries (17), refunds denied or delayed (13).
+- Swiggy replied to **100%** of its recent 1–2★ reviews on Google Play, while Zomato replied to about **49%**.
+- **7** of Swiggy's 161 recent 1–2★ reviews name Zomato; only **3** of Zomato's 121 name Swiggy.
+- Swiggy's fix-first list: slow or AI-only customer support (19 of 100 reviews), late deliveries (17), missing or wrong items (12).
 
 ## How to use it
 
@@ -173,7 +177,7 @@ Reading and sorting 1,000 reviews by hand takes hours. A weekly battlecard for o
 - **Failure:** if your app can't be found, has too few recent reviews, or the AI step fails, the run **fails with a clear message** and no battlecard item is saved, so you're not charged for a broken result.
 - If a rival can't be found, has too few reviews, or is the same app as another entry (`Swigy` and `Swiggy`), it's skipped and the rest of the comparison still runs. Skipped apps are named in the status message, the report and `skippedApps`.
 - When a typed name was matched to an app with a different title (`GPay` → Google Pay), or other popular apps share the name, the status message says which app was used. Each `apps[]` entry also has `typedName`, `storeTitle`, `developer` and `otherMatches`.
-- If the AI fails to write the headlines, plain template sentences are used and `aiCopy` is `false`. A single AI line that fails a check is replaced the same way and counted in `aiLinesReplaced`.
+- If the AI fails to write the headlines, plain template sentences are used and `aiCopy` is `false`. A single AI line that fails a check, or a card the AI left out, is replaced the same way and counted in `aiLinesReplaced`.
 
 ## Limits
 
