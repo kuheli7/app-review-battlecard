@@ -1,6 +1,6 @@
 # Test runs
 
-Platform runs on Apify (account `kuheli7`, Actor `app-review-battlecard`), 22 Nov 2026; runs 00, 09 and 10 re-run on 24 Nov (00 and 09 with build 0.1.22, verdict written in code; 10 with build 0.1.23).
+Platform runs on Apify (account `kuheli7`, Actor `app-review-battlecard`), 22 Nov 2026; runs 09 and 10 re-run on 24 Nov (09 with build 0.1.22, verdict written in code; 10 with build 0.1.23); run 00 re-run and test 11 added on 25 Nov with build 0.1.24 (`apps` required).
 Each folder in `results/` has the input, the dataset item (`battlecard.json`), both HTML reports, the Markdown report and a `summary.json`.
 Re-save any run with `python test-runs/fetch_run.py <name> <runId>`.
 
@@ -12,7 +12,7 @@ Unit tests: `npm test`, 57 passing (stats, theme shares, gaps and confidence, sw
 
 | # | Test | Build | Result | Time | Label check |
 |---|---|---|---|---|---|
-| 00 | Default input `{}`: Swiggy vs Zomato (older runs in `00-...-build0.1.18` and `-build0.1.21`) | 0.1.22 | SUCCEEDED, verdict built in code, 0 AI lines replaced | 11.4 s | 83.3% of 30 |
+| 00 | Swiggy vs Zomato, input `{"apps":["Swiggy","Zomato"]}` (older runs with `{}` in `00-...-build0.1.18`, `-build0.1.21` and `-build0.1.22`) | 0.1.24 | SUCCEEDED; 1 AI line replaced by a template because it held a number | 12.5 s | 76.7% of 30 |
 | 01 | Rides: Uber vs Ola, Rapido | 0.1.15 | SUCCEEDED | 12.5 s | 86.7% of 30 |
 | 02 | Payments: PhonePe vs Google Pay, Paytm | 0.1.18 | SUCCEEDED | 10.9 s | 86.4% of 22 |
 | 03 | Shopping, 4 apps, one given as a Play URL | 0.1.15 | SUCCEEDED | 10.4 s | 83.3% of 30 |
@@ -23,6 +23,7 @@ Unit tests: `npm test`, 57 passing (stats, theme shares, gaps and confidence, sw
 | 08 | Run started from the Console form: 4 ride apps | 0.1.16 | SUCCEEDED | 11.1 s | 73.3% of 30 |
 | 09 | Nickname: GPay vs PhonePe, Paytm (0.1.21 run with the mixed-up AI verdict in `09-...-build0.1.21`) | 0.1.22 | SUCCEEDED, "GPay" matched Google Pay; verdict says "No clear gap yet" because every gap rests on few complaints | 11.3 s | 88.2% of 17 |
 | 10 | Typo + duplicate: Swiggy, Swigy, Zomato (0.1.22 run with problem 8 in `10-...-build0.1.22`) | 0.1.23 | SUCCEEDED, "Swigy" skipped as the same app as Swiggy; verdict leads with the delivery gap | 10.8 s | 83.3% of 30 |
+| 11 | Empty input `{}` (no saved folder) | 0.1.24 | Rejected by Apify before a run starts: "Input is not valid: Field input.apps is required". No run, no charge | – | – |
 
 Run IDs and Console links are in each `summary.json`.
 
