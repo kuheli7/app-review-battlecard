@@ -29,7 +29,7 @@
             },
             "verdict": {
                 "type": "string",
-                "description": "One-sentence takeaway"
+                "description": "One-sentence takeaway, written in code from the computed gaps (each number sits next to its own app)"
             },
             "topOpportunity": {
                 "type": [
@@ -113,7 +113,11 @@
             },
             "aiCopy": {
                 "type": "boolean",
-                "description": "True if the AI wrote the headlines; false if plain template sentences were used"
+                "description": "True if the AI wrote the opportunity headlines, messages and threat actions; false if plain template sentences were used"
+            },
+            "aiLinesReplaced": {
+                "type": "integer",
+                "description": "AI lines that failed a check (a number, a claim the data can't back, too long) and were replaced by a template"
             },
             "tokensUsed": {
                 "type": "integer",

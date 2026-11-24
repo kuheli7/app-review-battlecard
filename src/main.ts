@@ -17,6 +17,7 @@ import {
     type ThemeResult,
 } from './analysis.js';
 import { type AppInfo, fetchReviews, resolveApp, type Review } from './apple.js';
+import { buildVerdict, byStrength, opportunityCopy, plural, threatCopy } from './copy.js';
 import { type BattlecardCopy, classifyReviews, type LlmUsage, nameIssues, writeBattlecard } from './llm.js';
 import { matchNote } from './match.js';
 import { fetchPlayReviews, resolvePlayApp } from './play.js';
@@ -242,8 +243,11 @@ try {
         side === 'opp'
             ? `${g.rivalShare}% of ${g.rival}'s specific 1–2★ complaints are about ${g.themeLabel.toLowerCase()}, vs ${g.yourShare}% of yours.`
             : `${g.yourShare}% of your specific 1–2★ complaints are about ${g.themeLabel.toLowerCase()}, vs ${g.rivalShare}% of ${g.rival}'s.`;
+    // AI lines that failed the checks in src/copy.ts (a number, a claim the data can't back, too long) are replaced.
+    const rejectedLines: string[] = [];
+    const fixFirstThemes = new Set<string>(yourIssues.slice(0, 3).map((i) => i.theme));
     const toCards = (gaps: Gap[], side: 'opp' | 'thr'): CardItem[] =>
-        gaps.map((g) => {
+        [...gaps].sort(byStrength).map((g) => {
             const base = {
                 theme: g.theme,
                 themeLabel: g.themeLabel,
@@ -256,9 +260,9 @@ try {
                 evidence: evidence(g, side),
                 quotes: g.quotes,
             };
-            const label = g.themeLabel.toLowerCase();
             if (side === 'opp') {
-                const c = copy?.opportunities.find((o) => o?.theme === g.theme);
+                const c = opportunityCopy(g, copy?.opportunities.find((o) => o.theme === g.theme));
+                rejectedLines.push(...c.rejected.map((r) => `${g.theme} opportunity ${r}`));
                 // A rival can be worse at something that is still one of your own top problems. Say so on the card.
                 const clash = yourIssues.slice(0, 3).find((i) => i.theme === g.theme);
                 return {
@@ -268,27 +272,20 @@ try {
                               caution: `Fix before you advertise this: "${clash.title}" is on your own fix-first list (mentioned in ${clash.count} of your ${yourNeg.length} recent 1–2★ reviews).`,
                           }
                         : {}),
-                    headline: c?.headline || `${g.rival} users are angrier about ${label}`,
-                    message: c?.message || `Lead with your strength in ${label} in campaigns aimed at ${g.rival} users.`,
+                    headline: c.headline,
+                    message: c.message,
                 };
             }
-            const c = copy?.threats.find((t) => t?.theme === g.theme);
-            return {
-                ...base,
-                headline: c?.headline || `You trail ${g.rival} on ${label}`,
-                action: c?.action || `Owner: ${g.owner}. Review the quoted complaints and fix the top cause first.`,
-            };
+            const c = threatCopy(g, copy?.threats.find((t) => t.theme === g.theme));
+            rejectedLines.push(...c.rejected.map((r) => `${g.theme} threat ${r}`));
+            return { ...base, headline: c.headline, action: c.action };
         });
-    // Opportunities you can use right away come first; the ones with a caution go last.
-    const oppCards = toCards(opportunities, 'opp').sort((a, b) => Number(Boolean(a.caution)) - Number(Boolean(b.caution)));
+    // Stronger evidence first; opportunities with a caution go last.
+    const oppCards = toCards(opportunities, 'opp').sort((x, y) => Number(Boolean(x.caution)) - Number(Boolean(y.caution)));
     const thrCards = toCards(threats, 'thr');
-    const verdict =
-        copy?.verdict ||
-        (oppCards[0]
-            ? `Biggest opening: ${oppCards[0].evidence}`
-            : thrCards[0]
-              ? `Biggest risk: ${thrCards[0].evidence}`
-              : 'No large complaint gaps between these apps in the current sample.');
+    for (const r of rejectedLines) log.info(`AI line replaced by a template: ${r}`);
+    // The verdict is written in code from the computed gaps, so its numbers and direction are always right.
+    const verdict = buildVerdict(you.name, opportunities, threats, fixFirstThemes);
 
     const appSummaries: AppSummary[] = analysed.map((a, i) => ({
         name: a.app.name,
@@ -373,12 +370,13 @@ try {
         skippedApps: skipped,
         model,
         aiCopy: Boolean(copy),
+        aiLinesReplaced: rejectedLines.length,
         tokensUsed: tokens,
         generatedAt,
     });
 
     await status(
-        `Done: ${you.name} vs ${rivals.map((r) => r.name).join(', ')}. ${oppCards.length} opportunities, ${thrCards.length} threats, ${yourIssues.length} named issues.${matchNotes.length ? ` Matched: ${matchNotes.join('; ')}.` : ''}${skipped.length ? ` Skipped: ${skipped.join(', ')}.` : ''} Open the Output tab for the battlecard.`,
+        `Done: ${you.name} vs ${rivals.map((r) => r.name).join(', ')}. ${plural(oppCards.length, 'opportunity', 'opportunities')}, ${plural(thrCards.length, 'threat')}, ${plural(yourIssues.length, 'named issue')}.${matchNotes.length ? ` Matched: ${matchNotes.join('; ')}.` : ''}${skipped.length ? ` Skipped: ${skipped.join(', ')}.` : ''} Open the Output tab for the battlecard.`,
     );
     await Actor.exit();
 } catch (err) {

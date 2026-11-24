@@ -132,11 +132,26 @@ function trimQuote(r: Review): string {
 const BAD_WORDS =
     /\b(fuck|shit|bitch|bastard|asshole|chutiya|chutia|madarchod|behenchod|bhenchod|benchod|gaand|gandu|harami|haramkhor|kamina|kamine|bhosdi|bhosda|lavde|lawde|lodu|randi|bsdk|bkl)\w*|\b(bc|mc|saala|saale)\b|\bma+ ?ki\b|\bma ?bhen/i;
 export const isQuotable = (q: string) => q.length >= 25 && !BAD_WORDS.test(q);
-const pickQuotes = (rs: Review[], n: number) => {
-    // Prefer medium-length reviews: specific enough to quote, short enough to read on a slide.
-    const ranked = [...rs].sort((a, b) => Math.abs((a.text || '').length - 120) - Math.abs((b.text || '').length - 120));
-    return ranked.map(trimQuote).filter(isQuotable).slice(0, n);
-};
+// Concrete details make a quote useful evidence: money, time, an order, a refund, an OTP, a driver...
+const CONCRETE =
+    /₹|\brs\.?\s?\d|\binr\b|\d+\s?(?:mins?|minutes?|hrs?|hours?|days?)\b|\brefund|\botp\b|\border|\bdeliver|\bpayment|\bpaid\b|\bdebit|\bcharg|\bcancel|\bdriver|\brider|\bcaptain|\bcustomer (?:care|support|service)|\bsupport\b|\bitems?\b|\bmissing|\bcrash|\blog ?in\b|\baccount|\bwallet|\bupi\b|\bbank|\bcoupon|\bfees?\b|\bprices?\b|\bsubscri|\bads?\b|\bupdate|\bfood\b|\bcold\b|\bstale|\bspill|\bwrong\b|\blate\b/gi;
+// Generic pleading or venting says nothing a team can act on ("please improve", "worst app").
+const GENERIC =
+    /\b(?:please|pls|plz|kindly)\s+(?:improve|fix|look|do something|update)|\bworst (?:app|service|experience)|\bvery (?:bad|poor)\b|\bbad (?:app|service|experience)|\bpathetic|\buseless|\bdo(?:n'?t| not) (?:download|install|use)|\bwaste of (?:time|money)|\bnot good\b|\bhate (?:this|it)\b/gi;
+
+/** Higher = a more specific, quotable complaint. Medium length breaks ties (readable on a slide). */
+export function quoteScore(q: string): number {
+    const concrete = new Set((q.match(CONCRETE) ?? []).map((m) => m.toLowerCase().replace(/\d+/g, '#'))).size;
+    const generic = (q.match(GENERIC) ?? []).length;
+    return 2 * Math.min(concrete, 4) + (/\d/.test(q) ? 1 : 0) - 2 * generic - Math.abs(q.length - 120) / 60;
+}
+
+const pickQuotes = (rs: Review[], n: number) =>
+    [...new Set(rs.map(trimQuote).filter(isQuotable))]
+        .map((q, i) => ({ q, s: quoteScore(q), i }))
+        .sort((a, b) => b.s - a.s || a.i - b.i)
+        .slice(0, n)
+        .map((x) => x.q);
 
 /** Turns LLM labels (review id -> theme code) into counts, shares and real quotes picked in code. */
 export function computeThemes(negReviews: Review[], labels: Map<string, ThemeCode>): ThemeResult {

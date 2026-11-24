@@ -4,7 +4,7 @@ Platform runs on Apify (account `kuheli7`, Actor `app-review-battlecard`), 22 No
 Each folder in `results/` has the input, the dataset item (`battlecard.json`), both HTML reports, the Markdown report and a `summary.json`.
 Re-save any run with `python test-runs/fetch_run.py <name> <runId>`.
 
-Unit tests: `npm test`, 43 passing (stats, theme shares, gaps and confidence, switching signals, issue counting, label agreement, name cleanup, name matching, report escaping).
+Unit tests: `npm test`, 56 passing (stats, theme shares, gaps and confidence, switching signals, issue counting, label agreement, name cleanup, name matching, report escaping, verdict and AI-line checks, quote picking).
 
 ## Runs
 
@@ -32,9 +32,10 @@ Run IDs and Console links are in each `summary.json`.
 4. **A mistyped rival was only in the log.** Skipped apps are now listed in the status message, the dataset item (`skippedApps`) and the report.
 5. **Confidence on tiny samples.** A gap is now always "low" confidence when either app has fewer than 15 specific complaints (e.g. Google Pay's 9).
 6. **Wrong app for a nickname.** "GPay" picked a 355-rating app titled "gpay" and "jio" picked JioSaavn. A typed name now goes to the most-rated matching app (Google Pay, MyJio), the status message says what was matched, and a repeated app ("Swigy" next to "Swiggy") is listed as skipped instead of dropped silently.
+7. **The AI verdict mixed up numbers.** Run 09 said "PhonePe trails on 36.4% of complaints versus our 63.2%" (the shares were swapped). The verdict is now written in code (build 0.1.22). AI lines with a number, an unbacked claim ("fastest", "guaranteed") or too many words are replaced by templates, threat headlines are always templates, and quotes with concrete details beat generic ones ("please improve your system").
 
 ## Known limits
 
 - App Store data is thin today (Apple's feed returns about 150 of 250 reviews), so Google Play is the default.
 - The label check is weaker on small samples (56% on 16 Duolingo reviews). The report shows the sample size and confidence next to each gap.
-- The AI writes the verdict and messages, so their wording changes between runs; the numbers are computed in code. The verdict sentence can still mix up who is ahead (run 09: "PhonePe trails on 36.4% of complaints versus our 63.2%").
+- The AI still writes the opportunity headlines, marketing messages and threat actions, so their wording changes between runs. They contain no numbers.

@@ -24,7 +24,7 @@
 - 🔴 **Threats:** themes where your users complain more than a rival's, with the team that owns the fix.
 - 🛠 **Fix-first list:** up to 6 named issues in your app ("Refund not issued for missing items") with owner team, review count and a real quote.
 - 🔁 **Switching signals:** unhappy reviews that name another app ("use Blinkit, their support is better"), counted both ways.
-- ⚖️ **Verdict:** one sentence you can paste into Slack.
+- ⚖️ **Verdict:** one sentence you can paste into Slack, written in code so every number sits next to the right app.
 - 📊 **Complaint-mix table:** every theme, every app, side by side.
 
 ![Opportunity cards: the gap in points, confidence, both apps' shares, a fix-first warning, a ready message and a real quote](https://raw.githubusercontent.com/kuheli7/app-review-battlecard/main/docs/report-moves.png)
@@ -45,11 +45,12 @@ Type app names. The Actor finds them on Google Play and compares them the same w
 
 In-app rating prompts push happy users to rate, so averages say little. Swiggy and Zomato both show about 4.5★ on Google Play, yet a third of Swiggy's latest reviews are 1–2★. This Actor compares **what people complain about**: if 18% of Zomato's complaints are about support but only 6% of yours, that's a message you can run.
 
-Opportunities and threats come from the numbers (gap of 3+ points and 2+ reviews). The AI only labels reviews and writes the wording.
+Opportunities and threats come from the numbers (gap of 3+ points and 2+ reviews). The AI labels reviews and writes a few short lines without numbers; the verdict and every number are written in code.
 
 ## How accurate is it?
 
-- **Numbers are computed in code**, not by the AI: counts, shares, gaps, reply rates, switching signals.
+- **Numbers are computed in code**, not by the AI: counts, shares, gaps, reply rates, switching signals. The verdict is also written in code.
+- **AI lines are checked before use.** A line with a number, a claim the data can't back ("fastest", "guaranteed") or too many words is replaced by a plain template, and the count is in `aiLinesReplaced`. Threat headlines and low-confidence cards always use templates.
 - **Each gap has a confidence level** (high / medium / low) from a two-proportion test. It is always low when either app has fewer than 15 specific complaints.
 - **Second-pass label check:** a second AI pass re-labels a sample of reviews. In our test runs the two passes agreed on 73–90% of reviews, and 56% on a small 16-review App Store sample (the score is in `labelCheck` and in the report).
 - **Vague reviews are left out** of theme shares, so an app with many "worst app" reviews doesn't create fake gaps.
@@ -66,7 +67,7 @@ Opportunities and threats come from the numbers (gap of 3+ points and 2+ reviews
 
 | Field | What it is |
 |---|---|
-| `verdict` | One-sentence takeaway |
+| `verdict` | One-sentence takeaway, written in code from the gaps |
 | `opportunities[]` | Up to 3 rival weaknesses: theme, rival, both shares, confidence, headline, marketing message, 2 real quotes. If the same theme is also on your own fix-first list, the card carries a `caution` ("fix before you advertise this") and is listed last |
 | `threats[]` | Up to 3 of your weaknesses: theme, rival, both shares, confidence, headline, suggested action, owner team, 2 real quotes |
 | `fixFirst[]` | Your app's top 3 issues to fix, each with review count and owner team |
@@ -156,7 +157,7 @@ Run it on a **schedule** (for example every Monday) and connect Slack or email i
 4. **Gaps in code:** compares each theme's share across apps. Opportunities and threats come from the numbers, not from the AI.
 5. **Switching signals in code:** a plain text match finds 1–2★ reviews that name another compared app.
 6. **Bug triage:** a second AI call names concrete recurring issues in your app's 1–2★ reviews and points to the reviews behind each. Counts, shares and quotes are computed in code from those reviews. If this step fails, the battlecard still ships without it.
-7. **AI copy:** the AI writes the verdict, headlines and messages using only the computed numbers and the real quotes.
+7. **AI copy, checked:** the AI writes opportunity headlines, marketing messages and threat actions, with no numbers. Each line is checked in code; one that fails gets a plain template. The verdict and threat headlines are templates filled with the computed numbers.
 
 The AI runs through Apify's OpenRouter integration, so **you don't need an API key**. Model usage is billed to your Apify account at cost.
 
@@ -172,7 +173,7 @@ Reading and sorting 1,000 reviews by hand takes hours. A weekly battlecard for o
 - **Failure:** if your app can't be found, has too few recent reviews, or the AI step fails, the run **fails with a clear message** and no battlecard item is saved, so you're not charged for a broken result.
 - If a rival can't be found, has too few reviews, or is the same app as another entry (`Swigy` and `Swiggy`), it's skipped and the rest of the comparison still runs. Skipped apps are named in the status message, the report and `skippedApps`.
 - When a typed name was matched to an app with a different title (`GPay` → Google Pay), or other popular apps share the name, the status message says which app was used. Each `apps[]` entry also has `typedName`, `storeTitle`, `developer` and `otherMatches`.
-- If the AI fails to write the headlines, plain template sentences are used and `aiCopy` is `false`.
+- If the AI fails to write the headlines, plain template sentences are used and `aiCopy` is `false`. A single AI line that fails a check is replaced the same way and counted in `aiLinesReplaced`.
 
 ## Limits
 
